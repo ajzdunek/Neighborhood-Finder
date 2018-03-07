@@ -49,152 +49,164 @@ $(".start").on("click", function(e) {
 //     ]
 // }
 
-$("#q1btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ2').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300 
+    $("#q1btn").on("click", function(e) {
+        e.preventDefault();
+        console.log($("input[name=group1]:checked").val())
+        $('#modalQ2').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300 
+        });
+        $('#modalQ2').modal('open');
     });
-    $('#modalQ2').modal('open');
-});
 
-$("#q2btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ3').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q2btn").on("click", function(e) {
+        e.preventDefault();
+        console.log($("input[name=group2]:checked").val())
+        $('#modalQ3').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ3').modal('open');
     });
-    $('#modalQ3').modal('open');
-});
 
-$("#q3btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ4').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q3btn").on("click", function(e) {
+        e.preventDefault();
+        console.log($("input[name=group2]:checked").val())
+        $('#modalQ4').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ4').modal('open');
     });
-    $('#modalQ4').modal('open');
-});
 
-$("#q4btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ5').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q4btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ5').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ5').modal('open');
     });
-    $('#modalQ5').modal('open');
-});
 
-$("#q5btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ6').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q5btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ6').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ6').modal('open');
     });
-    $('#modalQ6').modal('open');
-});
 
-$("#q6btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ7').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q6btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ7').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ7').modal('open');
     });
-    $('#modalQ7').modal('open');
-});
 
-$("#q7btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ8').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q7btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ8').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ8').modal('open');
     });
-    $('#modalQ8').modal('open');
-});
 
-$("#q8btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ9').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q8btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ9').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ9').modal('open');
     });
-    $('#modalQ9').modal('open');
-});
 
-$("#q9btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ10').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q9btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ10').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ10').modal('open');
     });
-    $('#modalQ10').modal('open');
-});
 
-$("#q10btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ11').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q10btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ11').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ11').modal('open');
     });
-    $('#modalQ11').modal('open');
-});
 
-$("#q11btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ12').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q11btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ12').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ12').modal('open');
     });
-    $('#modalQ12').modal('open');
-});
 
-$("#q12btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ13').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q12btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ13').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ13').modal('open');
     });
-    $('#modalQ13').modal('open');
-});
 
-$("#q13btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ14').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q13btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ14').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ14').modal('open');
     });
-    $('#modalQ14').modal('open');
-});
 
-$("#q14btn").on("click", function(e) {
-    e.preventDefault();
-    $('#modalQ15').modal({dismissible: true, 
-        opacity: 0.5,
-        inDuration: 800,
-        outDuration: 300
+    $("#q14btn").on("click", function(e) {
+        e.preventDefault();
+        $('#modalQ15').modal({dismissible: true, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modalQ15').modal('open');
+
+        var userScores = [
+            $("input[name=group1]:checked").val(),
+            $("input[name=group2]:checked").val(),
+            $("input[name=group3]:checked").val(),
+            $("input[name=group4]:checked").val(),
+            $("input[name=group5]:checked").val(),
+            $("input[name=group6]:checked").val(),
+            $("input[name=group7]:checked").val(),
+            $("input[name=group8]:checked").val(),
+            $("input[name=group9]:checked").val(),
+            $("input[name=group10]:checked").val(),
+            $("input[name=group11]:checked").val(),
+            $("input[name=group12]:checked").val(),
+            $("input[name=group13]:checked").val(),
+            $("input[name=group14]:checked").val(),
+            $("input[name=group15]:checked").val()
+        ];
+            console.log("user array scores", userScores);
     });
-    $('#modalQ15').modal('open');
-});
-
-// $(".filled-in").on("click", function(){
-//     $(".filled-in.checked").removeClass("checked");
-//     $(this).addClass("checked");
-// });
-
-$(".item").on("click", function () {
-    $(".item").removeProp("checked")
-    $(this).prop("checked", this.checked);
-});
