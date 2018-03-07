@@ -1,8 +1,8 @@
-html body {
+/* html body {
   margin: 0 auto;
   height: 100%;
   overflow: hidden;
-}
+} */
 
 body {
   text-align: center;
@@ -23,11 +23,11 @@ main {
 
 .landing-text {
   color: black;
-  /* text-shadow: -5px 3px 0px rgba(150, 150, 150, 1); */
   vertical-align: middle;
   padding-top: 20%;
 }
 
 .landing-title {
   font-size: 100px;
+  text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
 }
