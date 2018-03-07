@@ -1,0 +1,25 @@
+{
+  "name": "neighborhood-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajzdunek/Neighborhood-Finder.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajzdunek/Neighborhood-Finder/issues"
+  },
+  "homepage": "https://github.com/ajzdunek/Neighborhood-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "sequelize": "^4.35.2"
+  }
+}
