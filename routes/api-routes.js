@@ -1,6 +1,7 @@
 var path = require("path");
 
 
+
 module.exports = function(app) {
   app.get("", function(req, res) {
     res.json();
@@ -22,10 +23,9 @@ module.exports = function(app) {
       for (var x = 0; x < scoreNums.length; x++) {
         scoreDifference += Math.abs(parseFloat(neighborhood[i].scores[x]) - parseFloat(scoreNums[x]));
       }
-  
-      scoreArray.push(scoreDifference);
-      }
+
     
+
       var minDifference = (Math.min(...scoreArray));
       if (minDifference === scoreArray[i]){
         var bestMatch = neighborhood[i];
