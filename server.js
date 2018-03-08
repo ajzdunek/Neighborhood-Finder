@@ -27,10 +27,10 @@ app.use(bodyParser.json());
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./routes/api-routes")(app);
+require("./routes/html-routes")(app);
 
-app.use(express.static("/public"));
+app.use(express.static("public"));
 
 // =============================================================================
 // LISTENER

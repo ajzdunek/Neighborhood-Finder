@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style-survey.css" />
 </head>
 
 <body>
@@ -30,473 +30,521 @@
     <a class="waves-effect waves-light btn start" href="#modalStart">Modal</a>
 
     <div id="modalStart" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Question 1</h4>
-            <form action="#">
-                <p>
-                    <input name="group1" type="radio" id="q1-1" value="5" />
-                    <label for="q1-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="q1-2" value="10" />
-                    <label for="q1-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="q1-3" value="15" />
-                    <label for="q1-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="q1-4" value="20" />
-                    <label for="q1-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group1" type="radio" id="q1-5" value="25" />
-                    <label for="q1-5">Option 5</label>
-                </p>
-            </form>
+            <div class="modal-content">
+                <h4>Question 1</h4>
+                <p class="error hidden" id="error1">Please select a response</p>
+                <form action="#">
+                    <div class="radioRequired">
+                    <p>
+                        <input name="group1" type="radio" id="q1-1" value="5" />
+                        <label for="q1-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="q1-2" value="10" />
+                        <label for="q1-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="q1-3" value="15" />
+                        <label for="q1-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="q1-4" value="20" />
+                        <label for="q1-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group1" type="radio" id="q1-5" value="25" />
+                        <label for="q1-5">Option 5</label>
+                    </p>
+                </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="waves-effect waves-green btn-flat question" id="q1btn">Next</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button class="waves-effect waves-green btn-flat question" id="q1btn">Next</button>
-        </div>
-    </div>
 
     <div id="modalQ2" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 2</h4>
+            <p class="error hidden" id="error2">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group2" type="radio" id="q2-1" value="5" />
-                    <label for="q2-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group2" type="radio" id="q2-2" value="10" />
-                    <label for="q2-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group2" type="radio" id="q2-3" value="15" />
-                    <label for="q2-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group2" type="radio" id="q2-4" value="20" />
-                    <label for="q2-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group2" type="radio" id="q2-5" value="25" />
-                    <label for="q2-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group2" type="radio" id="q2-1" value="5" />
+                        <label for="q2-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group2" type="radio" id="q2-2" value="10" />
+                        <label for="q2-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group2" type="radio" id="q2-3" value="15" />
+                        <label for="q2-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group2" type="radio" id="q2-4" value="20" />
+                        <label for="q2-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group2" type="radio" id="q2-5" value="25" />
+                        <label for="q2-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="waves-effect waves-green btn-flat question" id="q2btn">Next</a>
+            <button class="waves-effect waves-green btn-flat question" id="q2btn">Next</button>
         </div>
     </div>
 
     <div id="modalQ3" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 3</h4>
-            <form action="#">
-                <p>
-                    <input name="group3" type="radio" id="q3-1" value="5" />
-                    <label for="q3-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group3" type="radio" id="q3-2" value="10" />
-                    <label for="q3-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group3" type="radio" id="q3-3" value="15" />
-                    <label for="q3-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group3" type="radio" id="q3-4" value="20" />
-                    <label for="q3-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group3" type="radio" id="q3-5" value="25" />
-                    <label for="q3-5">Option 5</label>
-                </p>
+            <p class="error hidden" id="error3">Please select a response</p>
+            <div class="radioRequired">
+                <form action="#">
+                    <p>
+                        <input name="group3" type="radio" id="q3-1" value="5" />
+                        <label for="q3-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group3" type="radio" id="q3-2" value="10" />
+                        <label for="q3-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group3" type="radio" id="q3-3" value="15" />
+                        <label for="q3-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group3" type="radio" id="q3-4" value="20" />
+                        <label for="q3-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group3" type="radio" id="q3-5" value="25" />
+                        <label for="q3-5">Option 5</label>
+                    </p>
+            </div>
             </form>
         </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q3btn">Next</a>
         </div>
+
     </div>
 
     <div id="modalQ4" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 4</h4>
+            <p class="error hidden" id="error4">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group4" type="radio" id="q4-1" value="5" />
-                    <label for="q4-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group4" type="radio" id="q4-2" value="10" />
-                    <label for="q4-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group4" type="radio" id="q4-3" value="15" />
-                    <label for="q4-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group4" type="radio" id="q4-4" value="20" />
-                    <label for="q4-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group4" type="radio" id="q4-5" value="25" />
-                    <label for="q4-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group4" type="radio" id="q4-1" value="5" />
+                        <label for="q4-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group4" type="radio" id="q4-2" value="10" />
+                        <label for="q4-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group4" type="radio" id="q4-3" value="15" />
+                        <label for="q4-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group4" type="radio" id="q4-4" value="20" />
+                        <label for="q4-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group4" type="radio" id="q4-5" value="25" />
+                        <label for="q4-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q4btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q4btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ5" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 5</h4>
+            <p class="error hidden" id="error5">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group5" type="radio" id="q5-1" value="5" />
-                    <label for="q5-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group5" type="radio" id="q5-2" value="10" />
-                    <label for="q5-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group5" type="radio" id="q5-3" value="15" />
-                    <label for="q5-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group5" type="radio" id="q5-4" value="20" />
-                    <label for="q5-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group5" type="radio" id="q5-5" value="25" />
-                    <label for="q5-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group5" type="radio" id="q5-1" value="5" />
+                        <label for="q5-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group5" type="radio" id="q5-2" value="10" />
+                        <label for="q5-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group5" type="radio" id="q5-3" value="15" />
+                        <label for="q5-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group5" type="radio" id="q5-4" value="20" />
+                        <label for="q5-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group5" type="radio" id="q5-5" value="25" />
+                        <label for="q5-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q5btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q5btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ6" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 6</h4>
+            <p class="error hidden" id="error6">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group6" type="radio" id="q6-1" value="5" />
-                    <label for="q6-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group6" type="radio" id="q6-2" value="10" />
-                    <label for="q6-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group6" type="radio" id="q6-3" value="15" />
-                    <label for="q6-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group6" type="radio" id="q6-4" value="20" />
-                    <label for="q6-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group6" type="radio" id="q6-5" value="25" />
-                    <label for="q6-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group6" type="radio" id="q6-1" value="5" />
+                        <label for="q6-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group6" type="radio" id="q6-2" value="10" />
+                        <label for="q6-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group6" type="radio" id="q6-3" value="15" />
+                        <label for="q6-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group6" type="radio" id="q6-4" value="20" />
+                        <label for="q6-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group6" type="radio" id="q6-5" value="25" />
+                        <label for="q6-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q6btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q6btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ7" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 7</h4>
+            <p class="error hidden" id="error7">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group7" type="radio" id="q7-1" value="5" />
-                    <label for="q7-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group7" type="radio" id="q7-2" value="10" />
-                    <label for="q3-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group7" type="radio" id="q7-3" value="15" />
-                    <label for="q7-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group7" type="radio" id="q7-4" value="20" />
-                    <label for="q7-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group7" type="radio" id="q7-5" value="25" />
-                    <label for="q7-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group7" type="radio" id="q7-1" value="5" />
+                        <label for="q7-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group7" type="radio" id="q7-2" value="10" />
+                        <label for="q3-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group7" type="radio" id="q7-3" value="15" />
+                        <label for="q7-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group7" type="radio" id="q7-4" value="20" />
+                        <label for="q7-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group7" type="radio" id="q7-5" value="25" />
+                        <label for="q7-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q7btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q7btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ8" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 8</h4>
+            <p class="error hidden" id="error8">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group8" type="radio" id="q8-1" value="5" />
-                    <label for="q8-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group8" type="radio" id="q8-2" value="10" />
-                    <label for="q8-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group8" type="radio" id="q8-3" value="15" />
-                    <label for="q8-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group8" type="radio" id="q8-4" value="20" />
-                    <label for="q8-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group8" type="radio" id="q8-5" value="25" />
-                    <label for="q8-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group8" type="radio" id="q8-1" value="5" />
+                        <label for="q8-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group8" type="radio" id="q8-2" value="10" />
+                        <label for="q8-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group8" type="radio" id="q8-3" value="15" />
+                        <label for="q8-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group8" type="radio" id="q8-4" value="20" />
+                        <label for="q8-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group8" type="radio" id="q8-5" value="25" />
+                        <label for="q8-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q8btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q8btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ9" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 9</h4>
+            <p class="error hidden" id="error9">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group9" type="radio" id="q9-1" value="5" />
-                    <label for="q9-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group9" type="radio" id="q9-2" value="10" />
-                    <label for="q9-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group9" type="radio" id="q9-3" value="15" />
-                    <label for="q9-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group9" type="radio" id="q9-4" value="20" />
-                    <label for="q9-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group9" type="radio" id="q9-5" value="25" />
-                    <label for="q9-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group9" type="radio" id="q9-1" value="5" />
+                        <label for="q9-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group9" type="radio" id="q9-2" value="10" />
+                        <label for="q9-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group9" type="radio" id="q9-3" value="15" />
+                        <label for="q9-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group9" type="radio" id="q9-4" value="20" />
+                        <label for="q9-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group9" type="radio" id="q9-5" value="25" />
+                        <label for="q9-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q9btn">Next</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat question" id="q9btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ10" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 10</h4>
+            <p class="error hidden" id="error10">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group10" type="radio" id="q10-1" value="5" />
-                    <label for="q10-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group10" type="radio" id="q10-2" value="10" />
-                    <label for="q10-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group10" type="radio" id="q10-3" value="15" />
-                    <label for="q10-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group10" type="radio" id="q10-4" value="20" />
-                    <label for="q10-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group10" type="radio" id="q10-5" value="25" />
-                    <label for="q10-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group10" type="radio" id="q10-1" value="5" />
+                        <label for="q10-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group10" type="radio" id="q10-2" value="10" />
+                        <label for="q10-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group10" type="radio" id="q10-3" value="15" />
+                        <label for="q10-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group10" type="radio" id="q10-4" value="20" />
+                        <label for="q10-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group10" type="radio" id="q10-5" value="25" />
+                        <label for="q10-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q10btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q10btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ11" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 11</h4>
+            <p class="error hidden" id="error11">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group11" type="radio" id="q11-1" value="5" />
-                    <label for="q11-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group11" type="radio" id="q11-2" value="10" />
-                    <label for="q11-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group11" type="radio" id="q11-3" value="15" />
-                    <label for="q11-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group11" type="radio" id="q11-4" value="20" />
-                    <label for="q11-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group11" type="radio" id="q11-5" value="25" />
-                    <label for="q11-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group11" type="radio" id="q11-1" value="5" />
+                        <label for="q11-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group11" type="radio" id="q11-2" value="10" />
+                        <label for="q11-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group11" type="radio" id="q11-3" value="15" />
+                        <label for="q11-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group11" type="radio" id="q11-4" value="20" />
+                        <label for="q11-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group11" type="radio" id="q11-5" value="25" />
+                        <label for="q11-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q11btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q11btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ12" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 12</h4>
+            <p class="error hidden" id="error12">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group3" type="radio" id="q3-1" value="5" />
-                    <label for="q3-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group12" type="radio" id="q12-2" value="10" />
-                    <label for="q12-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group12" type="radio" id="q12-3" value="15" />
-                    <label for="q12-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group12" type="radio" id="q12-4" value="20" />
-                    <label for="q12-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group12" type="radio" id="q12-5" value="25" />
-                    <label for="q12-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group3" type="radio" id="q3-1" value="5" />
+                        <label for="q3-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group12" type="radio" id="q12-2" value="10" />
+                        <label for="q12-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group12" type="radio" id="q12-3" value="15" />
+                        <label for="q12-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group12" type="radio" id="q12-4" value="20" />
+                        <label for="q12-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group12" type="radio" id="q12-5" value="25" />
+                        <label for="q12-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q12btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q12btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ13" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 13</h4>
+            <p class="error hidden" id="error13">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group13" type="radio" id="q13-1" value="5" />
-                    <label for="q13-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group13" type="radio" id="q13-2" value="10" />
-                    <label for="q13-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group13" type="radio" id="q13-3" value="15" />
-                    <label for="q13-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group13" type="radio" id="q13-4" value="20" />
-                    <label for="q13-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group13" type="radio" id="q13-5" value="25" />
-                    <label for="q13-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group13" type="radio" id="q13-1" value="5" />
+                        <label for="q13-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group13" type="radio" id="q13-2" value="10" />
+                        <label for="q13-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group13" type="radio" id="q13-3" value="15" />
+                        <label for="q13-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group13" type="radio" id="q13-4" value="20" />
+                        <label for="q13-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group13" type="radio" id="q13-5" value="25" />
+                        <label for="q13-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q13btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q13btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ14" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 14</h4>
+            <p class="error hidden" id="error14">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group14" type="radio" id="q14-1" value="5" />
-                    <label for="q14-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group14" type="radio" id="q14-2" value="10" />
-                    <label for="q14-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group14" type="radio" id="q14-3" value="15" />
-                    <label for="q14-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group14" type="radio" id="q14-4" value="20" />
-                    <label for="q14-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group14" type="radio" id="q14-5" value="25" />
-                    <label for="q14-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group14" type="radio" id="q14-1" value="5" />
+                        <label for="q14-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group14" type="radio" id="q14-2" value="10" />
+                        <label for="q14-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group14" type="radio" id="q14-3" value="15" />
+                        <label for="q14-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group14" type="radio" id="q14-4" value="20" />
+                        <label for="q14-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group14" type="radio" id="q14-5" value="25" />
+                        <label for="q14-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q14btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q14btn">Next</a>
         </div>
     </div>
 
     <div id="modalQ15" class="modal modal-fixed-footer">
         <div class="modal-content">
             <h4>Question 15</h4>
+            <p class="error hidden" id="error15">Please select a response</p>
             <form action="#">
-                <p>
-                    <input name="group3" type="radio" id="q15-1" value="5" />
-                    <label for="q15-1">Option 1</label>
-                </p>
-                <p>
-                    <input name="group15" type="radio" id="q15-2" value="10" />
-                    <label for="q15-2">Option 2</label>
-                </p>
-                <p>
-                    <input name="group15" type="radio" id="q15-3" value="15" />
-                    <label for="q15-3">Option 3</label>
-                </p>
-                <p>
-                    <input name="group15" type="radio" id="q15-4" value="20" />
-                    <label for="q3-4">Option 4</label>
-                </p>
-                <p>
-                    <input name="group3" type="radio" id="q15-5" value="25" />
-                    <label for="q15-5">Option 5</label>
-                </p>
+                <div class="radioRequired">
+                    <p>
+                        <input name="group3" type="radio" id="q15-1" value="5" />
+                        <label for="q15-1">Option 1</label>
+                    </p>
+                    <p>
+                        <input name="group15" type="radio" id="q15-2" value="10" />
+                        <label for="q15-2">Option 2</label>
+                    </p>
+                    <p>
+                        <input name="group15" type="radio" id="q15-3" value="15" />
+                        <label for="q15-3">Option 3</label>
+                    </p>
+                    <p>
+                        <input name="group15" type="radio" id="q15-4" value="20" />
+                        <label for="q3-4">Option 4</label>
+                    </p>
+                    <p>
+                        <input name="group3" type="radio" id="q15-5" value="25" />
+                        <label for="q15-5">Option 5</label>
+                    </p>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="q15btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q15btn">Next</a>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
+    <script src="chai.js"></script>
+    <script src="chai-jquery.js"></script>
 
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="js/materialize.min.js"></script>
