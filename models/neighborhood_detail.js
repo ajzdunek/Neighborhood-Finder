@@ -1,20 +1,34 @@
 module.exports = function (sequelize, DataTypes) {
-    var Neighborhooddetails = sequelize.define("neighborhood_details", {
-        Places: {
+    var Neighborhooddetail = sequelize.define("neighborhood_details", {
+        Type: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        Restaurants: {
+        Name: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        Apartments: {
+        Image: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Link: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Description: {
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
@@ -23,13 +37,14 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // Post.associate = function(models) {
-    //   Post.belongsTo(models.Author, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // };
+    Neighborhooddetail.associate = function(models) {
+      Neighborhooddetail.belongsTo(models.Neighborhoodgeneral, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
 
-    return Neighborhooddetails;
+
+    return Neighborhooddetail;
 };
