@@ -34,6 +34,7 @@ require("./routes/html-routes")(app);
 
 app.use(express.static("public"));
 
+
 // =============================================================================
 // LISTENER
 // The below code effectively "starts" our server
