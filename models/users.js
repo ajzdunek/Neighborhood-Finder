@@ -2,19 +2,19 @@ module.exports = function(sequelize, DataTypes) {
     var Users = sequelize.define("user", {
       Email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1]
         }
       },
-      Match: {
-        type: DataTypes.TEXT,
+      Score: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         len: [1]
       },
       Saved: {
-        type: DataTypes.TEXT,
-        allowNull: false,
+        type: DataTypes.INTEGER,
+        allowNull: true,
         len: [1]
       }
     });
