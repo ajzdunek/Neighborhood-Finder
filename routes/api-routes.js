@@ -1,36 +1,22 @@
 var path = require("path");
 
-
+var db = require("../models");
+console.log(db.Neighborhoodgeneral);
+// var neighGen = require("../models/neighborhood_general.js");
+// var neighDeet = require("../models/neighborhood_detail.js");
 
 module.exports = function(app) {
-  app.get("", function(req, res) {
-    res.json();
-  })
 
-   app.post("/api/results", function(req, res) {
 
-      var userScores = req.body.scores;
-      var scoreNums = userScores.map(function (i) {
-        return parseInt(i, 10);
-      });
+  app.get("/api/results:id", function(req, res) {
 
-      var scoreArray = [];
-      var bestMatch = 0;
-  
-      for (var i = 0; i < neighborhood.length; i++) {
-        var scoreDifference = 0;
-
-      for (var x = 0; x < scoreNums.length; x++) {
-        scoreDifference += Math.abs(parseFloat(neighborhood[i].scores[x]) - parseFloat(scoreNums[x]));
-      }
-
-    
-
-      var minDifference = (Math.min(...scoreArray));
-      if (minDifference === scoreArray[i]){
-        var bestMatch = neighborhood[i];
-      }
-
-    res.json(bestMatch);
-    })
-};
+        db.Neighborhoodgeneral.findOne({
+          where: {
+            Name: req.params.id
+          }
+          }).then(function(data) {
+          res.json(data);
+          console.log(res.json(data));
+        });
+    });
+  };

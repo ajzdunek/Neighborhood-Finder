@@ -56,10 +56,10 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   
-    Neighborhoodgeneral.associate = function(models) {
-      Neighborhoodgeneral.hasMany(models.Neighborhooddetail, {
-      });
-    };
+    //   Neighborhoodgeneral.associate = function(models) {
+    //   Neighborhoodgeneral.hasMany(models.Neighborhooddetail, {
+    //   });
+    // };
   
     return Neighborhoodgeneral;
   };

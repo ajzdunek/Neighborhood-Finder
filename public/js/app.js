@@ -304,6 +304,15 @@ $(document).ready(function(){
     }
     });
 
+    // var getTotal = function(scores){
+    //     var scoreNums = scores.map(function (i) {
+    //         return parseInt(i, 10);
+    //     });
+    //     var userTotal = scoreNums.reduce((a, b) => a + b)
+    //     return userTotal;
+
+    // }
+
     $("#q15btn").on("click", function(e) {
         e.preventDefault();
         if($("input[name=group15]:checked").val() === undefined){
@@ -334,45 +343,71 @@ $(document).ready(function(){
             $("input[name=group14]:checked").val(),
             $("input[name=group15]:checked").val()
         ];
-            console.log("user array scores", userScores);
 
-            var userData = {
-                scores: userScores
-            };
+        var scoreNums = userScores.map(function (i) {
+            return parseInt(i, 10);
+        });
+        var userTotal = scoreNums.reduce((a, b) => a + b);
+        var match;
+
+        if (userTotal <= 105) {
+            match = "Pilsen";
+          } else if (userTotal <= 135) {
+            match = "Logan Square";
+          } else if (userTotal <= 165) {
+            match = "Hyde Park";
+          } else if (userTotal <= 195) {
+            match = "Wicker Park";
+          } else if (userTotal <= 225) {
+            match = "Ukrainian Village";
+          } else if (userTotal <= 255) {
+            match = "Andersonville";
+          } else if (userTotal <= 285) {
+            match = "West Loop";
+          } else if (userTotal <= 315) {
+            match = "Lincoln Park";
+          } else if (userTotal <= 345) {
+            match = "Wrigleyville";
+          } else if (userTotal <= 375) {
+            match = "River North";
+          };
+
+        $.get("/api/results" + match, function(data) {
+            console.log("data", data);
+        
+            });
         }
 
+        // $.post("/api/results", userData,
+        // function(data) {
 
-        $.post("/api/results", userData,
-        function(data) {
-
-            if (data) {
-                console.log(data);
-            }   
-            else {
-                console.log("Something bad happened");
-            }
+        //     if (data) {
+        //         console.log(data);
+        //     }   
+        //     else {
+        //         console.log("Something bad happened");
+        //     }
 
         // Clear the question values on submit
-        $("input[name=group1]:checked").val(""),
-        $("input[name=group2]:checked").val(""),
-        $("input[name=group3]:checked").val(""),
-        $("input[name=group4]:checked").val(""),
-        $("input[name=group5]:checked").val(""),
-        $("input[name=group6]:checked").val(""),
-        $("input[name=group7]:checked").val(""),
-        $("input[name=group8]:checked").val(""),
-        $("input[name=group9]:checked").val(""),
-        $("input[name=group10]:checked").val(""),
-        $("input[name=group11]:checked").val(""),
-        $("input[name=group12]:checked").val(""),
-        $("input[name=group13]:checked").val(""),
-        $("input[name=group14]:checked").val(""),
-        $("input[name=group15]:checked").val("")
+        // $("input[name=group1]:checked").val(""),
+        // $("input[name=group2]:checked").val(""),
+        // $("input[name=group3]:checked").val(""),
+        // $("input[name=group4]:checked").val(""),
+        // $("input[name=group5]:checked").val(""),
+        // $("input[name=group6]:checked").val(""),
+        // $("input[name=group7]:checked").val(""),
+        // $("input[name=group8]:checked").val(""),
+        // $("input[name=group9]:checked").val(""),
+        // $("input[name=group10]:checked").val(""),
+        // $("input[name=group11]:checked").val(""),
+        // $("input[name=group12]:checked").val(""),
+        // $("input[name=group13]:checked").val(""),
+        // $("input[name=group14]:checked").val(""),
+        // $("input[name=group15]:checked").val("")
 
-        });
+        // });
 
-});
-
+    });
 
 });
 
