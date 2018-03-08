@@ -69,14 +69,15 @@
 
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script>
         $(document).ready(function () {
             console.log("I am working");
             // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-            $('.modal-trigger').leanModal();
+            $('.modal').modal();
 
 
             // When user clicks "submit + start" button, the user's email is saved into the database
@@ -91,7 +92,7 @@
                 console.log("User's email is ", newUser);
 
                 //CHANGE THIS to post info into database
-                $.post("/api/tables", newUser,
+                $.post("/api/results", newUser,
                     function (data) {
                         $("#email").val("");
                     });
