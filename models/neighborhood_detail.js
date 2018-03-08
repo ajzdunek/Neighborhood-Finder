@@ -1,0 +1,50 @@
+module.exports = function (sequelize, DataTypes) {
+    var Neighborhooddetail = sequelize.define("neighborhood_details", {
+        Type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Image: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Link: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        Description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        }
+    });
+
+    Neighborhooddetail.associate = function(models) {
+      Neighborhooddetail.belongsTo(models.Neighborhoodgeneral, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+
+
+    return Neighborhooddetail;
+};
