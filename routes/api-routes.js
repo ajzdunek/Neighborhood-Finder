@@ -1,37 +1,36 @@
 var path = require("path");
 
-// var musicians = require("../data/friend.js");
 
 module.exports = function(app) {
-//   app.get("/api/friends", function(req, res) {
-//     res.json(musicians);
-//   })
+  app.get("", function(req, res) {
+    res.json();
+  })
 
-//    app.post("/api/friends", function(req, res) {
+   app.post("/api/results", function(req, res) {
 
-//       var leadScore = req.body.scores;
-//       var scoreArray = [];
-//       var bestMatch = 0;
+      var userScores = req.body.scores;
+      var scoreNums = userScores.map(function (i) {
+        return parseInt(i, 10);
+      });
+
+      var scoreArray = [];
+      var bestMatch = 0;
   
-//       for (var i = 0; i < musicians.length; i++) {
-//         var scoreDifference = 0;
+      for (var i = 0; i < neighborhood.length; i++) {
+        var scoreDifference = 0;
 
-//         for (var x = 0; x < leadScore.length; x++) {
-//           scoreDifference += Math.abs(parseFloat(musicians[i].scores[x]) - parseFloat(leadScore[x]));
-//         }
+      for (var x = 0; x < scoreNums.length; x++) {
+        scoreDifference += Math.abs(parseFloat(neighborhood[i].scores[x]) - parseFloat(scoreNums[x]));
+      }
   
-//       scoreArray.push(scoreDifference);
-//       }
+      scoreArray.push(scoreDifference);
+      }
     
-//       for (var i = 0; i < scoreArray.length; i++) {
-//         if (scoreArray[i] <= scoreArray[bestMatch]) {
-//           bestMatch = i;
-//         }
-//       }
-      
-//       var leadFront = musicians[bestMatch];
-//       res.json(leadFront);
-//     })
+      var minDifference = (Math.min(...scoreArray));
+      if (minDifference === scoreArray[i]){
+        var bestMatch = neighborhood[i];
+      }
 
-
+    res.json(bestMatch);
+    })
 };

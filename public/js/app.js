@@ -12,48 +12,6 @@ $(document).ready(function(){
 
     });
 
-    // var validate = function(){
-    //     console.log("runnning");
-    //     $("").submit(function(e) {
-    //         $(".radioRequired").each(function() {
-    //           var rName = $(this).attr('name');
-    //         //   console.log($(this).attr('name'));
-    //           var checked = $('[name=' + rName + ']').is(':checked');
-    //           console.log("checked", checked);
-    //           if (!checked && !$(this).hasClass('radioWarning')) {
-    //             $(this).addClass('radioWarning');
-    //             $(this).append('<div class="chip radioMessage">' + $(this).data("error") + '</div>');
-    //           }
-    //           if (checked) {
-    //             $(this).removeClass('radioWarning');
-    //             $(this).children('.radioMessage').remove();
-    //           }
-    //         });
-
-    //       });
-    // }
-
-
-
-        // $(".question").click(function (e) {
-        //     var total = $((this).form).find("input:checked").val();
-        //     e.preventDefault();
-        //     $("form").each(function(){
-        //         total += $((this.form)).prev().find("input:checked").val() 
-        //         console.log($((this).form).find("input:checked").val());
-        //         console.log(total)
-        //         $('#modalQ2').modal({dismissible: false, 
-        //             opacity: 0.5,
-        //             inDuration: 800,
-        //             outDuration: 300 
-        //         });
-        //         $(this).modal('close');
-        //         $(this).next().modal('open');
-        //     })
-
-
-            // $(".modal").val(my_id_value);
-
 
     $("#q1btn").on("click", function(e) {
         e.preventDefault();
@@ -377,9 +335,44 @@ $(document).ready(function(){
             $("input[name=group15]:checked").val()
         ];
             console.log("user array scores", userScores);
+
+            var userData = {
+                scores: userScores
+            };
         }
 
-    });
+
+        $.post("/api/results", userData,
+        function(data) {
+
+            if (data) {
+                console.log(data);
+            }   
+            else {
+                console.log("Something bad happened");
+            }
+
+        // Clear the question values on submit
+        $("input[name=group1]:checked").val(""),
+        $("input[name=group2]:checked").val(""),
+        $("input[name=group3]:checked").val(""),
+        $("input[name=group4]:checked").val(""),
+        $("input[name=group5]:checked").val(""),
+        $("input[name=group6]:checked").val(""),
+        $("input[name=group7]:checked").val(""),
+        $("input[name=group8]:checked").val(""),
+        $("input[name=group9]:checked").val(""),
+        $("input[name=group10]:checked").val(""),
+        $("input[name=group11]:checked").val(""),
+        $("input[name=group12]:checked").val(""),
+        $("input[name=group13]:checked").val(""),
+        $("input[name=group14]:checked").val(""),
+        $("input[name=group15]:checked").val("")
+
+        });
+
+});
+
 
 });
 
