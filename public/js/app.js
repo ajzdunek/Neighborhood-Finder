@@ -108,7 +108,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ4').modal({dismissible: true, 
+        $('#modalQ4').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -128,7 +128,7 @@ $(document).ready(function(){
                 $("#error4").fadeTo(2000, 100).fadeTo(2000, 0);
             }
         }else{
-        $('#modalQ5').modal({dismissible: true, 
+        $('#modalQ5').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -149,7 +149,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ6').modal({dismissible: true, 
+        $('#modalQ6').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -170,7 +170,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ7').modal({dismissible: true, 
+        $('#modalQ7').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -190,7 +190,7 @@ $(document).ready(function(){
                 $("#error7").fadeTo(2000, 100).fadeTo(2000, 0);
             }
         }else{
-        $('#modalQ8').modal({dismissible: true, 
+        $('#modalQ8').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -211,7 +211,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ9').modal({dismissible: true, 
+        $('#modalQ9').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -231,7 +231,7 @@ $(document).ready(function(){
                 $("#error9").fadeTo(2000, 100).fadeTo(2000, 0);
             }
         }else{
-        $('#modalQ10').modal({dismissible: true, 
+        $('#modalQ10').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -252,7 +252,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ11').modal({dismissible: true, 
+        $('#modalQ11').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -273,7 +273,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ12').modal({dismissible: true, 
+        $('#modalQ12').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -294,7 +294,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ13').modal({dismissible: true, 
+        $('#modalQ13').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -315,7 +315,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ14').modal({dismissible: true, 
+        $('#modalQ14').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -336,7 +336,7 @@ $(document).ready(function(){
             }
         }else{
 
-        $('#modalQ15').modal({dismissible: true, 
+        $('#modalQ15').modal({dismissible: false, 
             opacity: 0.5,
             inDuration: 800,
             outDuration: 300
@@ -359,7 +359,6 @@ $(document).ready(function(){
 
         $('#modalQ15').modal('close');
 
-        
         var userScores = [
             $("input[name=group1]:checked").val(),
             $("input[name=group2]:checked").val(),
@@ -379,6 +378,7 @@ $(document).ready(function(){
         ];
             console.log("user array scores", userScores);
         }
+
     });
 
 });

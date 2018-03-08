@@ -33,4 +33,10 @@ li.active .collection-item.active .collection-item {
     visibility: visible;
 }
 
+.modal-close {
+    position: absolute;
+    font-size: 16px;
+    top: 10px;
+    right: 0;
+}
 
