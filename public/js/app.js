@@ -372,12 +372,11 @@ $(document).ready(function(){
             match = "River North";
           };
 
-        $.get("/api/results" + match, function(data) {
+        $.get("/api/results/" + match, function(data) {
             console.log("data", data);
             $("#neighborhoodName").text(data.name);
             $(".description").text(data.description);
 
-        
             });
         }
 

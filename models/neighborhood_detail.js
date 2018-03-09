@@ -37,13 +37,13 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    // Neighborhooddetail.associate = function(models) {
-    //   Neighborhooddetail.belongsTo(models.Neighborhoodgeneral, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // };
+    Neighborhooddetail.associate = function(models) {
+      Neighborhooddetail.belongsTo(models.Neighborhoodgeneral, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
 
 
     return Neighborhooddetail;

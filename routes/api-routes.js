@@ -1,4 +1,4 @@
-// var path = require("path");
+var path = require("path");
 
 var db = require("../models");
 console.log(db.Neighborhoodgeneral);
@@ -8,26 +8,30 @@ console.log(db.Neighborhoodgeneral);
 module.exports = function (app) {
 
 
-  app.get("/api/results:id", function (req, res) {
-
+  app.get("/api/results/:name", function (req, res) {
+  console.log("req", req.params.name);
     db.Neighborhoodgeneral.findOne({
       where: {
-        Name: req.params.id
+        Name: req.params.name
       }
+
     }).then(function (general) {
-      db.Neighborhooddetail.findAll({
-        where: {
+      console.log("general", general)
+      res.json(general);
+      // console.log("db", db.Neighborhoodgeneral.name) 
+      // db.Neighborhooddetail.findAll({
+      //   where: {
           //need to figure out how to call this on foreign key once tables associated
-          foreignkey: general.id
-        }
-      }).then(function (details) { 
-          var data = {
-            nameData: general,
-            detailData: details
-          }
-          console.log(data);
-          res.json({ data: data })
-        });
+      //     foreignkey: general.id
+      //   }
+      // }).then(function (details) { 
+      //     var data = {
+      //       nameData: general,
+      //       detailData: details
+      //     }
+      //     console.log(data);
+      //     res.json({ data: data })
+      //   });
       });
     });
   };
