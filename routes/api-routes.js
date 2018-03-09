@@ -1,36 +1,37 @@
 var path = require("path");
 
+var db = require("../models");
+console.log(db.Neighborhoodgeneral);
+// var neighGen = require("../models/neighborhood_general.js");
+// var neighDeet = require("../models/neighborhood_detail.js");
+
+module.exports = function (app) {
 
 
-module.exports = function(app) {
-  app.get("", function(req, res) {
-    res.json();
-  })
+  app.get("/api/results/:name", function (req, res) {
+  console.log("req", req.params.name);
+    db.Neighborhoodgeneral.findOne({
+      where: {
+        Name: req.params.name
+      }
 
-   app.post("/api/results", function(req, res) {
-
-      var userScores = req.body.scores;
-      var scoreNums = userScores.map(function (i) {
-        return parseInt(i, 10);
+    }).then(function (general) {
+      console.log("general", general)
+      res.json(general);
+      // console.log("db", db.Neighborhoodgeneral.name) 
+      // db.Neighborhooddetail.findAll({
+      //   where: {
+          //need to figure out how to call this on foreign key once tables associated
+      //     foreignkey: general.id
+      //   }
+      // }).then(function (details) { 
+      //     var data = {
+      //       nameData: general,
+      //       detailData: details
+      //     }
+      //     console.log(data);
+      //     res.json({ data: data })
+      //   });
       });
-
-      var scoreArray = [];
-      var bestMatch = 0;
-  
-      for (var i = 0; i < neighborhood.length; i++) {
-        var scoreDifference = 0;
-
-      for (var x = 0; x < scoreNums.length; x++) {
-        scoreDifference += Math.abs(parseFloat(neighborhood[i].scores[x]) - parseFloat(scoreNums[x]));
-      }
-    }
-    
-
-      var minDifference = (Math.min(...scoreArray));
-      if (minDifference === scoreArray[i]){
-        var bestMatch = neighborhood[i];
-      }
-
-    res.json(bestMatch);
-    })
-};
+    });
+  };

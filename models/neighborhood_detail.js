@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Neighborhooddetail = sequelize.define("neighborhood_details", {
+    var Neighborhooddetail = sequelize.define("Neighborhooddetail", {
         Type: {
             type: DataTypes.STRING,
             allowNull: false,
