@@ -1,4 +1,4 @@
-var path = require("path");
+// var path = require("path");
 
 var db = require("../models");
 console.log(db.Neighborhoodgeneral);
@@ -15,7 +15,7 @@ module.exports = function (app) {
         Name: req.params.id
       }
     }).then(function (general) {
-      db.Neighborhooddetails.findAll({
+      db.Neighborhooddetail.findAll({
         where: {
           //need to figure out how to call this on foreign key once tables associated
           foreignkey: general.id
