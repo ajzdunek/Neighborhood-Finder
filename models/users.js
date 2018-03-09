@@ -1,31 +1,44 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize, Sequelize) {
     var Users = sequelize.define("user", {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        primaryKey: true,
+        autoIncrement: true,
+        validate: {
+          len: [5]
+        }
+      },
       Email: {
-        type: DataTypes.STRING,
+        type: Sequelize.STRING,
         allowNull: true,
         validate: {
           len: [1]
         }
       },
-      Score: {
-        type: DataTypes.INTEGER,
+      Match: {
+        type: Sequelize.INTEGER,
         allowNull: false,
         len: [1]
       },
       Saved: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
         allowNull: true,
         len: [1]
+      },
+      createdAt: {
+        field: 'created_at',
+        type: Sequelize.DATE,
+        primaryKey: false,
+        autoIncrement: false
+      },
+      updatedAt: {
+        field: 'updated_at',
+        type: Sequelize.DATE,
+        primaryKey: false,
+        autoIncrement: false
       }
     });
-  
-    // Post.associate = function(models) {
-    //   Post.belongsTo(models.Author, {
-    //     foreignKey: {
-    //       allowNull: false
-    //     }
-    //   });
-    // };
   
     return Users;
   };

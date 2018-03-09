@@ -34,15 +34,18 @@ module.exports = function (sequelize, DataTypes) {
             validate: {
                 len: [1]
             }
+        },
+        FKNeighborhoodsGen: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            validate: {
+                len: [5]
+            },
         }
     });
 
     Neighborhooddetail.associate = function(models) {
-      Neighborhooddetail.belongsTo(models.Neighborhoodgeneral, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
+      Neighborhooddetail.belongsTo(models.Neighborhoodgeneral);
     };
 
 
