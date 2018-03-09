@@ -326,6 +326,13 @@ $(document).ready(function(){
 
         $('#modalQ15').modal('close');
 
+        $('#modalQ15').modal({dismissible: false, 
+            opacity: 0.5,
+            inDuration: 800,
+            outDuration: 300
+        });
+        $('#modal1').modal('open');
+
         var userScores = [
             $("input[name=group1]:checked").val(),
             $("input[name=group2]:checked").val(),
@@ -374,6 +381,7 @@ $(document).ready(function(){
 
         $.get("/api/results/" + match, function(data) {
             console.log("data", data);
+
             $("#neighborhoodName").text(data.name);
             $(".description").text(data.description);
 
