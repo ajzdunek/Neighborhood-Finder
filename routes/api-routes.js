@@ -16,21 +16,22 @@ module.exports = function (app) {
         }
   
       }).then(function (general) {
-        console.log("general", general.ID)
-        res.json(general);
-        // db.Neighborhooddetail.findAll({
-        //   where: {
+        // console.log("general", general)
+        // res.json(general);
+        db.Neighborhooddetail.findAll({
+          where: {
             // need to figure out how to call this on foreign key once tables associated
-        //     foreignKey: general.ID
-        //   }
-        // }).then(function (details) { 
-        //     var data = {
-        //       nameData: general,
-        //       detailData: details
-        //     }
-        //     console.log(data);
-        //     res.json({ data: data })
-        //   });
+            FKNeighborhoodsGen: general.dataValues.id
+          }
+        }).then(function (details) { 
+            var data = {
+              nameData: general,
+              detailData: details
+            }
+            console.log("details", details);
+            console.log(data);
+            res.json({ data: data })
+          });
         });
       });
     };
