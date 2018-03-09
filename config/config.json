@@ -5,7 +5,7 @@
         "database": "xq68tp5yeobkhy5x",
         "host": "op2hpcwcbxb1t4z9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
-       
+         
     },
     "test": {
         "username": "jbfdjll9rsjpo073",
@@ -13,6 +13,7 @@
         "database": "xq68tp5yeobkhy5x",
         "host": "op2hpcwcbxb1t4z9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
+        
     },
         
     "production": {
@@ -21,6 +22,7 @@
         "database": "xq68tp5yeobkhy5x",
         "host": "op2hpcwcbxb1t4z9.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
+
        
     }
 }

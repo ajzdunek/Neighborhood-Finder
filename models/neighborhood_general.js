@@ -24,11 +24,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       },
-      Walkscore: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        len: [1]
-      },
       Walkscore_bike: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -54,6 +49,8 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       }
+
+
     });
   
       Neighborhoodgeneral.associate = function(models) {
