@@ -374,38 +374,31 @@ $(document).ready(function(){
 
         $.get("/api/results" + match, function(data) {
             console.log("data", data);
+            $("#neighborhoodName").text(data.name);
+            $(".description").text(data.description);
+
         
             });
         }
 
-        // $.post("/api/results", userData,
-        // function(data) {
-
-        //     if (data) {
-        //         console.log(data);
-        //     }   
-        //     else {
-        //         console.log("Something bad happened");
-        //     }
-
         // Clear the question values on submit
-        // $("input[name=group1]:checked").val(""),
-        // $("input[name=group2]:checked").val(""),
-        // $("input[name=group3]:checked").val(""),
-        // $("input[name=group4]:checked").val(""),
-        // $("input[name=group5]:checked").val(""),
-        // $("input[name=group6]:checked").val(""),
-        // $("input[name=group7]:checked").val(""),
-        // $("input[name=group8]:checked").val(""),
-        // $("input[name=group9]:checked").val(""),
-        // $("input[name=group10]:checked").val(""),
-        // $("input[name=group11]:checked").val(""),
-        // $("input[name=group12]:checked").val(""),
-        // $("input[name=group13]:checked").val(""),
-        // $("input[name=group14]:checked").val(""),
-        // $("input[name=group15]:checked").val("")
+        $("input[name=group1]:checked").val(""),
+        $("input[name=group2]:checked").val(""),
+        $("input[name=group3]:checked").val(""),
+        $("input[name=group4]:checked").val(""),
+        $("input[name=group5]:checked").val(""),
+        $("input[name=group6]:checked").val(""),
+        $("input[name=group7]:checked").val(""),
+        $("input[name=group8]:checked").val(""),
+        $("input[name=group9]:checked").val(""),
+        $("input[name=group10]:checked").val(""),
+        $("input[name=group11]:checked").val(""),
+        $("input[name=group12]:checked").val(""),
+        $("input[name=group13]:checked").val(""),
+        $("input[name=group14]:checked").val(""),
+        $("input[name=group15]:checked").val("")
 
-        // });
+
 
     });
 
