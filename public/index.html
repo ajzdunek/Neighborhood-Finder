@@ -54,7 +54,7 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer">
+    <footer class="page-footer black">
         <!-- <div class="footer-copyright"> -->
         <div class="container right">
             <a class="white-text">Created by: </a>
@@ -92,7 +92,7 @@
                 console.log("User's email is ", newUser);
 
                 //CHANGE THIS to post info into database
-                $.post("/api/results", newUser,
+                $.post("/api/user", newUser,
                     function (data) {
                         $("#email").val("");
                     });

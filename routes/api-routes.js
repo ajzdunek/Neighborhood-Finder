@@ -23,7 +23,7 @@ module.exports = function(app) {
       for (var x = 0; x < scoreNums.length; x++) {
         scoreDifference += Math.abs(parseFloat(neighborhood[i].scores[x]) - parseFloat(scoreNums[x]));
       }
-
+    }
     
 
       var minDifference = (Math.min(...scoreArray));
