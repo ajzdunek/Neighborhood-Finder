@@ -46,9 +46,23 @@ li.active .collection-item.active .collection-item {
 
 .leftDiv , .middleDiv {
     float: left;
+    background-color: #A79793;
+    color: #3D4859;
+}
+
+.middleDiv {
+    margin-left: 8%;
 }
 
 
 .rightDiv {
     float: right;
+    background-color: #A79793;
+    color: #3D4859;
+    margin-left: 8%;
+}
+
+.modal1 {
+    opacity: .8;
+    background-color: #D9CFCA;
 }
