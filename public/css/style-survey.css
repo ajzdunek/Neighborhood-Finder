@@ -40,3 +40,15 @@ li.active .collection-item.active .collection-item {
     right: 0;
 }
 
+#modal1 {
+    width: 80%;
+}
+
+.leftDiv , .middleDiv {
+    float: left;
+}
+
+
+.rightDiv {
+    float: right;
+}
