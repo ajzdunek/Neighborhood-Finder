@@ -6,7 +6,7 @@ $(document).ready(function () {
             dismissible: false,
             opacity: 0.5,
             inDuration: 500,
-            outDuration: 200 // Transition in duration
+            outDuration: 200 
         });
         $('#modalStart').modal('open');
 
@@ -401,9 +401,11 @@ $(document).ready(function () {
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
-                $(".foodAppend").html("<div class='leftDiv col s12 l3'>" + "<h4>" + data.data.detailData[0].Name + "</h4>" + "<p>" + data.data.detailData[0].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l3'>" + "<h4>" + data.data.detailData[1].Name + "</h4>" + "<p>" + data.data.detailData[1].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l3'>" + "<h4>" + data.data.detailData[2].Name + "</h4>" + "<p>" + data.data.detailData[2].Description + "</p>" + "</div>");
+                $(".foodAppend").html("<div class='leftDiv col s12 l3' id='food1'>" + "<h4>" + data.data.detailData[0].Name + "</h4>" + "<p>" + data.data.detailData[0].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l3' id='food2'>" + "<h4>" + data.data.detailData[1].Name + "</h4>" + "<p>" + data.data.detailData[1].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l3' id='food3'>" + "<h4>" + data.data.detailData[2].Name + "</h4>" + "<p>" + data.data.detailData[2].Description + "</p>" + "</div>");
                 $(".funAppend").html("<div class='leftDiv col s12 l3'>" + "<h4>" + data.data.detailData[3].Name + "</h4>" + "<p>" + data.data.detailData[3].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l3'>" + "<h4>" + data.data.detailData[4].Name + "</h4>" + "<p>" + data.data.detailData[4].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l3'>" + "<h4>" + data.data.detailData[5].Name + "</h4>" + "<p>" + data.data.detailData[5].Description + "</p>" + "</div>");
-                // $(".walkAppend").html("<div class='transit col s12 l4>" + "<img src='" + data.data.nameData.Walkscore_transit + "'>");
+                $("#transit").attr('src', data.data.nameData.Walkscore_transit);
+                $("#walk").attr('src', data.data.nameData.Walkscore_walk);
+                $("#bike").attr('src', data.data.nameData.Walkscore_bike);
             });
         }
 

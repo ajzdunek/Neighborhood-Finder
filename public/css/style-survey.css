@@ -5,6 +5,7 @@ nav {
 body {
     background: linear-gradient(rgba(54, 54, 54, 0.45), rgba(54, 54, 54, 0.45)),url("../images/bike.jpg");
     background-color: rgb(51, 51, 51, 0.5);
+    color: #3D4859;
 }
 
 .brand-logo {
@@ -45,8 +46,8 @@ li.active .collection-item.active .collection-item {
 }
 
 .leftDiv , .middleDiv {
-    float: left;
-    background-color: #A79793;
+    background-color: #D9CFCA;
+    border: 1px solid #A79793;
     color: #3D4859;
 }
 
@@ -56,13 +57,18 @@ li.active .collection-item.active .collection-item {
 
 
 .rightDiv {
-    float: right;
-    background-color: #A79793;
+    background-color: #D9CFCA;
+    border: 1px solid #A79793;
     color: #3D4859;
-    margin-left: 8%;
+
 }
 
-.modal1 {
-    opacity: .8;
-    background-color: #D9CFCA;
+
+.modalQs {
+    height: 40%;
+    opacity: 0.5;
+}
+
+#food2 #food3 {
+    margin-left: 8%;
 }
