@@ -27,7 +27,7 @@
     </nav>
 
     <!-- Modal Trigger -->
-    <a class="waves-effect waves-light btn start" href="#modalStart">Modal</a>
+    <!-- <a class="waves-effect waves-light btn start" href="#modalStart">Modal</a> -->
 
     <div id="modalStart" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
@@ -63,6 +63,7 @@
             <button class="waves-effect waves-green btn-flat question" id="q1btn">Next</button>
         </div>
     </div>
+
 
     <div id="modalQ2" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
@@ -341,7 +342,7 @@
             <button class="modal-close btn-flat">X</button>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat question" id="q9btn">Next</a>
+            <a href="#!" class="waves-effect waves-green btn-flat question" id="q9btn">Next</a>
         </div>
     </div>
 
@@ -555,7 +556,7 @@
         </div>
     </div>
 
-    <div id="modal1" class="modal modal-fixed-footer">
+    <div id="modal1" class="modal modal-fixed-footer overlay">
         <div class="modal-content">
             <!-- Insert naighborhood name -->
             <h1 id="neighborhoodName"></h1>
@@ -563,30 +564,32 @@
 
             <!-- Tabbed information -->
             <ul id="tabs-swipe-demo" class="tabs">
-                <li class="tab col s3">
+                <li class="tab col s3 t-head">
                     <a href="#tab1">Map</a>
                 </li>
-                <li class="tab col s3">
+                <li class="tab col s3 t-head">
                     <a class="active" href="#tab2">Walk Score</a>
                 </li>
-                <li class="tab col s3">
+                <li class="tab col s3 t-head">
                     <a href="#tab3">Food</a>
                 </li>
-                <li class="tab col s3">
+                <li class="tab col s3 t-head">
                     <a href="#tab4">Fun</a>
                 </li>
             </ul>
             <div id="tab1" class="col s12">
                 <div class="mapTab">
-                    <p>insert map imag</p>
+                    <div class="row mapAppend"></div>
                 </div>
             </div>
             <div id="tab2" class="col s12">
                 <div class="walkScoreTab">
                     <div class="row walkAppend">
-                        <div class='col s12 l4'><img id ="transit" alt="transit score image"></div>
-                        <div class='col s12 l4'><img id="walk" alt="walk score image"></div>
-                        <div class='col s12 l4'><img id="bike" alt="bike score image"></div>
+                        <div class='col s6 offset-s3' id='walk-stuff'>
+                            <img id ="transit" alt="transit score image">
+                            <img id="walk" alt="walk score image">
+                            <img id="bike" alt="bike score image">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -604,11 +607,12 @@
         <button class="modal-close btn-flat">X</button>
     </div>
 
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
-    <script src="chai.js"></script>
-    <script src="chai-jquery.js"></script>
+
 
     <!-- Compiled and minified JavaScript -->
     <script type="text/javascript" src="js/materialize.min.js"></script>
