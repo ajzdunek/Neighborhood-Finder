@@ -74,3 +74,8 @@ li.active .collection-item.active .collection-item {
 .walk-append {
     margin-top: 50px;
 }
+
+#modal1 {
+    opacity: .8;
+    background-color: rgb(217, 207, 202, .8);
+}
