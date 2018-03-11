@@ -14,6 +14,13 @@ module.exports = function(sequelize, DataTypes) {
             len: [1]
         }
       },
+      Map_image: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
+      },
       Description: {
         type: DataTypes.TEXT,
         allowNull: false,
@@ -35,6 +42,11 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       },
       Walkscore_walk: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        len: [1]
+      },
+      Walkscore_desc: {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
