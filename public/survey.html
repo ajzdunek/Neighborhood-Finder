@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/button.scss" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style-survey.css" />
 </head>
 
@@ -556,10 +558,11 @@
     <div id="modal1" class="modal modal-fixed-footer overlay" style="opacity: 0.5;">
         <div class="modal-content">
             <!-- Insert naighborhood name -->
-            <div class="header">
-                <h1 id="neighborhoodName"></h1>
-                <p class="description"></p>
-            </div>
+            <h1 id="neighborhoodName"></h1>
+            <!-- Save neighborhood button -->
+            <a class="btn-floating btn-large waves-effect waves-light red" id="saveNeighborhood"><i class="material-icons">add</i></a>
+            <p class="description"></p>
+
             <!-- Tabbed information -->
             <ul id="tabs-swipe-demo" class="tabs">
                 <li class="tab col s3 t-head">
@@ -624,6 +627,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
+    <script src="js/localStorage.js"></script>
+
+    <!-- <script src="js/animate-button.js"></script> -->
 
 
     <!-- Compiled and minified JavaScript -->

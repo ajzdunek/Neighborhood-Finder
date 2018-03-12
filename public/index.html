@@ -28,6 +28,7 @@
                 <main role="main" class="landing-text">
                     <h1 class="landing-title">Chicago Neighborhood Finder</h1>
                     <p class="lead">
+
                         <a href="/survey.html" class="btn btn-lg btn-standard start">Start</a>
                     </p>
                 </main>
@@ -50,7 +51,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat" id="submitStart">Submit + Start</a>
+            <a href="/survey" class=" modal-action modal-close waves-effect waves-green btn-flat" id="submitStart">Submit + Start</a>
         </div>
     </div>
 
@@ -84,39 +85,50 @@
             });
 
             console.log("I am working");
-            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+
+            // Click Login to open modal
             $('.modal').modal();
 
             // When user clicks "submit + start" button, the user's email is saved into the database
             $("#sumbitStart").click(function (event) {
                 event.preventDefault();
 
-                var newUser = { userEmail: $("#email").val().trim() };
+                saveEmailInfo();
 
+                var newUser = { Email: $("#email").val().trim() };
+                console.log("User's email is ", newUser);
 
-                $.ajax({
-                    type: "POST",
-                    url: "/api/user",
-                    dataType: "string",
-                    data: userEmail,
-                    success: function (response) {
-                        if (response.status === "success") {
-                            window.location.replace = ("/survey");
-                        } else if (response.status === "error") {
-                            Materialize.toast('Please enter a valid email address!', 4000)
+                var login = function () {
+                    $.get("/api/users/", function (data) {
+                        if (!data) {
+                            $.post("/api/users/", newUser, function (data) {
+                                if (response.status === "success") {
+                                    window.location.replace = ("/survey.html");
+                                } else if (response.status === "error") {
+                                    Materialize.toast('Please enter a valid email address!', 4000)
+                                }
+                            });
                         }
-                    }
+                        else if (data.Email && data.saved) {
+                            // var match = 
+                            $.get("/api/results/match", function (data) {
+                                window.location.replace = ("/survey.html");
+                            })
+                        }
+                        else if (data.Email) {
+                            window.location.replace = ("/survey.html");
+                        }
+                    })
+                };
 
-                });
-
-
-
+                //End of button click function
             });
-
+            //End of document ready
         });
     </script>
     <script src="js/app.js"></script>
     <script src="js/localStorage.js"></script>
+
 </body>
 
 </html>

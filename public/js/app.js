@@ -447,6 +447,26 @@ $(document).ready(function () {
 
 });
 
+
+
+
+    $("#saveNeighborhood").click(function(){
+        console.log("Button clicked");
+        var userEmail = $("#email").val(); //Locally stored email
+        // JSON.parse(localStorage.getItem("savedemail"));
+        var neighborhood = $("#neighborhoodName").val();
+        console.log("Neighborhood name is ", neighborhood);
+        
+        function updateNeighborhood(userEmail) {
+            $.ajax({
+              method: "PUT",
+              url: "/api/users/" + neighborhood,
+              data: userEmail
+            })
+            .then(function() {});
+          }
+
+    })
 });
 
 // module.exports = app;

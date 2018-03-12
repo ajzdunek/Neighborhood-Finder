@@ -19,9 +19,10 @@ if (!Array.isArray(emailInfo)) {
     localStorage.setItem("savedplaces", JSON.stringify(emailInfo));
     console.log("saved", emailInfo);
     // putOnPage();
+    // return emailInfo;
     }
 
-$("#submitStart").on("click", saveEmailInfo);
+// $("#submitStart").on("click", saveEmailInfo);
 $(document).on("click", ".saveNeighborhood", saveNeighborhood);
 
 /** Saves restaurants and corresponding links in local storage 
