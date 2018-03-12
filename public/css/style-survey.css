@@ -1,5 +1,5 @@
 nav {
-    background-color: black;
+    background-color: #D9CFCA;
     opacity: .7;
 }
 body {
@@ -8,8 +8,17 @@ body {
     color: #3D4859;
 }
 
-.brand-logo {
+.headNav {
     margin-left: 20px;
+    color: #3d4859;
+    font-size: 40px;
+}
+
+.hoodie-icon {
+    width: 60px;
+    margin-left: 30px;
+
+
 }
 
 .modal {

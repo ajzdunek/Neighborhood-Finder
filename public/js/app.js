@@ -398,8 +398,8 @@ $(document).ready(function () {
                     outDuration: 300
                 });
                 $('#modal1').modal('open');
-                console.log("data", data.data.nameData.Name);
-                console.log("data for neigh", data.data.detailData[0]);
+                console.log("data", data);
+                console.log("data for neigh", data.data.detailData);
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
