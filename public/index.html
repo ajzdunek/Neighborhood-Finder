@@ -93,6 +93,8 @@
             $("#sumbitStart").click(function (event) {
                 event.preventDefault();
 
+                saveEmailInfo();
+
                 var newUser = { Email: $("#email").val().trim() };
                 console.log("User's email is ", newUser);
 
@@ -125,6 +127,8 @@
         });
     </script>
     <script src="js/app.js"></script>
+    <script src="js/localStorage.js"></script>
+
 </body>
 
 </html>

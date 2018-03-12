@@ -1,3 +1,7 @@
+var chai = require('chai')
+  , Strategy = require('../index.html');
+
+
 describe("userInput", function() {
   it("should take in an email address", function() {
     expect("hello@hi.com").to.equal(true);
@@ -7,6 +11,7 @@ describe("userInput", function() {
     expect(1234).to.throw(Error);
   });
 });
+
 
 describe("ifElseFunction", function() {
   it("should equal to a number", function() {

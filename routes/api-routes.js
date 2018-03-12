@@ -18,7 +18,7 @@ module.exports = function(app) {
       db.Neighborhooddetail.findAll({
         where: {
           // need to figure out how to call this on foreign key once tables associated
-          FKNeighborhoodsGen: general.dataValues.id
+          NeighborhoodgeneralId: general.dataValues.id
         }
       }).then(function(details) {
         var data = {
@@ -52,26 +52,65 @@ module.exports = function(app) {
 
   // POST route for saving a new User
   app.post("/api/users", function(req, res) {
-    db.Email.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Users.create(req.body).then(function(email) {
+      res.json(email);
     });
   });
 
   // POST route for saving a new favorite neighborhood    //Double check this
-  app.post("/api/users", function(req, res) {
-    db.Saved.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
+  // app.post("/api/users/", function(req, res) {
+  //   if(  db.Users.findOne())
+    
+  //   db.Users.Saved.create(req.body).then(function(neighborhood) {
+  //     res.json(neighborhood);
+  //   });
+  // });
 
   // PUT route for updating favorite neighborhood
-  app.put("/api/users", function(req, res) {
-    db.Users.update(req.body, {
-      where: {
-        Saved: req.body.Saved
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
-  });
-};
+  app.put("/api/users/:hood", function (req, res){
+    db.Users.update(
+      {
+        Saved: req.params.hood
+      },
+        {
+          where: {
+            Email: req.body.email
+          }
+  
+          }).then(function (user){
+          res.end();
+      
+      })  
+    })  
+ 
+  };
+
+
+
+  // app.put("/api/users", function(req, res) {
+  //   db.Users.update(req.body, {
+  //     where: {
+  //       Saved: req.body.Saved
+  //     }
+  //   }).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
+
+
+
+
+  // app.put("/api/users", function(req, res) {
+  //    db.Users.update(
+  //      req.body.Saved,
+  //      {
+  //        where: {
+  //          id: req.body.Saved
+  //        }
+  //      }).then(function(dbPost) {
+  //        res.json(dbPost);
+  //      });
+  //  });
+
+
+// };
