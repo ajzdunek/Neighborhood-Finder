@@ -2083,13 +2083,13 @@ if (Vel) {
 
         // Bottom sheet animation
         if (this.$el[0].classList.contains('bottom-sheet')) {
-          Vel(this.$el[0], { bottom: 0, opacity: 1 }, enterVelocityOptions);
+          Vel(this.$el[0], { bottom: 0, opacity: .8 }, enterVelocityOptions);
 
           // Normal modal animation
         } else {
           Vel.hook(this.$el[0], 'scaleX', 0.7);
           this.$el[0].style.top = this.options.startingTop;
-          Vel(this.$el[0], { top: this.options.endingTop, opacity: 1, scaleX: 1 }, enterVelocityOptions);
+          Vel(this.$el[0], { top: this.options.endingTop, opacity: .8, scaleX: 1 }, enterVelocityOptions);
         }
       }
 
