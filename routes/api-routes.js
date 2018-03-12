@@ -34,4 +34,21 @@ module.exports = function (app) {
           });
         });
       });
-    };
+
+  app.put("/api/users/:hood", function (req, res){
+    db.Users.update(
+      {
+        Saved: req.params.hood
+      },
+        {
+          where: {
+            Email: req.body.email 
+          }
+   
+          }).then(function (user){
+          res.end();
+      
+      })  
+    })   
+
+  };

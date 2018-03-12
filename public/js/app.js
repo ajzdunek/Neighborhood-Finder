@@ -1,9 +1,5 @@
 $(document).ready(function () {
 
-    // $(".start").on("click", function (e) {
-    //     e.preventDefault();
-    //     window.location.replace('/survey.html');
-
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -11,8 +7,6 @@ $(document).ready(function () {
             outDuration: 200 
         });
         $('#modalStart').modal('open');
-
-    // });
 
 
     $("#q1btn").on("click", function (e) {
@@ -403,11 +397,33 @@ $(document).ready(function () {
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
-                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<h4>" + data.data.detailData[0].Name + "</h4>" + "<p>" + data.data.detailData[0].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<h4>" + data.data.detailData[1].Name + "</h4>" + "<p>" + data.data.detailData[1].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<h4>" + data.data.detailData[2].Name + "</h4>" + "<p>" + data.data.detailData[2].Description + "</p>" + "</div>");
-                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<h4>" + data.data.detailData[3].Name + "</h4>" + "<p>" + data.data.detailData[3].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<h4>" + data.data.detailData[4].Name + "</h4>" + "<p>" + data.data.detailData[4].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<h4>" + data.data.detailData[5].Name + "</h4>" + "<p>" + data.data.detailData[5].Description + "</p>" + "</div>");
+
+                $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
+                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" +  "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img src='" + data.data.detailData[2].Image + "'>" + "</div>");
+                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>");
                 $("#transit").attr('src', data.data.nameData.Walkscore_transit);
                 $("#walk").attr('src', data.data.nameData.Walkscore_walk);
                 $("#bike").attr('src', data.data.nameData.Walkscore_bike);
+
+                $(".link1").attr({href: data.data.detailData[0].Link, target: '_blank', class: 'resultLink'});
+                $(".link2").attr({href: data.data.detailData[1].Link, target: '_blank', class: 'resultLink'});
+                $(".link3").attr({href: data.data.detailData[2].Link, target: '_blank', class: 'resultLink'});
+                $(".link4").attr({href: data.data.detailData[3].Link, target: '_blank', class: 'resultLink'});
+                $(".link5").attr({href: data.data.detailData[4].Link, target: '_blank', class: 'resultLink'});
+                $(".link6").attr({href: data.data.detailData[5].Link, target: '_blank', class: 'resultLink'});
+
+                $("#walkbtn").on("click", function(){
+                     $(".description").text(data.data.nameData.Walkscore_desc);
+                })
+                $("#foodbtn").on("click", function(){
+                     $(".description").text(data.data.nameData.Restaurant_desc);
+                });
+                $("#funbtn").on("click", function(){
+                     $(".description").text(data.data.nameData.Attraction_desc);
+                });
+                $("#mapbtn").on("click", function(){
+                    $(".description").text(data.data.nameData.Description);
+               });
             });
         }
 
@@ -429,8 +445,7 @@ $(document).ready(function () {
             $("input[name=group15]:checked").val("")
 
 
-
-    });
+});
 
 });
 

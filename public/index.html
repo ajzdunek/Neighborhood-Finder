@@ -82,7 +82,7 @@
                 e.preventDefault();
                 window.location.replace('/survey.html');
             });
-            
+
             console.log("I am working");
             // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
@@ -92,17 +92,6 @@
                 event.preventDefault();
 
                 var newUser = { userEmail: $("#email").val().trim() };
-
-                // Adjust this to post info into database
-                // $.post("/api/user", newUser, function (data) {
-                //     $("#email").val("");
-                // },
-                //     success: function (response) {
-                //         if (response.d === true) {
-                //             alert("You will now start the survey.");
-                //             window.location.replace = ("/survey");
-                //         }
-                //     });
 
 
                 $.ajax({
@@ -127,6 +116,7 @@
         });
     </script>
     <script src="js/app.js"></script>
+    <script src="js/localStorage.js"></script>
 </body>
 
 </html>
