@@ -83,32 +83,41 @@
                 e.preventDefault();
                 window.location.replace('/survey.html');
             });
-            
+
             console.log("I am working");
+
+            // Click Login to open modal
             $('.modal').modal();
 
             // When user clicks "submit + start" button, the user's email is saved into the database
             $("#sumbitStart").click(function (event) {
                 event.preventDefault();
 
-                var newUser = { userEmail: $("#email").val().trim() };
+                var newUser = { Email: $("#email").val().trim() };
+                console.log("User's email is ", newUser);
 
-                $.ajax({
-                    type: "POST",
-                    url: "/api/users",
-                    dataType: "string",
-                    Email: newUser,
-                    success: function (response) {
-                        if (response.status === "success") {
-                            window.location.replace = ("/survey");
-                        } else if (response.status === "error") {
-                            Materialize.toast('Please enter a valid email address!', 4000)
+                var login = function () {
+                    $.get("/api/users/", function (data) {
+                        if (!data) {
+                            $.post("/api/users/", newUser, function (data) {
+                                if (response.status === "success") {
+                                    window.location.replace = ("/survey.html");
+                                } else if (response.status === "error") {
+                                    Materialize.toast('Please enter a valid email address!', 4000)
+                                }
+                            });
                         }
-                    },
-                    error: function (error) {
-                        Materialize.toast("Please enter a valid email address.", 4000);
-                    }
-                });
+                        else if (data.Email && data.saved) {
+                            // var match = 
+                            $.get("/api/results/match", function (data) {
+                                window.location.replace = ("/survey.html");
+                            })
+                        }
+                        else if (data.Email) {
+                            window.location.replace = ("/survey.html");
+                        }
+                    })
+                };
 
                 //End of button click function
             });
