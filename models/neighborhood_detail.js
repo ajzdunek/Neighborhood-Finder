@@ -35,8 +35,8 @@ module.exports = function (sequelize, DataTypes) {
                 len: [1]
             }
         },
-        FKNeighborhoodsGen: {
-            type: DataTypes.TEXT,
+        NeighborhoodgeneralId: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 len: [5]

@@ -1,7 +1,9 @@
 $(document).ready(function () {
 
-    $(".start").on("click", function (e) {
-        e.preventDefault();
+    // $(".start").on("click", function (e) {
+    //     e.preventDefault();
+    //     window.location.replace('/survey.html');
+
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -10,7 +12,7 @@ $(document).ready(function () {
         });
         $('#modalStart').modal('open');
 
-    });
+    // });
 
 
     $("#q1btn").on("click", function (e) {
@@ -396,13 +398,13 @@ $(document).ready(function () {
                     outDuration: 300
                 });
                 $('#modal1').modal('open');
-                console.log("data", data.data.nameData.Name);
-                console.log("data for neigh", data.data.detailData[0]);
+                console.log("data", data);
+                console.log("data for neigh", data.data.detailData);
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
-                $(".foodAppend").html("<div class='leftDiv col s12 l3' id='food1'>" + "<h4>" + data.data.detailData[0].Name + "</h4>" + "<p>" + data.data.detailData[0].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l3' id='food2'>" + "<h4>" + data.data.detailData[1].Name + "</h4>" + "<p>" + data.data.detailData[1].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l3' id='food3'>" + "<h4>" + data.data.detailData[2].Name + "</h4>" + "<p>" + data.data.detailData[2].Description + "</p>" + "</div>");
-                $(".funAppend").html("<div class='leftDiv col s12 l3'>" + "<h4>" + data.data.detailData[3].Name + "</h4>" + "<p>" + data.data.detailData[3].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l3'>" + "<h4>" + data.data.detailData[4].Name + "</h4>" + "<p>" + data.data.detailData[4].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l3'>" + "<h4>" + data.data.detailData[5].Name + "</h4>" + "<p>" + data.data.detailData[5].Description + "</p>" + "</div>");
+                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<h4>" + data.data.detailData[0].Name + "</h4>" + "<p>" + data.data.detailData[0].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<h4>" + data.data.detailData[1].Name + "</h4>" + "<p>" + data.data.detailData[1].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<h4>" + data.data.detailData[2].Name + "</h4>" + "<p>" + data.data.detailData[2].Description + "</p>" + "</div>");
+                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<h4>" + data.data.detailData[3].Name + "</h4>" + "<p>" + data.data.detailData[3].Description + "</p>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<h4>" + data.data.detailData[4].Name + "</h4>" + "<p>" + data.data.detailData[4].Description + "</p>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<h4>" + data.data.detailData[5].Name + "</h4>" + "<p>" + data.data.detailData[5].Description + "</p>" + "</div>");
                 $("#transit").attr('src', data.data.nameData.Walkscore_transit);
                 $("#walk").attr('src', data.data.nameData.Walkscore_walk);
                 $("#bike").attr('src', data.data.nameData.Walkscore_bike);

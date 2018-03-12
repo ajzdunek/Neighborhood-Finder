@@ -16,11 +16,6 @@ module.exports = function(sequelize, Sequelize) {
           len: [1]
         }
       },
-      Match: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        len: [1]
-      },
       Saved: {
         type: Sequelize.INTEGER,
         allowNull: true,

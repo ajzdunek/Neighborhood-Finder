@@ -1,5 +1,5 @@
 nav {
-    background-color: black;
+    background-color: #D9CFCA;
     opacity: .7;
 }
 body {
@@ -8,8 +8,17 @@ body {
     color: #3D4859;
 }
 
-.brand-logo {
+.headNav {
     margin-left: 20px;
+    color: #3d4859;
+    font-size: 40px;
+}
+
+.hoodie-icon {
+    width: 60px;
+    margin-left: 30px;
+
+
 }
 
 .modal {
@@ -63,12 +72,19 @@ li.active .collection-item.active .collection-item {
 
 }
 
-
-.modalQs {
-    height: 40%;
-    opacity: 0.5;
-}
-
 #food2 #food3 {
     margin-left: 8%;
+}
+
+.t-head {
+    color: #A55B54;
+}
+
+.walk-append {
+    margin-top: 50px;
+}
+
+#modal1 {
+    opacity: .8;
+    background-color: rgb(217, 207, 202, .8);
 }

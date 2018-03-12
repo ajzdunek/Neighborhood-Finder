@@ -21,7 +21,7 @@ module.exports = function (app) {
         db.Neighborhooddetail.findAll({
           where: {
             // need to figure out how to call this on foreign key once tables associated
-            FKNeighborhoodsGen: general.dataValues.id
+            NeighborhoodgeneralId: general.dataValues.id
           }
         }).then(function (details) { 
             var data = {
