@@ -10,16 +10,16 @@ if (!Array.isArray(emailInfo)) {
  * @return {function} putOnPage - runs putOnPage function
  */
 // function saveRestaurant(event) {
-    function saveEmailInfo(){
+    function saveEmailInfo(event){
 
-    // event.preventDefault();
+    event.preventDefault();
 
     var email = $("#email").val().trim();
     emailInfo.push(email);
     localStorage.setItem("savedplaces", JSON.stringify(emailInfo));
     console.log("saved", emailInfo);
     // putOnPage();
-    return emailInfo;
+    // return emailInfo;
     }
 
 // $("#submitStart").on("click", saveEmailInfo);
@@ -48,7 +48,6 @@ $(document).on("click", ".saveNeighborhood", saveNeighborhood);
  * Gets restaurant names and links from local storage and appends to My Favorites div
  * */
 function putOnPage() {
-    $(".savedemail").empty();
 
     // var insideFavorites = JSON.parse(localStorage.getItem("savedplaces"));
     var insideStorage = JSON.parse(localStorage.getItem("savedemail"));

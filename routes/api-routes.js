@@ -81,36 +81,6 @@ module.exports = function(app) {
           res.end();
       
       })  
-    })  
- 
+    })   
+
   };
-
-
-
-  // app.put("/api/users", function(req, res) {
-  //   db.Users.update(req.body, {
-  //     where: {
-  //       Saved: req.body.Saved
-  //     }
-  //   }).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
-
-
-
-
-  // app.put("/api/users", function(req, res) {
-  //    db.Users.update(
-  //      req.body.Saved,
-  //      {
-  //        where: {
-  //          id: req.body.Saved
-  //        }
-  //      }).then(function(dbPost) {
-  //        res.json(dbPost);
-  //      });
-  //  });
-
-
-// };

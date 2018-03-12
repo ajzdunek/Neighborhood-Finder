@@ -566,16 +566,16 @@
             <!-- Tabbed information -->
             <ul id="tabs-swipe-demo" class="tabs">
                 <li class="tab col s3 t-head">
-                    <a href="#tab1">Map</a>
+                    <a id="mapbtn" href="#tab1">Map</a>
                 </li>
                 <li class="tab col s3 t-head">
-                    <a class="active" href="#tab2">Walk Score</a>
+                    <a id="walkbtn" class="active" href="#tab2">Walk Score</a>
                 </li>
                 <li class="tab col s3 t-head">
-                    <a href="#tab3">Food</a>
+                    <a id="foodbtn" href="#tab3">Food</a>
                 </li>
                 <li class="tab col s3 t-head">
-                    <a href="#tab4">Fun</a>
+                    <a id="funbtn" href="#tab4">Fun</a>
                 </li>
             </ul>
             <div id="tab1" class="col s12">
@@ -586,7 +586,7 @@
             <div id="tab2" class="col s12">
                 <div class="walkScoreTab">
                     <div class="row walkAppend">
-                        <div class='col s6 offset-s3' id='walk-stuff'>
+                        <div class='col s12' id='walk-stuff'>
                             <img id ="transit" alt="transit score image">
                             <img id="walk" alt="walk score image">
                             <img id="bike" alt="bike score image">
@@ -606,6 +606,20 @@
             </div>
         </div>
         <button class="modal-close btn-flat">X</button>
+    </div>
+
+    <div class="container loggedIn hidden">
+        <div class="row">
+            <div class="col s12"><h3 id="localEmail">Hi, email</h3></div>
+        </div>
+        <div class="row">
+            <div class="col s12 welcome"><p>Welcome back!</p></div>
+        <div class="row">
+            <div class="col s4"><button id="savedHood">Check out your saved hood</button></div>
+            <div class="col s4"><p id="or">OR</p></div>
+            <div class="col s4"><button id="retake">Take the Quiz again</button></div>
+        </div>
+        </div>
     </div>
 
 
