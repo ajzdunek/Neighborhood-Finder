@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     $(".start").on("click", function (e) {
@@ -22,27 +23,30 @@ $(document).ready(function () {
                 if (data.length <= 0) {
                     $.post("/api/users/" + newUser, function (data) {
                         //not working
-                            // window.location.replace('/survey.html');
-                            // quizStart();
+                        // var href = $("#submitStart").attr("href");
+                        window.location.href = "/survey.html"
+                        quizStart();
                     });
                 }
                 else if (data.length > 0 && data[0].Saved !== null) {
-                    console.log("saved!")
+                    console.log(data[0].Saved);
                     var match = data[0].Saved;
-                    $.get("/api/results/" + match, function (data) {
-                        var href = $("#submitStart").attr("href");
-                        window.location.href = href;
-                        // window.location.replace('/survey.html');
-                        console.log("saved match", data)
-                        $(document).ready(function(){
-                            $(".loggedIn").removeClass("hidden");
-                            $("#localEmail").text("Hi, " + data[0].Email);
-                        })
+                    saveHoodName(match);
+                    window.location.href = "/survey.html"
+                    // var href = $("#submitStart").attr("href");
+                    // window.location.href = href;
+                    // $(document).ready(function(){
 
-                    })
-                }
-                else if (data[0].Email.length > 0) {
-                    // console.log(data[0].Email);
+                    //not working
+                        var email = JSON.parse(localStorage.getItem("savedemail"));
+                        var hood = JSON.parse(localStorage.getItem("savedhood"));
+                        $(".loggedIn").removeClass("hidden");
+                        $("#localEmail").append("Hi, " + email);
+
+                    // })
+
+                }else if(data[0].Email.length > 0) {
+                    console.log(data[0].Email);
                     window.location.replace = ("/survey.html");
                 }
             })
@@ -53,53 +57,50 @@ $(document).ready(function () {
 
 // var favorites = JSON.parse(localStorage.getItem("savedplaces"));
 var emailInfo = JSON.parse(localStorage.getItem("savedemail"));
+var savedHood = JSON.parse(localStorage.getItem("savedhood"));
 
 if (!Array.isArray(emailInfo)) {
     emailInfo = [];
 }
+
+if (!Array.isArray(savedHood)) {
+    savedHood= [];
+}
+
 /** Saves restaurants and corresponding links in local storage 
  * @param {method} event - Prevents page from reloading
  * @return {function} putOnPage - runs putOnPage function
  */
 // function saveRestaurant(event) {
-    function saveEmailInfo(event){
-
-
-    event.preventDefault();
-
+    function saveEmailInfo(){
+    emailInfo = [];
     var email = $("#email").val().trim();
     emailInfo.push(email);
     localStorage.setItem("savedemail", JSON.stringify(emailInfo));
     console.log("saved", emailInfo);
     checkEmail();
-    // putOnPage();
-    }
 
-$("#submitStart").on("click", saveEmailInfo);
-// $(document).on("click", ".saveNeighborhood", saveNeighborhood);
+    }
 
 /** Saves restaurants and corresponding links in local storage 
  * @param {method} event - Prevents page from reloading
  * @return {function} putOnPage - runs putOnPage function
  */
 // function saveRestaurant(event) {
-    // function saveNeighborhood(event){
+    function saveHoodName(hood){
+    savedHood = [];
+    savedHood.push(hood);
+    localStorage.setItem("savedhood", JSON.stringify(savedHood));
+    console.log("saved hood", savedHood);
 
-    //     event.preventDefault();
-    
-    //     var hood = $("#email").val().trim();
-    //     emailInfo.push(email);
-    //     localStorage.setItem("savedplaces", JSON.stringify(emailInfo));
-    //     console.log("saved", emailInfo);
-
-    // }
+    return savedHood;
+    }
 
 
 
+$("#submitStart").on("click", saveEmailInfo);
 
-/** 
- * Gets restaurant names and links from local storage and appends to My Favorites div
- * */
+
 function putOnPage() {
 
     // var insideFavorites = JSON.parse(localStorage.getItem("savedplaces"));
@@ -128,7 +129,7 @@ $(document).on("click", "savePlace", function () {
 
 });
 
-
-
     //End of document ready
 });
+
+
