@@ -1,23 +1,22 @@
 
 
 $(document).ready(function () {
-    // $('.modal').modal();  
+    $('.modal').modal();
     console.log("this is loading");
 
     var quizStart = function () {
-        $('#modalStart').modal();
-        //     dismissible: false,
-        //     opacity: 0.5,
-        //     inDuration: 500,
-        //     outDuration: 200 
-        // });
-        // $('.modal').modal('open');
-        $('.modal').modal('open');
+        $('#modalStart').modal({
+            dismissible: false,
+            opacity: 0.5,
+            inDuration: 500,
+            outDuration: 200
+        });
+        $('#modalStart').modal('open');
+
         console.log("quiz is running");
 
         $("#q1btn").on("click", function (e) {
             console.log("q1 button works");
-
             e.preventDefault();
             if ($("input[name=group1]:checked").val() === undefined) {
                 console.log($("input[name=group1]:checked").val())
@@ -537,103 +536,103 @@ $(document).ready(function () {
 
         })
     })
-// });
+    // });
 
-// $(".start").on("click", function (e) {
-//     e.preventDefault();
-//     window.location.href = "/survey.html"
-//     quizStart();
-// });
+    // $(".start").on("click", function (e) {
+    //     e.preventDefault();
+    //     window.location.href = "/survey.html"
+    //     quizStart();
+    // });
 
-// console.log("I am working");
+    // console.log("I am working");
 
-// Click Login to open modal
-// $('.modal').modal();
+    // Click Login to open modal
+    // $('.modal').modal();
 
-// When user clicks "submit + start" button, the user's email is saved into the database
-// var checkEmail = function () {
-//     console.log("running")
+    // When user clicks "submit + start" button, the user's email is saved into the database
+    // var checkEmail = function () {
+    //     console.log("running")
 
-//     var newUser = $("#email").val().trim();
-//     console.log("User's email is ", newUser);
-//     $.get("/api/users/" + newUser, function (data) {
-//         if (data.length > 0 && data[0].Saved !== null) {
-//             console.log(data[0].Saved);
-//             var match = data[0].Saved;
-//             saveHoodName(match);
-//             window.location.href = "/survey.html";
-//         } else if (data[0].Email.length > 0) {
-//             window.location.href = "/survey.html#quizStart";
-//             quizStart();
-//         }
-//         if (data.length <= 0) {
-//             $.post("/api/users/" + newUser, function (data) {
-//                 window.location.href = "/survey.html#quizStart";
-//                 quizStart();
-//             });
-//         }
-//     })
-// }; //End of button click function
-
-
-
-// var favorites = JSON.parse(localStorage.getItem("savedplaces"));
-var emailInfo = JSON.parse(localStorage.getItem("savedemail"));
-var savedHood = JSON.parse(localStorage.getItem("savedhood"));
-
-if (!Array.isArray(emailInfo)) {
-    emailInfo = [];
-}
-
-if (!Array.isArray(savedHood)) {
-    savedHood = [];
-}
-
-/** Saves restaurants and corresponding links in local storage 
- * @param {method} event - Prevents page from reloading
- * @return {function} putOnPage - runs putOnPage function
- */
-// function saveRestaurant(event) {
-function saveEmailInfo() {
-    emailInfo = [];
-    var email = $("#email").val().trim();
-    emailInfo.push(email);
-    localStorage.setItem("savedemail", JSON.stringify(emailInfo));
-    console.log("saved", emailInfo);
-    checkEmail();
-
-}
-
-/** Saves restaurants and corresponding links in local storage 
- * @param {method} event - Prevents page from reloading
- * @return {function} putOnPage - runs putOnPage function
- */
-// function saveRestaurant(event) {
-function saveHoodName(hood) {
-    savedHood = [];
-    savedHood.push(hood);
-    localStorage.setItem("savedhood", JSON.stringify(savedHood));
-    console.log("saved hood", savedHood);
-
-    return savedHood;
-}
+    //     var newUser = $("#email").val().trim();
+    //     console.log("User's email is ", newUser);
+    //     $.get("/api/users/" + newUser, function (data) {
+    //         if (data.length > 0 && data[0].Saved !== null) {
+    //             console.log(data[0].Saved);
+    //             var match = data[0].Saved;
+    //             saveHoodName(match);
+    //             window.location.href = "/survey.html";
+    //         } else if (data[0].Email.length > 0) {
+    //             window.location.href = "/survey.html#quizStart";
+    //             quizStart();
+    //         }
+    //         if (data.length <= 0) {
+    //             $.post("/api/users/" + newUser, function (data) {
+    //                 window.location.href = "/survey.html#quizStart";
+    //                 quizStart();
+    //             });
+    //         }
+    //     })
+    // }; //End of button click function
 
 
-// $("#submitStart").on("click", saveEmailInfo);
 
-$(document).on("click", "#retake", function () {
-    quizStart();
-});
+    // var favorites = JSON.parse(localStorage.getItem("savedplaces"));
+    var emailInfo = JSON.parse(localStorage.getItem("savedemail"));
+    var savedHood = JSON.parse(localStorage.getItem("savedhood"));
+
+    if (!Array.isArray(emailInfo)) {
+        emailInfo = [];
+    }
+
+    if (!Array.isArray(savedHood)) {
+        savedHood = [];
+    }
+
+    /** Saves restaurants and corresponding links in local storage 
+     * @param {method} event - Prevents page from reloading
+     * @return {function} putOnPage - runs putOnPage function
+     */
+    // function saveRestaurant(event) {
+    function saveEmailInfo() {
+        emailInfo = [];
+        var email = $("#email").val().trim();
+        emailInfo.push(email);
+        localStorage.setItem("savedemail", JSON.stringify(emailInfo));
+        console.log("saved", emailInfo);
+        checkEmail();
+
+    }
+
+    /** Saves restaurants and corresponding links in local storage 
+     * @param {method} event - Prevents page from reloading
+     * @return {function} putOnPage - runs putOnPage function
+     */
+    // function saveRestaurant(event) {
+    function saveHoodName(hood) {
+        savedHood = [];
+        savedHood.push(hood);
+        localStorage.setItem("savedhood", JSON.stringify(savedHood));
+        console.log("saved hood", savedHood);
+
+        return savedHood;
+    }
 
 
-function loadSaved() {
-    var email = JSON.parse(localStorage.getItem("savedemail"));
-    var hood = JSON.parse(localStorage.getItem("savedhood"));
-    $("#savedHood").text("Check out your latest saved hood: " + hood);
-    $(".loggedIn").removeClass("hidden");
-    $("#localEmail").text("Hi, " + email);
-}
+    // $("#submitStart").on("click", saveEmailInfo);
 
-if (window.location.hash === '#loadSaved') { loadSaved(); }
+    $(document).on("click", "#retake", function () {
+        quizStart();
+    });
+
+
+    function loadSaved() {
+        var email = JSON.parse(localStorage.getItem("savedemail"));
+        var hood = JSON.parse(localStorage.getItem("savedhood"));
+        $("#savedHood").text("Check out your latest saved hood: " + hood);
+        $(".loggedIn").removeClass("hidden");
+        $("#localEmail").text("Hi, " + email);
+    }
+
+    if (window.location.hash === '#loadSaved') { loadSaved(); }
 
 });
