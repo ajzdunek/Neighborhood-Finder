@@ -30,7 +30,9 @@ $(document).ready(function () {
                     console.log("saved!")
                     var match = data[0].Saved;
                     $.get("/api/results/" + match, function (data) {
-                        window.location.replace('/survey.html');
+                        var href = $("#submitStart").attr("href");
+                        window.location.href = href;
+                        // window.location.replace('/survey.html');
                         console.log("saved match", data)
                         $(document).ready(function(){
                             $(".loggedIn").removeClass("hidden");
@@ -46,6 +48,7 @@ $(document).ready(function () {
             })
 
     }; //End of button click function
+
 
 
 // var favorites = JSON.parse(localStorage.getItem("savedplaces"));
