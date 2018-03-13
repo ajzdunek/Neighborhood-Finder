@@ -23,6 +23,8 @@ $(document).ready(function () {
                     $.post("/api/users/" + newUser, function (data) {
                         //not working
                             // window.location.replace('/survey.html');
+                            location.href = "/survey.html"
+
                             // quizStart();
                     });
                 }
@@ -31,7 +33,8 @@ $(document).ready(function () {
                     var match = data[0].Saved;
                     $.get("/api/results/" + match, function (data) {
                         var href = $("#submitStart").attr("href");
-                        window.location.href = href;
+                        // window.location.href = href;
+                        location.href = "/survey.html"
                         // window.location.replace('/survey.html');
                         console.log("saved match", data)
                         $(document).ready(function(){
@@ -43,7 +46,8 @@ $(document).ready(function () {
                 }
                 else if (data[0].Email.length > 0) {
                     // console.log(data[0].Email);
-                    window.location.replace = ("/survey.html");
+                    // window.location.replace = ("/survey.html");
+                    location.href = "/survey.html"
                 }
             })
 
