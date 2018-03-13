@@ -35,16 +35,15 @@ $(document).ready(function () {
                     window.location.href = "/survey.html"
                     // var href = $("#submitStart").attr("href");
                     // window.location.href = href;
-                    $(document).ready(function(){
-                        console.log("saved match", data[0].Email)
-                        $(".loggedIn").removeClass("hidden");
-                        $("#localEmail").text("Hi, " + data[0].Email);
-                    
-                    $.get("/api/results/" + match, function (data) {
-                            console.log(data);
+                    // $(document).ready(function(){
 
-                    })
-                    })
+                    //not working
+                        var email = JSON.parse(localStorage.getItem("savedemail"));
+                        var hood = JSON.parse(localStorage.getItem("savedhood"));
+                        $(".loggedIn").removeClass("hidden");
+                        $("#localEmail").append("Hi, " + email);
+
+                    // })
 
                 }else if(data[0].Email.length > 0) {
                     console.log(data[0].Email);

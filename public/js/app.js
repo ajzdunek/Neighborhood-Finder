@@ -428,12 +428,6 @@ $(document).ready(function () {
                 $("#mapbtn").on("click", function(){
                     $(".description").text(data.data.nameData.Description);
                });
-
-            //    $("#saveNeighborhood").on("click", function(){
-            //        console.log("save wokrs")
-            //         var hoodName = $("#neighborhoodName").val();
-            //         saveHoodName(hoodName);
-            //     }); 
             });
         }
 
@@ -454,14 +448,12 @@ $(document).ready(function () {
             $("input[name=group14]:checked").val(""),
             $("input[name=group15]:checked").val("")
 
-
 });
 
 
 
 
     $("#saveNeighborhood").click(function(){
-        // console.log("Button clicked");
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
         userEmail = userEmail.toString();
         var emailInfo = {email: userEmail};
@@ -486,6 +478,22 @@ $(document).ready(function () {
           }
 
     })
+
+    $(document).on("click", "#savedHood", function(){
+        var email = JSON.parse(localStorage.getItem("savedemail"));                  
+        $.get("/api/users/" + email, function (data) {
+            console.log(data)
+
+        }).then(function(data){
+            $.get("/api/results/" + data[0].Saved, function(hoodData){
+                console.log("hood", hoodData);
+            })
+        })
+    });
+
+    $(document).on("click", "#retake", function(){
+            quizStart();
+    });
 });
 
 // module.exports = app;
