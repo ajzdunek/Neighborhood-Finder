@@ -541,43 +541,6 @@ $(document).ready(function () {
             });
         })
     })
-    // });
-
-    // $(".start").on("click", function (e) {
-    //     e.preventDefault();
-    //     window.location.href = "/survey.html"
-    //     quizStart();
-    // });
-
-    // console.log("I am working");
-
-    // Click Login to open modal
-    // $('.modal').modal();
-
-    // When user clicks "submit + start" button, the user's email is saved into the database
-    // var checkEmail = function () {
-    //     console.log("running")
-
-    //     var newUser = $("#email").val().trim();
-    //     console.log("User's email is ", newUser);
-    //     $.get("/api/users/" + newUser, function (data) {
-    //         if (data.length > 0 && data[0].Saved !== null) {
-    //             console.log(data[0].Saved);
-    //             var match = data[0].Saved;
-    //             saveHoodName(match);
-    //             window.location.href = "/survey.html";
-    //         } else if (data[0].Email.length > 0) {
-    //             window.location.href = "/survey.html#quizStart";
-    //             quizStart();
-    //         }
-    //         if (data.length <= 0) {
-    //             $.post("/api/users/" + newUser, function (data) {
-    //                 window.location.href = "/survey.html#quizStart";
-    //                 quizStart();
-    //             });
-    //         }
-    //     })
-    // }; //End of button click function
 
 
 
@@ -625,7 +588,24 @@ $(document).ready(function () {
 
     // $("#submitStart").on("click", saveEmailInfo);
 
-    $(document).on("click", "#retake", function () {
+    $("#retake").on("click", function () {
+        $('.radio-button').prop('checked', false);
+        // $("input[name=group1]:checked").val(""),
+        // $("input[name=group2]:checked").val(""),
+        // $("input[name=group3]:checked").val(""),
+        // $("input[name=group4]:checked").val(""),
+        // $("input[name=group5]:checked").val(""),
+        // $("input[name=group6]:checked").val(""),
+        // $("input[name=group7]:checked").val(""),
+        // $("input[name=group8]:checked").val(""),
+        // $("input[name=group9]:checked").val(""),
+        // $("input[name=group10]:checked").val(""),
+        // $("input[name=group11]:checked").val(""),
+        // $("input[name=group12]:checked").val(""),
+        // $("input[name=group13]:checked").val(""),
+        // $("input[name=group14]:checked").val(""),
+        // $("input[name=group15]:checked").val("")
+    
         quizStart();
     });
 
