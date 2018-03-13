@@ -469,6 +469,7 @@ $(document).ready(function () {
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
 
         updateNeighborhood(emailInfo);
+        loadSaved();
 
         function updateNeighborhood(email) {
             console.log("email", email);
@@ -477,11 +478,10 @@ $(document).ready(function () {
                 url: "/api/users/" + neighborhood,
                 data: email
             })
-                .then(function (data) {
-                    console.log(data)
-                });
+            .then(function (data) {
+                console.log(data)
+            });
         }
-
     })
 
     $(document).on("click", "#savedHood", function () {
@@ -533,7 +533,6 @@ $(document).ready(function () {
                     $(".description").text(data.data.nameData.Description);
                 });
             });
-
         })
     })
     // });
