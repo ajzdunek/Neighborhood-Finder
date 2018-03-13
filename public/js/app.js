@@ -2,9 +2,8 @@
 $(document).ready(function () {
 
         $(".start").on("click", function (e) {
-            var email = false;
             e.preventDefault();
-            window.location.href = "/survey.html#quizStart" + email;
+            window.location.href = "/survey.html#quizStart";
         });
     
         console.log("I am working");
@@ -20,18 +19,15 @@ $(document).ready(function () {
             console.log("User's email is ", newUser);
             $.get("/api/users/" + newUser, function (data) {
                 if (data.length > 0 && data[0].Saved !== null) {
-                    var email = true;
                     var match = data[0].Saved;
                     saveHoodName(match);
-                    window.location.href = "/survey.html#loadSaved" + email;
+                    window.location.href = "/survey.html#loadSaved";
                 } else if (data.length > 0) {
-                    email = true;
-                    window.location.href = "/survey.html#quizStart" + email;
+                    window.location.href = "/survey.html#quizStart";
                 }
                 if (data.length <= 0){
-                    email = true;
                     $.post("/api/users/" + newUser, function (data) {
-                        window.location.href = "/survey.html#quizStart" + email;
+                        window.location.href = "/survey.html#quizStart";
                     });
                 }
             })

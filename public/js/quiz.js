@@ -330,6 +330,9 @@ $(document).ready(function () {
         // }
 
         $("#q15btn").on("click", function (e) {
+            if ($("#saveNeighborhood").hasClass("hidden")) {
+                $("#saveNeighborhood").removeClass("hidden");
+            } 
             e.preventDefault();
             if ($("input[name=group15]:checked").val() === undefined) {
                 console.log($("input[name=group15]:checked").val())
@@ -427,9 +430,9 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
-                    var email = JSON.parse(localStorage.getItem("savedemail"));
-                    console.log("email", email);
-                    if(!email){
+                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
+                    console.log("email", isLoggedIn);
+                    if(!isLoggedIn){
                         $("#saveNeighborhood").addClass("hidden")
                     }
                 });
@@ -450,12 +453,12 @@ $(document).ready(function () {
                 $("input[name=group13]:checked").val(""),
                 $("input[name=group14]:checked").val(""),
                 $("input[name=group15]:checked").val("")
-
+            
         });
 
     };
-
-    if (window.location.hash === '#quizStartfalse' || window.location.hash === '#quizStarttrue') { quizStart(); }
+    
+    if (window.location.hash === '#quizStart') {quizStart();}
 
 
     $("#saveNeighborhood").click(function () {
@@ -465,18 +468,21 @@ $(document).ready(function () {
         var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
         neighborhood = [];
         var hoodName = $("#neighborhoodName").val();
+        var hoodObj = {
+            hood: hoodName
+        };
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
-
-        updateNeighborhood(emailInfo);
+        
         loadSaved();
+        updateNeighborhood(hoodObj);
 
-        function updateNeighborhood(email) {
-            console.log("email", email);
+        function updateNeighborhood(hood) {
+            console.log("hood", hood);
             $.ajax({
                 method: "PUT",
-                url: "/api/users/" + neighborhood,
-                data: email
+                url: "/api/users/" + userEmail,
+                data: hood
             })
             .then(function (data) {
                 console.log(data)
