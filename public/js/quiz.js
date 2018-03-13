@@ -395,8 +395,8 @@ $(document).ready(function () {
                     console.log("email", isLoggedIn);
                     if(isLoggedIn.length <= 0){
                         $("#saveNeighborhood").addClass("hidden")
-                        $(".results-close").attr('id', "retake-loggedout");
-                        $("#retake-loggedout").text("Retake Quiz");
+                        $(".results-close").removeClass("modal-close").text("");
+
                     }
                     $('#modal1').modal({
                         dismissible: false,
@@ -583,6 +583,14 @@ $(document).ready(function () {
     
         quizStart();
     });
+
+    $(".restart-quiz").on("click", function(){
+        console.log("retake button clicked")
+        $('.radio-button').prop('checked', false);
+        $('#modal1').modal('close');
+        quizStart();
+    });
+
 
     $("#logout").on("click", function(){
         emailInfo = [];

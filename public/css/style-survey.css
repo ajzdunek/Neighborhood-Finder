@@ -157,3 +157,14 @@ li.active .collection-item.active .collection-item {
     margin-top: 50px;
 }
 
+.results-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.restart-quiz {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
