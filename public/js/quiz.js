@@ -1,21 +1,21 @@
 
+
 $(document).ready(function () {
-    $('#modalStart').modal();        
+    // $('.modal').modal();        
 
     var quizStart = function(){
-        $('#modalStart').modal({
-            dismissible: false,
-            opacity: 0.5,
-            inDuration: 500,
-            outDuration: 200 
-        });
-        $('#modalStart').modal('open');
+        $('#modalStart').modal();
+        //     dismissible: false,
+        //     opacity: 0.5,
+        //     inDuration: 500,
+        //     outDuration: 200 
+        // });
+        $('.modal').modal('open');
         console.log("quiz is running");
 
-
-    // if (window.location.hash === '#quizStart') {quizStart();}
-
     $("#q1btn").on("click", function (e) {
+        console.log("q1 button works");
+    
         e.preventDefault();
         if ($("input[name=group1]:checked").val() === undefined) {
             console.log($("input[name=group1]:checked").val())
@@ -379,19 +379,16 @@ $(document).ready(function () {
             } else if (userTotal <= 225) {
                 match = "Ukrainian Village";
             } else if (userTotal <= 255) {
-                match = "Wrigleyville";
+                match = "Andersonville";
             } else if (userTotal <= 285) {
                 match = "West Loop";
             } else if (userTotal <= 315) {
                 match = "Lincoln Park";
             } else if (userTotal <= 345) {
-                match = "Andersonville";
+                match = "Wrigleyville";
             } else if (userTotal <= 375) {
                 match = "River North";
             };
-
-            Andersonville
-            Wrigleyville
 
             $.get("/api/results/" + match, function (data) {
                 $('#modal1').modal({
@@ -455,7 +452,11 @@ $(document).ready(function () {
             $("input[name=group15]:checked").val("")
 
 });
+
 };
+
+if (window.location.hash === '#quizStart') {quizStart();}
+
 
     $("#saveNeighborhood").click(function(){
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
@@ -567,18 +568,17 @@ $(document).ready(function () {
                             var hood = JSON.parse(localStorage.getItem("savedhood"));
                             $(".loggedIn").removeClass("hidden");
                             $("#localEmail").append("Hi, " + email);
-                    }else if(data.length > 0) {
+                    }else if(data[0].Email.length > 0) {
                         console.log(data[0].Email);
                         window.location.href = "/survey.html#quizStart";
-    
-                        // quizStart();
+                        quizStart();
                     }
-                    else if (data.length <= 0) {
+                    if (data.length <= 0) {
                         $.post("/api/users/" + newUser, function (data) {
                             //not working
                             // var href = $("#submitStart").attr("href");
                             window.location.href = "/survey.html#quizStart";
-                            // quizStart();
+                            quizStart();
                         });
                     }
 
