@@ -17,8 +17,6 @@ body {
 .hoodie-icon {
     width: 60px;
     margin-left: 30px;
-
-
 }
 
 .modal {
@@ -50,8 +48,19 @@ li.active .collection-item.active .collection-item {
     right: 0;
 }
 
+.modal {
+    max-height: 90%;
+    opacity: .8;
+    background-color: rgb(217, 207, 202, .8);
+}
+
+.modal-overlay {
+    background: none;
+}
+
 #modal1 {
     width: 80%;
+    height: 80%;
 }
 
 .leftDiv , .middleDiv {
@@ -80,11 +89,47 @@ li.active .collection-item.active .collection-item {
     color: #A55B54;
 }
 
-.walk-append {
+#walk-stuff {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+.map {
+    max-width: 60%;
+}
+
+.description {
+    min-height: 75px;
+}
+
+.resultLink {
+    font-size: 20px;
+    color: #3D4859;
+    font-weight: bold;
+}
+
+.resultLink:hover, .resultLink:active, .resultLink:focus {
+    color: rgb(114, 128, 150);
+    text-decoration: underline;
+}
+
+.loggedIn {
+    background-color: #3D4859;
+    color: #D9CFCA;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
     margin-top: 50px;
 }
 
-#modal1 {
-    opacity: .8;
-    background-color: rgb(217, 207, 202, .8);
+
+#savedHood, #retake {
+    font-size: 20px;
+    font-weight: bold;
 }
+
+.welcome, #savedHood, #retake, #or {
+    text-align: center;
+}
+

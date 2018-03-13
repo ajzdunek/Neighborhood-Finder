@@ -1,6 +1,6 @@
 describe("userInput", function() {
   it("should take in an email address", function() {
-    expect("hello@hi.com").to.equal(true);
+    expect("hello@gmail.com").to.equal(true);
   });
 
   it("should be a string", function() {
