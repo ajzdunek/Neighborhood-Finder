@@ -388,8 +388,14 @@ $(document).ready(function () {
                 } else if (userTotal <= 375) {
                     match = "River North";
                 };
+                console.log("match", match);
 
                 $.get("/api/results/" + match, function (data) {
+                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
+                    console.log("email", isLoggedIn);
+                    if(isLoggedIn.length <= 0){
+                        $("#saveNeighborhood").addClass("hidden")
+                    }
                     $('#modal1').modal({
                         dismissible: false,
                         opacity: 0.5,
@@ -430,11 +436,7 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
-                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
-                    console.log("email", isLoggedIn);
-                    if(!isLoggedIn){
-                        $("#saveNeighborhood").addClass("hidden")
-                    }
+
                 });
             }
             // Clear the question values on submit
