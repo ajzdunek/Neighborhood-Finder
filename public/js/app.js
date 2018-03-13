@@ -564,12 +564,13 @@ $(document).ready(function () {
                             var hood = JSON.parse(localStorage.getItem("savedhood"));
                             $(".loggedIn").removeClass("hidden");
                             $("#localEmail").append("Hi, " + email);
-                    }else if(data[0].Email.length > 0) {
+                    }else if(data.length > 0) {
                         console.log(data[0].Email);
                         window.location.href = "/survey.html#quizStart";
+    
                         // quizStart();
                     }
-                    if (data.length <= 0) {
+                    else if (data.length <= 0) {
                         $.post("/api/users/" + newUser, function (data) {
                             //not working
                             // var href = $("#submitStart").attr("href");

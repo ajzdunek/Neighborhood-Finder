@@ -13,10 +13,6 @@ $(document).ready(function () {
         $('.modal').modal('open');
         console.log("quiz is running");
 
-    };
-
-    if (window.location.hash === '#quizStart') {quizStart();}
-
     $("#q1btn").on("click", function (e) {
         console.log("q1 button works");
     
@@ -456,6 +452,10 @@ $(document).ready(function () {
             $("input[name=group15]:checked").val("")
 
 });
+
+};
+
+if (window.location.hash === '#quizStart') {quizStart();}
 
 
     $("#saveNeighborhood").click(function(){
