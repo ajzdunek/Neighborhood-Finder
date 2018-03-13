@@ -379,16 +379,19 @@ $(document).ready(function () {
             } else if (userTotal <= 225) {
                 match = "Ukrainian Village";
             } else if (userTotal <= 255) {
-                match = "Andersonville";
+                match = "Wrigleyville";
             } else if (userTotal <= 285) {
                 match = "West Loop";
             } else if (userTotal <= 315) {
                 match = "Lincoln Park";
             } else if (userTotal <= 345) {
-                match = "Wrigleyville";
+                match = "Andersonville";
             } else if (userTotal <= 375) {
                 match = "River North";
             };
+
+            Andersonville
+            Wrigleyville
 
             $.get("/api/results/" + match, function (data) {
                 $('#modal1').modal({
