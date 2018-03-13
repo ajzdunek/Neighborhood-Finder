@@ -13,7 +13,6 @@ $(document).ready(function () {
         });
         $('#modalStart').modal('open');
 
-        console.log("quiz is running");
 
         $("#q1btn").on("click", function (e) {
             console.log("q1 button works");
@@ -340,11 +339,7 @@ $(document).ready(function () {
                     $("#error15").fadeTo(2000, 100).fadeTo(2000, 0);
                 }
             } else {
-
                 $('#modalQ15').modal('close');
-
-
-
                 var userScores = [
                     $("input[name=group1]:checked").val(),
                     $("input[name=group2]:checked").val(),
@@ -432,6 +427,11 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
+                    var email = JSON.parse(localStorage.getItem("savedemail"));
+                    console.log("email", email);
+                    if(!email){
+                        $("#saveNeighborhood").addClass("hidden")
+                    }
                 });
             }
             // Clear the question values on submit
@@ -455,7 +455,7 @@ $(document).ready(function () {
 
     };
 
-    if (window.location.hash === '#quizStart') { quizStart(); }
+    if (window.location.hash === '#quizStartfalse' || window.location.hash === '#quizStarttrue') { quizStart(); }
 
 
     $("#saveNeighborhood").click(function () {
