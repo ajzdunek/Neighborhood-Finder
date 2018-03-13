@@ -22,27 +22,31 @@ $(document).ready(function () {
                 if (data.length <= 0) {
                     $.post("/api/users/" + newUser, function (data) {
                         //not working
-                            // window.location.replace('/survey.html');
-                            // quizStart();
+                        // var href = $("#submitStart").attr("href");
+                        window.location.href = "/survey.html"
+                        // quizStart();
                     });
                 }
                 else if (data.length > 0 && data[0].Saved !== null) {
-                    console.log("saved!")
+                    console.log(data[0].Saved);
                     var match = data[0].Saved;
+                    saveHoodName(match);
+                    // var href = $("#submitStart").attr("href");
+                    // window.location.href = href;
+                    $(document).ready(function(){
+                        console.log("saved match", data[0].Email)
+                        $(".loggedIn").removeClass("hidden");
+                        $("#localEmail").text("Hi, " + data[0].Email);
+                    
                     $.get("/api/results/" + match, function (data) {
-                        var href = $("#submitStart").attr("href");
-                        window.location.href = href;
-                        // window.location.replace('/survey.html');
-                        console.log("saved match", data)
-                        $(document).ready(function(){
-                            $(".loggedIn").removeClass("hidden");
-                            $("#localEmail").text("Hi, " + data[0].Email);
-                        })
+                        // var href = $("#submitStart").attr("href");
+                        // window.location.href = href;
 
                     })
-                }
-                else if (data[0].Email.length > 0) {
-                    // console.log(data[0].Email);
+                    })
+
+                }else if(data[0].Email.length > 0) {
+                    console.log(data[0].Email);
                     window.location.replace = ("/survey.html");
                 }
             })
@@ -53,26 +57,42 @@ $(document).ready(function () {
 
 // var favorites = JSON.parse(localStorage.getItem("savedplaces"));
 var emailInfo = JSON.parse(localStorage.getItem("savedemail"));
+var savedHood = JSON.parse(localStorage.getItem("savedhood"));
 
 if (!Array.isArray(emailInfo)) {
     emailInfo = [];
 }
+
+if (!Array.isArray(savedHood)) {
+    savedHood= [];
+}
+
 /** Saves restaurants and corresponding links in local storage 
  * @param {method} event - Prevents page from reloading
  * @return {function} putOnPage - runs putOnPage function
  */
 // function saveRestaurant(event) {
-    function saveEmailInfo(event){
-
-
-    event.preventDefault();
-
+    function saveEmailInfo(){
+    emailInfo = [];
     var email = $("#email").val().trim();
     emailInfo.push(email);
     localStorage.setItem("savedemail", JSON.stringify(emailInfo));
     console.log("saved", emailInfo);
     checkEmail();
-    // putOnPage();
+
+    }
+
+/** Saves restaurants and corresponding links in local storage 
+ * @param {method} event - Prevents page from reloading
+ * @return {function} putOnPage - runs putOnPage function
+ */
+// function saveRestaurant(event) {
+    function saveHoodName(hood){
+    savedHood = [];
+    savedHood.push(hood);
+    localStorage.setItem("savedhood", JSON.stringify(savedHood));
+    console.log("saved hood", savedHood);
+
     }
 
 $("#submitStart").on("click", saveEmailInfo);

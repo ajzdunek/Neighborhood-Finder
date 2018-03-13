@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    // var quizStart = function(){
+    var quizStart = function(){
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -8,8 +8,8 @@ $(document).ready(function () {
             outDuration: 200 
         });
         $('#modalStart').modal('open');
-    // }
-    // quizStart();
+    }
+    quizStart();
     $("#q1btn").on("click", function (e) {
         e.preventDefault();
         if ($("input[name=group1]:checked").val() === undefined) {
@@ -425,6 +425,12 @@ $(document).ready(function () {
                 $("#mapbtn").on("click", function(){
                     $(".description").text(data.data.nameData.Description);
                });
+
+               $("#saveNeighborhood").on("click", function(){
+                   console.log("save wokrs")
+                    var hoodName = $("#neighborhoodName").val();
+                    saveHoodName(hoodName);
+                }); 
             });
         }
 
