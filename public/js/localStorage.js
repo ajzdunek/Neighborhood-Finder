@@ -25,7 +25,7 @@ $(document).ready(function () {
                         //not working
                         // var href = $("#submitStart").attr("href");
                         window.location.href = "/survey.html"
-                        // quizStart();
+                        quizStart();
                     });
                 }
                 else if (data.length > 0 && data[0].Saved !== null) {
@@ -101,11 +101,6 @@ if (!Array.isArray(savedHood)) {
 $("#submitStart").on("click", saveEmailInfo);
 
 
-
-
-/** 
- * Gets restaurant names and links from local storage and appends to My Favorites div
- * */
 function putOnPage() {
 
     // var insideFavorites = JSON.parse(localStorage.getItem("savedplaces"));
