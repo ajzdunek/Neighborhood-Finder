@@ -62,25 +62,16 @@ module.exports = function (app) {
         });
     });
 
-    // POST route for saving a new favorite neighborhood    //Double check this
-    // app.post("/api/users/", function(req, res) {
-    //   if(  db.Users.findOne())
-
-    //   db.Users.Saved.create(req.body).then(function(neighborhood) {
-    //     res.json(neighborhood);
-    //   });
-    // });
-
   // PUT route for updating favorite neighborhood
-  app.put("/api/users/:hood", function (req, res){
-    console.log("req", req.body.email)
+  app.put("/api/users/:email", function (req, res){
+    console.log("req", req.body.hood)
     db.user.update(
       {
-        Saved: req.params.hood
+        Saved: req.body.hood
       },
         {
           where: {
-            Email: req.body.email
+            Email: req.params.email
           }
 
         }).then(function (user) {
