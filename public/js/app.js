@@ -9,7 +9,7 @@ $(document).ready(function () {
             inDuration: 500,
             outDuration: 200 
         });
-        $('#modalStart').modal('open');
+        // $('#modalStart').modal('open');
         console.log("quiz is running");
 
 
@@ -390,8 +390,6 @@ $(document).ready(function () {
                 match = "River North";
             };
 
-            Andersonville
-            Wrigleyville
 
             $.get("/api/results/" + match, function (data) {
                 $('#modal1').modal({
@@ -539,54 +537,39 @@ $(document).ready(function () {
 
         $(".start").on("click", function (e) {
             e.preventDefault();
-            window.location.href = "/survey.html"
-            quizStart();
+            window.location.href = "/survey.html#quizStart"
         });
     
         console.log("I am working");
     
         // Click Login to open modal
-        $('.modal').modal();
-    
+        $('#login-modal').modal();
+
         // When user clicks "submit + start" button, the user's email is saved into the database
-        var checkEmail = function(){
+        var checkEmail = function () {
             // event.preventDefault();
             console.log("running")
-    
+        
             var newUser = $("#email").val().trim();
             console.log("User's email is ", newUser);
-                $.get("/api/users/" + newUser, function (data) {
-                    console.log("email", data);
-                    if (data.length > 0 && data[0].Saved !== null) {
-                        console.log(data[0].Saved);
-                        var match = data[0].Saved;
-                        saveHoodName(match);
-                        window.location.href = "/survey.html";
-                        //not working
-                            var email = JSON.parse(localStorage.getItem("savedemail"));
-                            var hood = JSON.parse(localStorage.getItem("savedhood"));
-                            $(".loggedIn").removeClass("hidden");
-                            $("#localEmail").append("Hi, " + email);
-                    }else if(data.length > 0) {
-                        console.log(data[0].Email);
+            $.get("/api/users/" + newUser, function (data) {
+                if (data.length > 0 && data[0].Saved !== null) {
+                    console.log(data[0].Saved);
+                    var match = data[0].Saved;
+                    saveHoodName(match);
+                    window.location.href = "/survey.html";
+                } else if (data.length > 0) {
+                    window.location.href = "/survey.html#quizStart";
+                    // quizStart();
+                }
+                if (data.length <= 0) {
+                    $.post("/api/users/" + newUser, function (data) {
                         window.location.href = "/survey.html#quizStart";
-    
                         // quizStart();
-                    }
-                    else if (data.length <= 0) {
-                        $.post("/api/users/" + newUser, function (data) {
-                            //not working
-                            // var href = $("#submitStart").attr("href");
-                            window.location.href = "/survey.html#quizStart";
-                            // quizStart();
-                        });
-                    }
-
-    
-
-                })
-    
-        }; //End of button click function
+                    });
+                }
+            })
+        }; 
     
     
     
@@ -635,9 +618,9 @@ $(document).ready(function () {
     
     $("#submitStart").on("click", saveEmailInfo);
     
-    $(document).on("click", "#retake", function(){
-        quizStart();
-    });
+    // $(document).on("click", "#retake", function(){
+    //     quizStart();
+    // });
 
 
 });
