@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+<<<<<<< HEAD
 //     $('#modalStart').modal();        
 
 //     var quizStart = function(){
@@ -534,10 +535,12 @@ $(document).ready(function () {
     //         })
     //     })
     // });
+=======
+>>>>>>> 51211b17caa07ea1be7c736fad3f4c57323fcd38
 
         $(".start").on("click", function (e) {
             e.preventDefault();
-            window.location.href = "/survey.html#quizStart"
+            window.location.href = "/survey.html#quizStart";
         });
     
         console.log("I am working");
@@ -547,21 +550,19 @@ $(document).ready(function () {
 
         // When user clicks "submit + start" button, the user's email is saved into the database
         var checkEmail = function () {
-            // event.preventDefault();
             console.log("running")
         
             var newUser = $("#email").val().trim();
             console.log("User's email is ", newUser);
             $.get("/api/users/" + newUser, function (data) {
                 if (data.length > 0 && data[0].Saved !== null) {
-                    console.log(data[0].Saved);
                     var match = data[0].Saved;
                     saveHoodName(match);
                     window.location.href = "/survey.html#loadSaved";
                 } else if (data.length > 0) {
                     window.location.href = "/survey.html#quizStart";
                 }
-                if (data.length <= 0) {
+                if (data.length <= 0){
                     $.post("/api/users/" + newUser, function (data) {
                         window.location.href = "/survey.html#quizStart";
                     });

@@ -63,6 +63,10 @@ li.active .collection-item.active .collection-item {
     height: 80%;
 }
 
+.modalQs {
+    max-height: 60%;
+}
+
 .leftDiv , .middleDiv {
     background-color: #D9CFCA;
     border: 1px solid #A79793;
@@ -129,7 +133,46 @@ li.active .collection-item.active .collection-item {
     font-weight: bold;
 }
 
-.welcome, #savedHood, #retake, #or {
+.welcome {
+    margin-top: -10px;
+}
+
+.welcome, #or {
     text-align: center;
 }
 
+#savedHood {
+    text-align: right;
+}
+
+#retake {
+    text-align: left;
+}
+
+#savedHood, #retake {
+    margin-top: 15px;
+}
+
+#or {
+    margin-top: 50px;
+}
+
+.results-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+
+.restart-quiz {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.home {
+    position: absolute;
+    bottom: 5px;;
+    left: 5px;
+    color: rgb(133, 133, 133);
+    font-size: 12px;
+}

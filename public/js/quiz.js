@@ -15,6 +15,10 @@ $(document).ready(function () {
     console.log("this is loading");
 
     var quizStart = function () {
+        var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
+        if(isLoggedIn === null){
+            $(".modal-close").addClass("hidden")
+        }
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -23,7 +27,6 @@ $(document).ready(function () {
         });
         $('#modalStart').modal('open');
 
-        console.log("quiz is running");
 
         $("#q1btn").on("click", function (e) {
             console.log("q1 button works");
@@ -342,6 +345,10 @@ $(document).ready(function () {
 
         $("#q15btn").on("click", function (e) {
             e.preventDefault();
+            if ($("#saveNeighborhood").hasClass("hidden")) {
+                $("#saveNeighborhood").removeClass("hidden");
+            } 
+
             if ($("input[name=group15]:checked").val() === undefined) {
                 console.log($("input[name=group15]:checked").val())
                 if ($("#error15").hasClass("hidden")) {
@@ -350,11 +357,7 @@ $(document).ready(function () {
                     $("#error15").fadeTo(2000, 100).fadeTo(2000, 0);
                 }
             } else {
-
                 $('#modalQ15').modal('close');
-
-
-
                 var userScores = [
                     $("input[name=group1]:checked").val(),
                     $("input[name=group2]:checked").val(),
@@ -400,8 +403,16 @@ $(document).ready(function () {
                 } else if (userTotal <= 375) {
                     match = "River North";
                 };
+                console.log("match", match);
 
                 $.get("/api/results/" + match, function (data) {
+                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
+                    console.log("email", isLoggedIn);
+                    if(isLoggedIn === null){
+                        $("#saveNeighborhood").addClass("hidden")
+                        $(".results-close").removeClass("modal-close").text("");
+
+                    }
                     $('#modal1').modal({
                         dismissible: false,
                         opacity: 0.5,
@@ -442,30 +453,17 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
+
                 });
             }
             // Clear the question values on submit
-            $("input[name=group1]:checked").val(""),
-                $("input[name=group2]:checked").val(""),
-                $("input[name=group3]:checked").val(""),
-                $("input[name=group4]:checked").val(""),
-                $("input[name=group5]:checked").val(""),
-                $("input[name=group6]:checked").val(""),
-                $("input[name=group7]:checked").val(""),
-                $("input[name=group8]:checked").val(""),
-                $("input[name=group9]:checked").val(""),
-                $("input[name=group10]:checked").val(""),
-                $("input[name=group11]:checked").val(""),
-                $("input[name=group12]:checked").val(""),
-                $("input[name=group13]:checked").val(""),
-                $("input[name=group14]:checked").val(""),
-                $("input[name=group15]:checked").val("")
-
+            $('.radio-button').prop('checked', false);
+            
         });
 
     };
-
-    if (window.location.hash === '#quizStart') { quizStart(); }
+    
+    if (window.location.hash === '#quizStart') {quizStart();}
 
 /* Emails.
 * @function save
@@ -485,23 +483,26 @@ $(document).ready(function () {
         var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
         neighborhood = [];
         var hoodName = $("#neighborhoodName").val();
+        var hoodObj = {
+            hood: hoodName
+        };
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
+        
+        loadSaved();
+        updateNeighborhood(hoodObj);
 
-        updateNeighborhood(emailInfo);
-
-        function updateNeighborhood(email) {
-            console.log("email", email);
+        function updateNeighborhood(hood) {
+            console.log("hood", hood);
             $.ajax({
                 method: "PUT",
-                url: "/api/users/" + neighborhood,
-                data: email
+                url: "/api/users/" + userEmail,
+                data: hood
             })
-                .then(function (data) {
-                    console.log(data)
-                });
+            .then(function (data) {
+                console.log(data)
+            });
         }
-
     })
 
 /* Save Neigborhood.
@@ -564,46 +565,8 @@ $(document).ready(function () {
                     $(".description").text(data.data.nameData.Description);
                 });
             });
-
         })
     })
-    // });
-
-    // $(".start").on("click", function (e) {
-    //     e.preventDefault();
-    //     window.location.href = "/survey.html"
-    //     quizStart();
-    // });
-
-    // console.log("I am working");
-
-    // Click Login to open modal
-    // $('.modal').modal();
-
-    // When user clicks "submit + start" button, the user's email is saved into the database
-    // var checkEmail = function () {
-    //     console.log("running")
-
-    //     var newUser = $("#email").val().trim();
-    //     console.log("User's email is ", newUser);
-    //     $.get("/api/users/" + newUser, function (data) {
-    //         if (data.length > 0 && data[0].Saved !== null) {
-    //             console.log(data[0].Saved);
-    //             var match = data[0].Saved;
-    //             saveHoodName(match);
-    //             window.location.href = "/survey.html";
-    //         } else if (data[0].Email.length > 0) {
-    //             window.location.href = "/survey.html#quizStart";
-    //             quizStart();
-    //         }
-    //         if (data.length <= 0) {
-    //             $.post("/api/users/" + newUser, function (data) {
-    //                 window.location.href = "/survey.html#quizStart";
-    //                 quizStart();
-    //             });
-    //         }
-    //     })
-    // }; //End of button click function
 
 
 
@@ -651,15 +614,42 @@ $(document).ready(function () {
     }
 
 
+<<<<<<< HEAD
     $(document).on("click", "#retake", function () {
+=======
+    // $("#submitStart").on("click", saveEmailInfo);
+
+    $("#retake").on("click", function () {
+        $('.radio-button').prop('checked', false);
+    
         quizStart();
     });
+
+    $(".restart-quiz").on("click", function(){
+        console.log("retake button clicked")
+        $('.radio-button').prop('checked', false);
+        $('#modal1').modal('close');
+>>>>>>> 51211b17caa07ea1be7c736fad3f4c57323fcd38
+        quizStart();
+    });
+
+
+    $("#logout").on("click", function(){
+        emailInfo = [];
+        localStorage.setItem("savedemail", JSON.stringify(emailInfo));
+        hoodInfo = [];
+        localStorage.setItem("savedhood", JSON.stringify(hoodInfo));
+    })
+
+    $(".home").on("click", function(){
+        window.location.href = "/index.html";
+    })
 
 
     function loadSaved() {
         var email = JSON.parse(localStorage.getItem("savedemail"));
         var hood = JSON.parse(localStorage.getItem("savedhood"));
-        $("#savedHood").text("Check out your latest saved hood: " + hood);
+        $("#savedName").text(hood);
         $(".loggedIn").removeClass("hidden");
         $("#localEmail").text("Hi, " + email);
     }
