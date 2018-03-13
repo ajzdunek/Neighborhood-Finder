@@ -71,12 +71,13 @@ module.exports = function (app) {
     //   });
     // });
 
-    // PUT route for updating favorite neighborhood
-    app.put("/api/users/:hood", function (req, res) {
-      db.Users.update(
-        {
-          Saved: req.params.hood
-        },
+  // PUT route for updating favorite neighborhood
+  app.put("/api/users/:hood", function (req, res){
+    console.log("req", req.body.email)
+    db.user.update(
+      {
+        Saved: req.params.hood
+      },
         {
           where: {
             Email: req.body.email
