@@ -1,6 +1,14 @@
 describe("userInput", function() {
   it("should take in an email address", function() {
     expect("hello@gmail.com").to.equal(true);
+
+var chai = require('chai')
+  , Strategy = require('../index.html');
+
+
+describe("userInput", function() {
+  it("should take in an email address", function() {
+    expect("hello@hi.com").to.equal(true);
   });
 
   it("should be a string", function() {
