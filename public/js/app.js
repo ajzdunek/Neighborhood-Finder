@@ -385,8 +385,7 @@ $(document).ready(function () {
                 match = "River North";
             };
 
-            Andersonville
-            Wrigleyville
+    
 
             $.get("/api/results/" + match, function (data) {
                 $('#modal1').modal({
