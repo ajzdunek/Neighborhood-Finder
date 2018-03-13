@@ -609,11 +609,18 @@ $(document).ready(function () {
         quizStart();
     });
 
+    $("#logout").on("click", function(){
+        emailInfo = [];
+        localStorage.setItem("savedemail", JSON.stringify(emailInfo));
+        hoodInfo = [];
+        localStorage.setItem("savedhood", JSON.stringify(hoodInfo));
+    })
+
 
     function loadSaved() {
         var email = JSON.parse(localStorage.getItem("savedemail"));
         var hood = JSON.parse(localStorage.getItem("savedhood"));
-        $("#savedHood").text("Check out your latest saved hood: " + hood);
+        $("#savedName").text(hood);
         $(".loggedIn").removeClass("hidden");
         $("#localEmail").text("Hi, " + email);
     }

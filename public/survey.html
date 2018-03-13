@@ -21,6 +21,9 @@
                 <li>
                     <a href="index.html">Quiz Home</a>
                 </li>
+                <li>
+                    <a id="logout" href="index.html">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -581,10 +584,10 @@
             <!-- Tabbed information -->
             <ul id="tabs-swipe-demo" class="tabs">
                 <li class="tab col s3 t-head">
-                    <a id="mapbtn" href="#tab1">Map</a>
+                    <a id="mapbtn" class="active"href="#tab1">Map</a>
                 </li>
                 <li class="tab col s3 t-head">
-                    <a id="walkbtn" class="active" href="#tab2">Walk Score</a>
+                    <a id="walkbtn" href="#tab2">Walk Score</a>
                 </li>
                 <li class="tab col s3 t-head">
                     <a id="foodbtn" href="#tab3">Food</a>
@@ -625,14 +628,14 @@
 
     <div class="container loggedIn hidden">
         <div class="row">
-            <div class="col s12"><h3 id="localEmail">Hi, email</h3></div>
+            <div class="col s12"><h3 id="localEmail"></h3></div>
         </div>
         <div class="row">
-            <div class="col s12 welcome"><p>Welcome back!</p></div>
+            <div class="col s12 welcome"><h5>Welcome back!</h5></div>
         <div class="row">
-            <div class="col s4"><button id="savedHood"></button></div>
-            <div class="col s4"><p id="or">OR</p></div>
-            <div class="col s4"><button id="retake">Take the Quiz again</button></div>
+            <div class="col s5"><button id="savedHood">View my Saved Hood</button><p id="savedName"></p></div>
+            <div class="col s2"><p id="or">OR</p></div>
+            <div class="col s5"><button id="retake">Take the Quiz again</button></div>
         </div>
         </div>
     </div>
