@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     var quizStart = function(){
@@ -397,6 +399,7 @@ $(document).ready(function () {
                 console.log("data for neigh", data.data.detailData);
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
+                $("#neighborhoodName").val(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
@@ -426,11 +429,11 @@ $(document).ready(function () {
                     $(".description").text(data.data.nameData.Description);
                });
 
-               $("#saveNeighborhood").on("click", function(){
-                   console.log("save wokrs")
-                    var hoodName = $("#neighborhoodName").val();
-                    saveHoodName(hoodName);
-                }); 
+            //    $("#saveNeighborhood").on("click", function(){
+            //        console.log("save wokrs")
+            //         var hoodName = $("#neighborhoodName").val();
+            //         saveHoodName(hoodName);
+            //     }); 
             });
         }
 
@@ -458,9 +461,14 @@ $(document).ready(function () {
 
 
     $("#saveNeighborhood").click(function(){
-        console.log("Button clicked");
+        // console.log("Button clicked");
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
-        var neighborhood = $("#neighborhoodName").val();
+        var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
+        neighborhood = [];
+        var hoodName = $("#neighborhoodName").val();
+        console.log($("#neighborhoodName").val());
+        neighborhood.push(hoodName);
+        localStorage.setItem("savedhood", JSON.stringify(neighborhood));
         console.log("Neighborhood name is ", neighborhood);
         console.log("Username is ", userEmail);
         
@@ -470,7 +478,9 @@ $(document).ready(function () {
               url: "/api/users/" + neighborhood,
               data: userEmail
             })
-            .then(function() {});
+            .then(function(data) {
+                console.log(data)
+            });
           }
 
     })

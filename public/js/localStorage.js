@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
 
     $(".start").on("click", function (e) {
@@ -31,6 +32,7 @@ $(document).ready(function () {
                     console.log(data[0].Saved);
                     var match = data[0].Saved;
                     saveHoodName(match);
+                    window.location.href = "/survey.html"
                     // var href = $("#submitStart").attr("href");
                     // window.location.href = href;
                     $(document).ready(function(){
@@ -39,8 +41,7 @@ $(document).ready(function () {
                         $("#localEmail").text("Hi, " + data[0].Email);
                     
                     $.get("/api/results/" + match, function (data) {
-                        // var href = $("#submitStart").attr("href");
-                        // window.location.href = href;
+                            console.log(data);
 
                     })
                     })
@@ -93,26 +94,12 @@ if (!Array.isArray(savedHood)) {
     localStorage.setItem("savedhood", JSON.stringify(savedHood));
     console.log("saved hood", savedHood);
 
+    return savedHood;
     }
 
+
+
 $("#submitStart").on("click", saveEmailInfo);
-// $(document).on("click", ".saveNeighborhood", saveNeighborhood);
-
-/** Saves restaurants and corresponding links in local storage 
- * @param {method} event - Prevents page from reloading
- * @return {function} putOnPage - runs putOnPage function
- */
-// function saveRestaurant(event) {
-    // function saveNeighborhood(event){
-
-    //     event.preventDefault();
-    
-    //     var hood = $("#email").val().trim();
-    //     emailInfo.push(email);
-    //     localStorage.setItem("savedplaces", JSON.stringify(emailInfo));
-    //     console.log("saved", emailInfo);
-
-    // }
 
 
 
@@ -148,7 +135,7 @@ $(document).on("click", "savePlace", function () {
 
 });
 
-
-
     //End of document ready
 });
+
+
