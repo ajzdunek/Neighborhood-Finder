@@ -463,20 +463,22 @@ $(document).ready(function () {
     $("#saveNeighborhood").click(function(){
         // console.log("Button clicked");
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
+        userEmail = userEmail.toString();
+        var emailInfo = {email: userEmail};
         var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
         neighborhood = [];
         var hoodName = $("#neighborhoodName").val();
-        console.log($("#neighborhoodName").val());
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
-        console.log("Neighborhood name is ", neighborhood);
-        console.log("Username is ", userEmail);
+ 
+        updateNeighborhood(emailInfo);
         
-        function updateNeighborhood(userEmail) {
+        function updateNeighborhood(email) {
+            console.log("email", email);
             $.ajax({
               method: "PUT",
               url: "/api/users/" + neighborhood,
-              data: userEmail
+              data: email
             })
             .then(function(data) {
                 console.log(data)
