@@ -481,12 +481,54 @@ $(document).ready(function () {
 
     $(document).on("click", "#savedHood", function(){
         var email = JSON.parse(localStorage.getItem("savedemail"));                  
-        $.get("/api/users/" + email, function (data) {
-            console.log(data)
+        $.get("/api/users/" + email, function (emaildata) {
+            console.log(emaildata)
 
         }).then(function(data){
-            $.get("/api/results/" + data[0].Saved, function(hoodData){
-                console.log("hood", hoodData);
+            $.get("/api/results/" + data[0].Saved, function(data){
+                console.log("hood", data);
+                $('#modal1').modal({
+                    dismissible: false,
+                    opacity: 0.5,
+                    inDuration: 2000,
+                    outDuration: 300
+                });
+                $('#modal1').modal('open');
+                console.log("data", data);
+                console.log("data for neigh", data.data.detailData);
+
+                $("#neighborhoodName").text(data.data.nameData.Name);
+                $("#neighborhoodName").val(data.data.nameData.Name);
+                $(".description").text(data.data.nameData.Description);
+
+                $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
+                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" +  "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img src='" + data.data.detailData[2].Image + "'>" + "</div>");
+                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>");
+                $("#transit").attr('src', data.data.nameData.Walkscore_transit);
+                $("#walk").attr('src', data.data.nameData.Walkscore_walk);
+                $("#bike").attr('src', data.data.nameData.Walkscore_bike);
+
+                $(".link1").attr({href: data.data.detailData[0].Link, target: '_blank', class: 'resultLink'});
+                $(".link2").attr({href: data.data.detailData[1].Link, target: '_blank', class: 'resultLink'});
+                $(".link3").attr({href: data.data.detailData[2].Link, target: '_blank', class: 'resultLink'});
+                $(".link4").attr({href: data.data.detailData[3].Link, target: '_blank', class: 'resultLink'});
+                $(".link5").attr({href: data.data.detailData[4].Link, target: '_blank', class: 'resultLink'});
+                $(".link6").attr({href: data.data.detailData[5].Link, target: '_blank', class: 'resultLink'});
+
+            //     $("#walkbtn").on("click", function(){
+            //          $(".description").text(data.data.nameData.Walkscore_desc);
+            //     })
+            //     $("#foodbtn").on("click", function(){
+            //          $(".description").text(data.data.nameData.Restaurant_desc);
+            //     });
+            //     $("#funbtn").on("click", function(){
+            //          $(".description").text(data.data.nameData.Attraction_desc);
+            //     });
+            //     $("#mapbtn").on("click", function(){
+            //         $(".description").text(data.data.nameData.Description);
+            //    });
+            // });
+                // }
             })
         })
     });
