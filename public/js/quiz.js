@@ -395,6 +395,8 @@ $(document).ready(function () {
                     console.log("email", isLoggedIn);
                     if(isLoggedIn.length <= 0){
                         $("#saveNeighborhood").addClass("hidden")
+                        $(".results-close").attr('id', "retake-loggedout");
+                        $("#retake-loggedout").text("Retake Quiz");
                     }
                     $('#modal1').modal({
                         dismissible: false,
@@ -440,21 +442,7 @@ $(document).ready(function () {
                 });
             }
             // Clear the question values on submit
-            $("input[name=group1]:checked").val(""),
-                $("input[name=group2]:checked").val(""),
-                $("input[name=group3]:checked").val(""),
-                $("input[name=group4]:checked").val(""),
-                $("input[name=group5]:checked").val(""),
-                $("input[name=group6]:checked").val(""),
-                $("input[name=group7]:checked").val(""),
-                $("input[name=group8]:checked").val(""),
-                $("input[name=group9]:checked").val(""),
-                $("input[name=group10]:checked").val(""),
-                $("input[name=group11]:checked").val(""),
-                $("input[name=group12]:checked").val(""),
-                $("input[name=group13]:checked").val(""),
-                $("input[name=group14]:checked").val(""),
-                $("input[name=group15]:checked").val("")
+            $('.radio-button').prop('checked', false);
             
         });
 
@@ -592,21 +580,6 @@ $(document).ready(function () {
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);
-        // $("input[name=group1]:checked").val(""),
-        // $("input[name=group2]:checked").val(""),
-        // $("input[name=group3]:checked").val(""),
-        // $("input[name=group4]:checked").val(""),
-        // $("input[name=group5]:checked").val(""),
-        // $("input[name=group6]:checked").val(""),
-        // $("input[name=group7]:checked").val(""),
-        // $("input[name=group8]:checked").val(""),
-        // $("input[name=group9]:checked").val(""),
-        // $("input[name=group10]:checked").val(""),
-        // $("input[name=group11]:checked").val(""),
-        // $("input[name=group12]:checked").val(""),
-        // $("input[name=group13]:checked").val(""),
-        // $("input[name=group14]:checked").val(""),
-        // $("input[name=group15]:checked").val("")
     
         quizStart();
     });
