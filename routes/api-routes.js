@@ -33,10 +33,11 @@ module.exports = function(app) {
   });
 
   // Check to see if email exists in the db
-  app.get("api/users/:id", function(req, res) {
-    db.Users.findAll({
+  app.get("/api/users/:email", function(req, res) {
+    console.log("user", req.params.email);
+    db.user.findAll({
       where: {
-        Email: req.body.email
+        Email: req.params.email
       }
     }).then(function(data) {
       res.json(data);
@@ -51,8 +52,12 @@ module.exports = function(app) {
   // });
 
   // POST route for saving a new User
-  app.post("/api/users", function(req, res) {
-    db.Users.create(req.body).then(function(email) {
+  app.post("/api/users/:email", function(req, res) {
+    console.log("req", req.params.email)
+    db.user.create(
+      {
+        Email: req.params.email
+      }).then(function(email) {
       res.json(email);
     });
   });

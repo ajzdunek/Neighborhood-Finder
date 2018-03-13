@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-    var Users = sequelize.define("user", {
+    var user = sequelize.define("user", {
       id: {
         type: Sequelize.INTEGER,
         allowNull: true,
@@ -17,7 +17,7 @@ module.exports = function(sequelize, Sequelize) {
         }
       },
       Saved: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: true,
         len: [1]
       },
@@ -35,5 +35,5 @@ module.exports = function(sequelize, Sequelize) {
       }
     });
   
-    return Users;
+    return user;
   };
