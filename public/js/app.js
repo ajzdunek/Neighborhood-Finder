@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    // var quizStart = function(){
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -7,8 +8,8 @@ $(document).ready(function () {
             outDuration: 200 
         });
         $('#modalStart').modal('open');
-
-
+    // }
+    // quizStart();
     $("#q1btn").on("click", function (e) {
         e.preventDefault();
         if ($("input[name=group1]:checked").val() === undefined) {
@@ -452,10 +453,10 @@ $(document).ready(function () {
 
     $("#saveNeighborhood").click(function(){
         console.log("Button clicked");
-        var userEmail = $("#email").val(); //Locally stored email
-        // JSON.parse(localStorage.getItem("savedemail"));
+        var userEmail = JSON.parse(localStorage.getItem("savedemail"));
         var neighborhood = $("#neighborhoodName").val();
         console.log("Neighborhood name is ", neighborhood);
+        console.log("Username is ", userEmail);
         
         function updateNeighborhood(userEmail) {
             $.ajax({
