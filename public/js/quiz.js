@@ -5,6 +5,10 @@ $(document).ready(function () {
     console.log("this is loading");
 
     var quizStart = function () {
+        var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
+        if(isLoggedIn === null){
+            $(".modal-close").addClass("hidden")
+        }
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -598,6 +602,10 @@ $(document).ready(function () {
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         hoodInfo = [];
         localStorage.setItem("savedhood", JSON.stringify(hoodInfo));
+    })
+
+    $(".home").on("click", function(){
+        window.location.href = "/index.html";
     })
 
 
