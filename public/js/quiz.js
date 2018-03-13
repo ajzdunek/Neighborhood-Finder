@@ -330,10 +330,11 @@ $(document).ready(function () {
         // }
 
         $("#q15btn").on("click", function (e) {
+            e.preventDefault();
             if ($("#saveNeighborhood").hasClass("hidden")) {
                 $("#saveNeighborhood").removeClass("hidden");
             } 
-            e.preventDefault();
+
             if ($("input[name=group15]:checked").val() === undefined) {
                 console.log($("input[name=group15]:checked").val())
                 if ($("#error15").hasClass("hidden")) {
@@ -393,7 +394,7 @@ $(document).ready(function () {
                 $.get("/api/results/" + match, function (data) {
                     var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
                     console.log("email", isLoggedIn);
-                    if(isLoggedIn.length <= 0){
+                    if(isLoggedIn === null){
                         $("#saveNeighborhood").addClass("hidden")
                         $(".results-close").removeClass("modal-close").text("");
 
