@@ -29,8 +29,6 @@ module.exports = function(app) {
         console.log(data);
         res.json({ data: data });
       });
-    });
-  });
 
   // Check to see if email exists in the db
   app.get("/api/users/:email", function(req, res) {
