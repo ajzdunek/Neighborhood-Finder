@@ -1,4 +1,3 @@
-
 var expect = require("chai").expect;
 var $ = require("jquery");
 var app = require('./app.js');
@@ -9,4 +8,8 @@ describe(".modal", function() {
   });
 });
 
+/**
+ * test-two.js
+ * no tests required. No pure functions dedected.
+ */
 

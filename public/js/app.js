@@ -329,6 +329,143 @@ $(document).ready(function () {
 
     // }
 
+// <<<<<<< models_setup
+//     $("#q15btn").on("click", function (e) {
+//         e.preventDefault();
+//         if ($("input[name=group15]:checked").val() === undefined) {
+//             console.log($("input[name=group15]:checked").val())
+//             if ($("#error15").hasClass("hidden")) {
+//                 $("#error15").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
+//             } else {
+//                 $("#error15").fadeTo(2000, 100).fadeTo(2000, 0);
+//             }
+//         } else {
+
+//             $('#modalQ15').modal('close');
+
+
+
+//             var userScores = [
+//                 $("input[name=group1]:checked").val(),
+//                 $("input[name=group2]:checked").val(),
+//                 $("input[name=group3]:checked").val(),
+//                 $("input[name=group4]:checked").val(),
+//                 $("input[name=group5]:checked").val(),
+//                 $("input[name=group6]:checked").val(),
+//                 $("input[name=group7]:checked").val(),
+//                 $("input[name=group8]:checked").val(),
+//                 $("input[name=group9]:checked").val(),
+//                 $("input[name=group10]:checked").val(),
+//                 $("input[name=group11]:checked").val(),
+//                 $("input[name=group12]:checked").val(),
+//                 $("input[name=group13]:checked").val(),
+//                 $("input[name=group14]:checked").val(),
+//                 $("input[name=group15]:checked").val()
+//             ];
+
+//             var scoreNums = userScores.map(function (i) {
+//                 return parseInt(i, 10);
+//             });
+//             var userTotal = scoreNums.reduce((a, b) => a + b);
+//             var match;
+
+//             if (userTotal <= 105) {
+//                 match = "Pilsen";
+//             } else if (userTotal <= 135) {
+//                 match = "Logan Square";
+//             } else if (userTotal <= 165) {
+//                 match = "Hyde Park";
+//             } else if (userTotal <= 195) {
+//                 match = "Wicker Park";
+//             } else if (userTotal <= 225) {
+//                 match = "Ukrainian Village";
+//             } else if (userTotal <= 255) {
+//                 match = "Wrigleyville";
+//             } else if (userTotal <= 285) {
+//                 match = "West Loop";
+//             } else if (userTotal <= 315) {
+//                 match = "Lincoln Park";
+//             } else if (userTotal <= 345) {
+//                 match = "Andersonville";
+//             } else if (userTotal <= 375) {
+//                 match = "River North";
+//             };
+
+    
+
+//             $.get("/api/results/" + match, function (data) {
+//                 $('#modal1').modal({
+//                     dismissible: false,
+//                     opacity: 0.5,
+//                     inDuration: 2000,
+//                     outDuration: 300
+//                 });
+//                 $('#modal1').modal('open');
+//                 console.log("data", data);
+//                 console.log("data for neigh", data.data.detailData);
+
+//                 $("#neighborhoodName").text(data.data.nameData.Name);
+//                 $(".description").text(data.data.nameData.Description);
+
+//                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
+//                 $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" +  "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img src='" + data.data.detailData[2].Image + "'>" + "</div>");
+//                 $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>");
+//                 $("#transit").attr('src', data.data.nameData.Walkscore_transit);
+//                 $("#walk").attr('src', data.data.nameData.Walkscore_walk);
+//                 $("#bike").attr('src', data.data.nameData.Walkscore_bike);
+
+//                 $(".link1").attr({href: data.data.detailData[0].Link, target: '_blank', class: 'resultLink'});
+//                 $(".link2").attr({href: data.data.detailData[1].Link, target: '_blank', class: 'resultLink'});
+//                 $(".link3").attr({href: data.data.detailData[2].Link, target: '_blank', class: 'resultLink'});
+//                 $(".link4").attr({href: data.data.detailData[3].Link, target: '_blank', class: 'resultLink'});
+//                 $(".link5").attr({href: data.data.detailData[4].Link, target: '_blank', class: 'resultLink'});
+//                 $(".link6").attr({href: data.data.detailData[5].Link, target: '_blank', class: 'resultLink'});
+
+//                 $("#walkbtn").on("click", function(){
+//                      $(".description").text(data.data.nameData.Walkscore_desc);
+//                 })
+//                 $("#foodbtn").on("click", function(){
+//                      $(".description").text(data.data.nameData.Restaurant_desc);
+//                 });
+//                 $("#funbtn").on("click", function(){
+//                      $(".description").text(data.data.nameData.Attraction_desc);
+//                 });
+//                 $("#mapbtn").on("click", function(){
+//                     $(".description").text(data.data.nameData.Description);
+//                });
+//             });
+//         }
+
+//         // Clear the question values on submit
+//         $("input[name=group1]:checked").val(""),
+//             $("input[name=group2]:checked").val(""),
+//             $("input[name=group3]:checked").val(""),
+//             $("input[name=group4]:checked").val(""),
+//             $("input[name=group5]:checked").val(""),
+//             $("input[name=group6]:checked").val(""),
+//             $("input[name=group7]:checked").val(""),
+//             $("input[name=group8]:checked").val(""),
+//             $("input[name=group9]:checked").val(""),
+//             $("input[name=group10]:checked").val(""),
+//             $("input[name=group11]:checked").val(""),
+//             $("input[name=group12]:checked").val(""),
+//             $("input[name=group13]:checked").val(""),
+//             $("input[name=group14]:checked").val(""),
+//             $("input[name=group15]:checked").val("")
+
+
+// });
+
+
+
+
+//     $("#saveNeighborhood").click(function(){
+//         console.log("Button clicked");
+//         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
+//         var neighborhood = $("#neighborhoodName").val();
+//         console.log("Neighborhood name is ", neighborhood);
+//         console.log("Username is ", userEmail);
+// =======
 //     $("#q15btn").on("click", function (e) {
 //         e.preventDefault();
 //         if ($("input[name=group15]:checked").val() === undefined) {
