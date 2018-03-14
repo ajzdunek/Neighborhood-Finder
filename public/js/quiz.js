@@ -466,6 +466,7 @@ $(document).ready(function () {
         var hoodObj = {
             hood: hoodName
         };
+        console.log(hoodObj);
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
         
@@ -506,6 +507,7 @@ $(document).ready(function () {
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $("#neighborhoodName").val(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
+                $('body').css('background', "url(.." + data.data.nameData.Image + ")");
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
                 $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img src='" + data.data.detailData[2].Image + "'>" + "</div>");
