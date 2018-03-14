@@ -76,8 +76,6 @@ $(document).ready(function () {
         return savedHood;
     }
 
-
-
     // $("#submitStart").on("click", function () {
     //     if ($("#email").attr('data-error', 'please enter a valid email address')) {
     //         $("#submitStart").removeClass('modal-close')
