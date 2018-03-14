@@ -586,11 +586,9 @@ $(document).ready(function () {
         savedHood = [];
     }
 
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
+    /** Saves email in local storage and replaces if one already exists
+     * @return {function} checkEmail - after saving, runs check email to validate
      */
-    // function saveRestaurant(event) {
     
     function saveEmailInfo() {
         emailInfo = [];
@@ -599,27 +597,9 @@ $(document).ready(function () {
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         console.log("saved", emailInfo);
         checkEmail();
-
-    }
-
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
-     */
-    // function saveRestaurant(event) {
-    
-    function saveHoodName(hood) {
-        savedHood = [];
-        savedHood.push(hood);
-        localStorage.setItem("savedhood", JSON.stringify(savedHood));
-        console.log("saved hood", savedHood);
-
-        return savedHood;
     }
 
 
-    // $(document).on("click", "#retake", function () {
-    // $("#submitStart").on("click", saveEmailInfo);
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);

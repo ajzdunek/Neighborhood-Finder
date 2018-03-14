@@ -48,11 +48,9 @@ $(document).ready(function () {
         savedHood = [];
     }
 
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
+    /** Saves email in local storage and replaces if one already exists
+     * @return {function} checkEmail - runs function to check if email exists in db
      */
-    // function saveRestaurant(event) {
     function saveEmailInfo() {
         emailInfo = [];
         var email = $("#email").val().trim();
@@ -60,12 +58,11 @@ $(document).ready(function () {
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         console.log("saved", emailInfo);
         checkEmail();
-
     }
 
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
+    /** Saves neighborhood name in local storage if it exists in db
+     * @param {method} hood - takes in variable that holds saved neighborhood name from db
+     * @return {string} savedHood - returns name of the saved neighborhood
      */
     // function saveRestaurant(event) {
     function saveHoodName(hood) {
@@ -77,6 +74,11 @@ $(document).ready(function () {
         return savedHood;
     }
 
+    /** Checks to see if the email address user enters is valid with regex
+     * @param {method} emailAddress - takes in variable that holds email address user inputed
+     * @return {function} saveEmailInfo - runs function to save email in local storage
+     */
+    // function saveRestaurant(event) {
     function isValidEmailAddress(emailAddress) {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         return pattern.test(emailAddress);
