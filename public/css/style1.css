@@ -17,21 +17,6 @@ body {
   flex-direction: column;
 }
 
-<<<<<<< HEAD
-/* The only rule that matters */
-#video-background {
-  /*  making the video fullscreen  */
-    position: fixed;
-    right: 0; 
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;
-    width: auto; 
-    height: auto;
-    z-index: -100;
-  }
-  
-=======
 #video-background {
 /*  making the video fullscreen  */
 position: fixed;
@@ -43,7 +28,6 @@ width: auto;
 height: auto;
 z-index: -100;
  }
->>>>>>> 83acbb0f36aff05ebfa9c93832d1add7942d5be9
 
 main {
   flex: 1 0 auto;
