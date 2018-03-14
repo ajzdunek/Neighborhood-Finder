@@ -72,6 +72,8 @@ li.active .collection-item.active .collection-item {
     border: 1px solid #A79793;
     color: #3D4859;
     overflow: auto;
+    min-height: 440px;
+
 }
 
 .middleDiv {
@@ -84,7 +86,12 @@ li.active .collection-item.active .collection-item {
     border: 1px solid #A79793;
     color: #3D4859;
     overflow: auto;
+    min-height: 440px;
 
+}
+
+div{
+    padding: 10px;
 }
 
 #food2 #food3 {
@@ -114,6 +121,12 @@ li.active .collection-item.active .collection-item {
     color: #3D4859;
     font-weight: bold;
 }
+
+.resultLink:hover {
+color: rgb(114, 128, 150);
+text-decoration: underline;
+}
+
 
 .resultLink:hover, .resultLink:active, .resultLink:focus {
     color: rgb(114, 128, 150);
@@ -179,7 +192,8 @@ li.active .collection-item.active .collection-item {
     font-size: 12px;
 }
 
-#img {
+img  {
     max-width: 300px;
-    width: auto;
+    height: auto;
+    max-height: 350px;
 }
