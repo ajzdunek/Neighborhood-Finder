@@ -38,3 +38,7 @@ footer{
   left: 0;
   width: 100%;
 }
+
+.material-tooltip {
+  width: 300px;
+}
