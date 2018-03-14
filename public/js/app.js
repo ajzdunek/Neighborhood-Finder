@@ -18,6 +18,7 @@ $(document).ready(function () {
         var newUser = $("#email").val().trim();
         console.log("User's email is ", newUser);
         $.get("/api/users/" + newUser, function (data) {
+            $("#email").val("");
             if (data.length > 0 && data[0].Saved !== null) {
                 var match = data[0].Saved;
                 saveHoodName(match);
@@ -30,7 +31,7 @@ $(document).ready(function () {
                     window.location.href = "/survey.html#quizStart";
                 });
             }
-        })
+        })  
     };
 
 
