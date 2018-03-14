@@ -77,18 +77,6 @@ $(document).ready(function () {
         return savedHood;
     }
 
-    // $("#submitStart").on("click", function () {
-    //     if ($("#email").attr('data-error', 'please enter a valid email address')) {
-    //         $("#submitStart").removeClass('modal-close')
-    //         console.log("this email has error")
-    //     }else if($("#email").attr('data-success', 'right')){
-    //         if(!$("#submitStart").hasClass('modal-close')){
-    //             $('#submitStart').addClass('modal-close')
-    //         }
-    //         saveEmailInfo();
-    //     }
-    // })
-
     function isValidEmailAddress(emailAddress) {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         return pattern.test(emailAddress);
