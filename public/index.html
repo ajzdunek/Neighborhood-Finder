@@ -13,15 +13,14 @@
 
 <body>
    
-    <!-- <video autoplay loop id="video-background" muted plays-inline>
-        <iframe id="video" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </video> -->
+    <!-- <video autoplay loop id="video-background" muted plays-inline> -->
+     <iframe id="video" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <!-- </video> -->
 
-
-<div class="container-fluid">
-        <video autoplay loop id="video-background" muted plays-inline>
+    <div class="container-fluid">
+        <!-- <video autoplay loop id="video-background" muted plays-inline> -->
          <iframe src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </video>
+        <!-- </video> -->
     </div>
         
     <div class="container">
@@ -100,10 +99,10 @@
     <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
     
 
-    <iframe id="video" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <!-- <iframe id="video" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 
     <script type="text/javascript">
-        var iframe = document.querySelector('iframe');
+        var iframe = $('iframe');
         var player = new Vimeo.Player(iframe);
     
         player.setVolume(0);
