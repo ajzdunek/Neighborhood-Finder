@@ -614,9 +614,6 @@ $(document).ready(function () {
     }
 
 
-<<<<<<< HEAD
-    $(document).on("click", "#retake", function () {
-=======
     // $("#submitStart").on("click", saveEmailInfo);
 
     $("#retake").on("click", function () {
@@ -629,7 +626,6 @@ $(document).ready(function () {
         console.log("retake button clicked")
         $('.radio-button').prop('checked', false);
         $('#modal1').modal('close');
->>>>>>> 51211b17caa07ea1be7c736fad3f4c57323fcd38
         quizStart();
     });
 
