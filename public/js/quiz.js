@@ -1,3 +1,13 @@
+/* Quiz is running through fifteen questions and appends result.
+* @function save
+* @param {string} 
+* @function store
+* @param {string} 
+* @function getValues
+* @return 
+* @param {string}
+*/
+
 
 
 $(document).ready(function () {
@@ -455,6 +465,16 @@ $(document).ready(function () {
     
     if (window.location.hash === '#quizStart') {quizStart();}
 
+/* Emails.
+* @function save
+* @param {string} 
+* @function store
+* @param {string} 
+* @function getValues
+* @return 
+* @param {string}
+*/
+
 
     $("#saveNeighborhood").click(function () {
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
@@ -485,6 +505,17 @@ $(document).ready(function () {
             });
         }
     })
+
+/* Save Neigborhood.
+* @function save
+* @param {string} 
+* @function store
+* @param {string} 
+* @function getValues
+* @return 
+* @param {string}
+*/
+
 
     $(document).on("click", "#savedHood", function () {
         var email = JSON.parse(localStorage.getItem("savedemail"));
@@ -558,6 +589,7 @@ $(document).ready(function () {
      * @return {function} putOnPage - runs putOnPage function
      */
     // function saveRestaurant(event) {
+    
     function saveEmailInfo() {
         emailInfo = [];
         var email = $("#email").val().trim();
@@ -573,6 +605,7 @@ $(document).ready(function () {
      * @return {function} putOnPage - runs putOnPage function
      */
     // function saveRestaurant(event) {
+    
     function saveHoodName(hood) {
         savedHood = [];
         savedHood.push(hood);
@@ -583,6 +616,7 @@ $(document).ready(function () {
     }
 
 
+    // $(document).on("click", "#retake", function () {
     // $("#submitStart").on("click", saveEmailInfo);
 
     $("#retake").on("click", function () {
