@@ -8,12 +8,13 @@
 * @param {string}
 */
 
-
-
 $(document).ready(function () {
     $('.modal').modal();
-    console.log("this is loading");
 
+    /** On click
+     * @param {method} emailAddress - takes in variable that holds email address user inputed
+     * @return {function} saveEmailInfo - runs function to save email in local storage
+     */
     var quizStart = function () {
         var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
         if(isLoggedIn === null){
@@ -334,15 +335,6 @@ $(document).ready(function () {
             }
         });
 
-        // var getTotal = function(scores){
-        //     var scoreNums = scores.map(function (i) {
-        //         return parseInt(i, 10);
-        //     });
-        //     var userTotal = scoreNums.reduce((a, b) => a + b)
-        //     return userTotal;
-
-        // }
-
         $("#q15btn").on("click", function (e) {
             e.preventDefault();
             if ($("#saveNeighborhood").hasClass("hidden")) {
@@ -598,7 +590,6 @@ $(document).ready(function () {
         console.log("saved", emailInfo);
         checkEmail();
     }
-
 
 
     $("#retake").on("click", function () {
