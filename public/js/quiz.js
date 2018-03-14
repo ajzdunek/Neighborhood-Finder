@@ -614,6 +614,7 @@ $(document).ready(function () {
     }
 
 
+    // $(document).on("click", "#retake", function () {
     // $("#submitStart").on("click", saveEmailInfo);
 
     $("#retake").on("click", function () {
