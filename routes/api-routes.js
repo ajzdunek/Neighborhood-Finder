@@ -7,7 +7,7 @@ console.log(db.Neighborhoodgeneral);
 
 module.exports = function (app) {
   app.get("/api/results/:name", function (req, res) {
-    console.log("req", req.params.name);
+    console.log("req get hood", req.params.name);
     db.Neighborhoodgeneral.findOne({
       where: {
         Name: req.params.name
@@ -25,8 +25,8 @@ module.exports = function (app) {
           nameData: general,
           detailData: details
         };
-        console.log("details", details);
-        console.log(data);
+        // console.log("details", details);
+        // console.log(data);
         res.json({ data: data });
       });
     });
@@ -53,7 +53,7 @@ module.exports = function (app) {
 
     // POST route for saving a new User
     app.post("/api/users/:email", function (req, res) {
-      console.log("req", req.params.email)
+      console.log("req post", req.params.email)
       db.user.create(
         {
           Email: req.params.email
@@ -64,7 +64,8 @@ module.exports = function (app) {
 
   // PUT route for updating favorite neighborhood
   app.put("/api/users/:email", function (req, res){
-    console.log("req", req.body.hood)
+    console.log("req hood", req.body.hood);
+    console.log("req email", req.params.email);
     db.user.update(
       {
         Saved: req.body.hood
