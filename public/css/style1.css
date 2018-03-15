@@ -18,7 +18,7 @@ body {
 }
 
 #video-background {
-/*  making the video fullscreen  */
+ /* making the video fullscreen  */
 position: fixed;
 right: 0; 
 bottom: 0;
@@ -29,18 +29,19 @@ height: auto;
 z-index: -100;
  }
 
-main {
+/* main {
   flex: 1 0 auto;
-}
+} */
 
 .landing-text {
   color: black;
   vertical-align: middle;
   padding-top: 20%;
+  text-align: center
 }
 
-.landing-title {
-  font-size: 100px;
+#landing-title {
+  /* font-size: 100px; */
   text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
 }
 

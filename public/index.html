@@ -12,49 +12,67 @@
 </head>
 
 <body>
-   
+<div class="container-fluid">
     <video autoplay loop id="video-background" muted plays-inline>
-        <iframe src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      </video>
-
-
-<!-- <iframe src="https://player.vimeo.com/video/52302939" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen
+            mozallowfullscreen allowfullscreen></iframe>
+    </video>
+  <!-- <iframe src="https://player.vimeo.com/video/52302939" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/52302939">Cityscape Chicago</a> from <a href="https://vimeo.com/erichinesphotography">Eric Hines</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
 
 
-
-        <video autoplay loop id="video-background" muted plays-inline>
-         <iframe src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </video>
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col s3">
-                <button class="waves-effect waves-light btn modal-trigger openLogin" data-target="login-modal">
-                    <i class="material-icons">account_circle</i>
-                    Login</button>
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper black" id="navigation">
+                <!-- <img src="images/Chi-hood.png" class="hoodie-icon"><a class="headNav">Hoodie</a> -->
+                <ul id="nav-mobile" class="left">
+                    <li>
+                        <a class="modal-trigger openLogin" data-target="login-modal">
+                            <i class="material-icons left">account_circle</i>Login</a>
+                    </li>
+                </ul>
+                <ul id="nav-mobile" class="right">
+                    <li>
+                        <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">About</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col s3 offset-s6">
-                <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
-                    About</a>
-
-            </div>
-        </div>
-
-        <div class="valign-wrapper">
-            <div class="col s12">
-                <main role="main" class="landing-text">
-                    <h1 class="landing-title">Chicago Neighborhood Finder</h1>
-                    <p class="lead">
-
-                        <a href="#modalStart" class="btn btn-lg btn-standard start">Start</a>
-                    </p>
-                </main>
-            </div>
-        </div>
-
+        </nav>
     </div>
+
+
+
+    <!-- Old nav buttons -->
+    <!-- <div class="row">
+        <div class="col s3">
+            <button class="waves-effect waves-light btn modal-trigger openLogin" data-target="login-modal">
+                <i class="material-icons">account_circle</i>
+                Login</button>
+        </div>
+        <div class="col s3 offset-s6">
+            <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">
+                About</a>
+
+        </div>
+    </div> -->
+
+
+    <div class="valign-wrapper">
+        <div class="row">
+        <div class="col s12">
+            <main role="main" class="landing-text">
+                <div>
+                    <h2 class="center-align" id="landing-title">Chicago Neighborhood Finder</h2>
+                </div>
+                <p class="lead">
+                    <a href="#modalStart" class="btn btn-lg btn-standard start">Start</a>
+                </p>
+            </main>
+        </div>
+    </div>
+</div>
+
 
     <!-- Modal pop up -->
 
@@ -71,7 +89,7 @@
                 <i class="material-icons prefix">email</i>
 
                 <input id="email" type="email" class="validate" required="" aria-required="true">
-                <label for="email" data-success="right" data-error="please enter a valid email address" >Email</label>
+                <label for="email" data-success="right" data-error="please enter a valid email address">Email</label>
             </div>
         </div>
         <div class="modal-footer">
@@ -83,7 +101,7 @@
     <!-- Footer -->
     <footer class="page-footer black">
         <!-- <div class="footer-copyright"> -->
-        <div class="container right">
+        <div class="container center">
             <a class="white-text">Created by: </a>
             <a class="white-text" target="_blank" href="https://github.com/ajzdunek">Andrew / </a>
             <a class="white-text" target="_blank" href="https://github.com/haganka">Kelly / </a>
@@ -94,7 +112,7 @@
         <!-- </div> -->
     </footer>
 
-
+</div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
