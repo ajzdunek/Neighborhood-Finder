@@ -13,12 +13,14 @@
 
 <body>
 <div class="container-fluid">
-    <video autoplay loop id="video-background" muted plays-inline>
-        <iframe src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" frameborder="0" webkitallowfullscreen
-            mozallowfullscreen allowfullscreen></iframe>
-    </video>
-  <!-- <iframe src="https://player.vimeo.com/video/52302939" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/52302939">Cityscape Chicago</a> from <a href="https://vimeo.com/erichinesphotography">Eric Hines</a> on <a href="https://vimeo.com">Vimeo</a>.</p> -->
+  
+    
+    <div class="video-container" autoplay loop id="video-background" muted plays-inline>
+        <iframe id="vimeo-player" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" autoplay controls muted frameborder="0" webkitallowfullscreen
+        mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+    
 
 
         <!-- Navbar -->
@@ -97,7 +99,7 @@
             </div>
         </div>
 
-
+    
         <!-- Footer -->
         <footer class="page-footer black">
             <!-- <div class="footer-copyright"> -->
@@ -116,6 +118,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!-- <script src="js/localStorage.js"></script> -->
