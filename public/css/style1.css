@@ -4,12 +4,14 @@
   overflow: hidden;
 } */
 
-body {
+/* body {
   text-align: center;
   background-image: url(../images/map.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
+
+
 
 body {
   display: flex;
