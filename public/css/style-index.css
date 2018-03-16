@@ -59,6 +59,11 @@
   }
 }
 
+#login-modal {
+  height: 30%;
+  border-radius: 10px;
+ }
+
 
 
 
@@ -115,6 +120,12 @@
   .material-tooltip {
     width: 300px;
   }
+
+  #login-modal {
+    min-height: 30%;
+    border-radius: 10px;
+   }
+
 }
 
 
@@ -153,8 +164,12 @@
     z-index: -100;
   }
 
-  /* main {
-    flex: 1 0 auto;
+ #login-modal {
+    height: 30%;
+   }
+
+   /* h4 {
+    font-size: 16px;
   } */
 
   .landing-text {

@@ -19,7 +19,9 @@ $(document).ready(function () {
         var saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
         if(saved === null){
-            $(".modal-close").addClass("hidden")
+            if($(".modal-close").not("hidden")){
+                $(".modal-close").addClass("hidden")
+            }
         }
         $('#modalStart').modal({
             dismissible: false,
@@ -399,12 +401,14 @@ $(document).ready(function () {
                 console.log("match", match);
 
                 $.get("/api/results/" + match, function (data) {
-                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
-                    console.log("email", isLoggedIn);
-                    if(isLoggedIn === null){
-                        $("#saveNeighborhood").addClass("hidden")
-                        $(".results-close").removeClass("modal-close").text("");
-
+                    var saved = JSON.parse(localStorage.getItem("savedhood"));
+                    console.log("email", saved);
+                    if(saved === null){
+                        if($("#saveNeighborhood").not("hidden")){
+                            $("#saveNeighborhood").addClass("hidden")
+                        }if($(".results-close").hasClass("modal-close")){
+                            $(".results-close").removeClass("modal-close").text("");
+                        }
                     }
                     $('#modal1').modal({
                         dismissible: false,
@@ -595,12 +599,16 @@ $(document).ready(function () {
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);
-    
+        if($(".modal-close").not("hidden")){
+            $(".modal-close").addClass("hidden")
+        }
         quizStart();
     });
 
     $(".restart-quiz").on("click", function(){
-        console.log("retake button clicked")
+        if($(".modal-close").not("hidden")){
+            $(".modal-close").addClass("hidden")
+        }
         $('.radio-button').prop('checked', false);
         $('#modal1').modal('close');
         quizStart();
@@ -623,7 +631,9 @@ $(document).ready(function () {
         var email = JSON.parse(localStorage.getItem("savedemail"));
         var hood = JSON.parse(localStorage.getItem("savedhood"));
         $("#savedName").text(hood);
-        $(".loggedIn").removeClass("hidden");
+        if($(".loggedIn").hasClass("hidden")){
+            $(".loggedIn").removeClass("hidden");
+        }
         $("#localEmail").text("Hi, " + email);
     }
 
