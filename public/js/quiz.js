@@ -18,11 +18,11 @@ $(document).ready(function () {
     var quizStart = function () {
         var saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
-        if(saved === null){
-            if($(".modal-close").not("hidden")){
-                $(".modal-close").addClass("hidden")
-            }
-        }
+        // if(saved === null){
+        //     if($(".modal-close").not("hidden")){
+        //         $(".modal-close").addClass("hidden")
+        //     }
+        // }
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -478,13 +478,11 @@ $(document).ready(function () {
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
         userEmail = userEmail.toString();
         var emailInfo = { email: userEmail };
-        var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
-        neighborhood = [];
+        var neighborhood = [];
         var hoodName = $("#neighborhoodName").val();
         var hoodObj = {
             hood: hoodName
         };
-        console.log(hoodObj);
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
         
@@ -493,13 +491,14 @@ $(document).ready(function () {
 
         function updateNeighborhood(hood) {
             console.log("hood", hood);
+            console.log(userEmail);
             $.ajax({
                 method: "PUT",
                 url: "/api/users/" + userEmail,
                 data: hood
             })
             .then(function (data) {
-                console.log(data)
+                console.log("hood data from db", data)
             });
         }
     })
@@ -599,16 +598,10 @@ $(document).ready(function () {
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);
-        if($(".modal-close").not("hidden")){
-            $(".modal-close").addClass("hidden")
-        }
         quizStart();
     });
 
     $(".restart-quiz").on("click", function(){
-        if($(".modal-close").not("hidden")){
-            $(".modal-close").addClass("hidden")
-        }
         $('.radio-button').prop('checked', false);
         $('#modal1').modal('close');
         quizStart();
