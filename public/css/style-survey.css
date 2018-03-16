@@ -1,3 +1,4 @@
+/* Survey page static elements */
 nav {
     background-color: #131313;
     opacity: .7;
@@ -27,18 +28,31 @@ li.active .collection-item.active .collection-item {
     background-color: rgb(121, 9, 9);
 }
 
-.error {
-    color: red;
-    display: block;
-
-}
-
 .hidden {
     visibility: hidden;
 }
 
 .show {
     visibility: visible;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 50px;
+    opacity: .7;
+    background-color: #131313;
+  }
+
+
+/* Question modals */
+
+.error {
+    color: red;
+    display: block;
+
 }
 
 .modal-close {
@@ -60,14 +74,29 @@ li.active .collection-item.active .collection-item {
     background: none;
 }
 
-#modal1 {
-    width: 80%;
-    height: 80%;
+.modalQs {
+    max-height: 50%;
 }
 
-.modalQs {
-    max-height: 60%;
+.q-num {
+    padding-left: 20px;
+    padding-top:20px;
 }
+
+.q, .error, .radioRequired {
+    padding-left: 20px;
+}
+
+.q {
+    font-size: 20px;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+    font-size: 20px;
+}
+
+
+/* Results Modal */
 
 .leftDiv , .middleDiv {
     background-color: #D9CFCA;
@@ -75,7 +104,6 @@ li.active .collection-item.active .collection-item {
     color: #3D4859;
     overflow: auto;
     min-height: 440px;
-
 }
 
 .middleDiv {
@@ -89,12 +117,15 @@ li.active .collection-item.active .collection-item {
     color: #3D4859;
     overflow: auto;
     min-height: 440px;
-
 }
-
 
 #food2 #food3 {
     margin-left: 8%;
+}
+
+#modal1 {
+    width: 80%;
+    height: 80%;
 }
 
 .t-head {
@@ -106,6 +137,11 @@ li.active .collection-item.active .collection-item {
     text-align: center;
 }
 
+.results-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
 
 .map {
     width: 60%;
@@ -113,6 +149,7 @@ li.active .collection-item.active .collection-item {
 
 .description {
     min-height: 75px;
+    font-size: 18px;
 }
 
 .resultLink {
@@ -126,11 +163,19 @@ li.active .collection-item.active .collection-item {
     text-decoration: underline;
 }
 
-
 .resultLink:hover, .resultLink:active, .resultLink:focus {
     color: rgb(114, 128, 150);
     text-decoration: underline;
 }
+
+.imageThumbs  {
+    max-width: 300px;
+    height: auto;
+    max-height: 350px;
+}
+
+
+/* User logged in and saved place landing page */
 
 .loggedIn {
     background-color: #3D4859;
@@ -146,6 +191,7 @@ li.active .collection-item.active .collection-item {
 #savedHood, #retake {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 .welcome {
@@ -164,24 +210,15 @@ li.active .collection-item.active .collection-item {
     text-align: left;
 }
 
-#savedHood, #retake {
-    margin-top: 15px;
-}
-
 #or {
     margin-top: 50px;
-}
-
-.results-close {
-    position: absolute;
-    top: 10px;
-    right: 0;
 }
 
 .restart-quiz {
     position: absolute;
     bottom: 20px;
     right: 10px;
+    font-size: 20px;
 }
 
 .home {
@@ -192,21 +229,6 @@ li.active .collection-item.active .collection-item {
     font-size: 12px;
 }
 
-.imageThumbs  {
-    max-width: 300px;
-    height: auto;
-    max-height: 350px;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-bottom: 50px;
-    opacity: .7;
-    background-color: #131313;
-  }
 
 /* Extra small devices (phones, less than 768px) */
 @media screen and (max-width: 768px) {
