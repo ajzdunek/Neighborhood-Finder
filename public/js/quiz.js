@@ -8,15 +8,17 @@
 * @param {string}
 */
 
-
-
 $(document).ready(function () {
     $('.modal').modal();
-    console.log("this is loading");
 
+    /** On click
+     * @param {method} emailAddress - takes in variable that holds email address user inputed
+     * @return {function} saveEmailInfo - runs function to save email in local storage
+     */
     var quizStart = function () {
-        var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
-        if(isLoggedIn === null){
+        var saved = JSON.parse(localStorage.getItem("savedhood"));
+        console.log(saved);
+        if(saved === null){
             $(".modal-close").addClass("hidden")
         }
         $('#modalStart').modal({
@@ -334,15 +336,6 @@ $(document).ready(function () {
             }
         });
 
-        // var getTotal = function(scores){
-        //     var scoreNums = scores.map(function (i) {
-        //         return parseInt(i, 10);
-        //     });
-        //     var userTotal = scoreNums.reduce((a, b) => a + b)
-        //     return userTotal;
-
-        // }
-
         $("#q15btn").on("click", function (e) {
             e.preventDefault();
             if ($("#saveNeighborhood").hasClass("hidden")) {
@@ -543,8 +536,8 @@ $(document).ready(function () {
                 // $('body').css('background', "url(.." + data.data.nameData.Image + ")no-repeat center center-fixed");
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
-                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img src='" + data.data.detailData[2].Image + "'>" + "</div>");
-                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img src='" + data.data.detailData[0].Image + "'>" + "</div>");
+                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>");
+                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>");
                 $("#transit").attr('src', data.data.nameData.Walkscore_transit);
                 $("#walk").attr('src', data.data.nameData.Walkscore_walk);
                 $("#bike").attr('src', data.data.nameData.Walkscore_bike);
@@ -586,11 +579,9 @@ $(document).ready(function () {
         savedHood = [];
     }
 
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
+    /** Saves email in local storage and replaces if one already exists
+     * @return {function} checkEmail - after saving, runs check email to validate
      */
-    // function saveRestaurant(event) {
     
     function saveEmailInfo() {
         emailInfo = [];
@@ -599,27 +590,8 @@ $(document).ready(function () {
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         console.log("saved", emailInfo);
         checkEmail();
-
     }
 
-    /** Saves restaurants and corresponding links in local storage 
-     * @param {method} event - Prevents page from reloading
-     * @return {function} putOnPage - runs putOnPage function
-     */
-    // function saveRestaurant(event) {
-    
-    function saveHoodName(hood) {
-        savedHood = [];
-        savedHood.push(hood);
-        localStorage.setItem("savedhood", JSON.stringify(savedHood));
-        console.log("saved hood", savedHood);
-
-        return savedHood;
-    }
-
-
-    // $(document).on("click", "#retake", function () {
-    // $("#submitStart").on("click", saveEmailInfo);
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);

@@ -1,17 +1,21 @@
+/* Survey page static elements */
 nav {
-    background-color: #D9CFCA;
+    background-color: #131313;
     opacity: .7;
 }
 body {
     background: linear-gradient(rgba(54, 54, 54, 0.45), rgba(54, 54, 54, 0.45)),url("../images/bike.jpg") no-repeat;
     background-color: rgb(51, 51, 51, 0.5);
     color: #3D4859;
+    overflow: hidden;
 }
 
 .headNav {
     margin-left: 20px;
-    color: #3d4859;
+    color: #b6c2d3;
     font-size: 40px;
+    position: relative;
+    top: -10px;
 }
 
 .hoodie-icon {
@@ -19,18 +23,9 @@ body {
     margin-left: 30px;
 }
 
-.modal {
-    z-index: 10;
-}
 
 li.active .collection-item.active .collection-item {
     background-color: rgb(121, 9, 9);
-}
-
-.error {
-    color: red;
-    display: block;
-
 }
 
 .hidden {
@@ -39,6 +34,25 @@ li.active .collection-item.active .collection-item {
 
 .show {
     visibility: visible;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 50px;
+    opacity: .7;
+    background-color: #131313;
+  }
+
+
+/* Question modals */
+
+.error {
+    color: red;
+    display: block;
+
 }
 
 .modal-close {
@@ -52,20 +66,42 @@ li.active .collection-item.active .collection-item {
     max-height: 90%;
     opacity: .8;
     background-color: rgb(217, 207, 202, .8);
+    z-index: 10;
+    border-radius: 10px;
 }
 
 .modal-overlay {
     background: none;
 }
 
-#modal1 {
-    width: 80%;
-    height: 80%;
+.modalQs {
+    max-height: 50%;
 }
 
-.modalQs {
-    max-height: 60%;
+.q-num {
+    padding-left: 20px;
+    padding-top:20px;
 }
+
+.q, .error, .radioRequired {
+    padding-left: 20px;
+}
+
+.q {
+    font-size: 20px;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+    font-size: 20px;
+    color: rgb(26, 26, 26);
+}
+
+#homebtn, .question {
+    font-size: 16px;
+}
+
+
+/* Results Modal */
 
 .leftDiv , .middleDiv {
     background-color: #D9CFCA;
@@ -73,7 +109,6 @@ li.active .collection-item.active .collection-item {
     color: #3D4859;
     overflow: auto;
     min-height: 440px;
-
 }
 
 .middleDiv {
@@ -87,12 +122,15 @@ li.active .collection-item.active .collection-item {
     color: #3D4859;
     overflow: auto;
     min-height: 440px;
-
 }
-
 
 #food2 #food3 {
     margin-left: 8%;
+}
+
+#modal1 {
+    width: 80%;
+    height: 80%;
 }
 
 .t-head {
@@ -104,13 +142,19 @@ li.active .collection-item.active .collection-item {
     text-align: center;
 }
 
+.results-close {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
 
 .map {
-    max-width: 60%;
+    width: 60%;
 }
 
 .description {
     min-height: 75px;
+    font-size: 18px;
 }
 
 .resultLink {
@@ -120,15 +164,23 @@ li.active .collection-item.active .collection-item {
 }
 
 .resultLink:hover {
-color: rgb(114, 128, 150);
-text-decoration: underline;
+    color: rgb(114, 128, 150);
+    text-decoration: underline;
 }
-
 
 .resultLink:hover, .resultLink:active, .resultLink:focus {
     color: rgb(114, 128, 150);
     text-decoration: underline;
 }
+
+.imageThumbs  {
+    max-width: 300px;
+    height: auto;
+    max-height: 350px;
+}
+
+
+/* User logged in and saved place landing page */
 
 .loggedIn {
     background-color: #3D4859;
@@ -137,12 +189,14 @@ text-decoration: underline;
     text-align: center;
     padding: 20px;
     margin-top: 50px;
+    border-radius: 10px;
 }
 
 
 #savedHood, #retake {
     font-size: 20px;
     font-weight: bold;
+    margin-top: 15px;
 }
 
 .welcome {
@@ -161,24 +215,15 @@ text-decoration: underline;
     text-align: left;
 }
 
-#savedHood, #retake {
-    margin-top: 15px;
-}
-
 #or {
     margin-top: 50px;
-}
-
-.results-close {
-    position: absolute;
-    top: 10px;
-    right: 0;
 }
 
 .restart-quiz {
     position: absolute;
     bottom: 20px;
     right: 10px;
+    font-size: 20px;
 }
 
 .home {
@@ -189,8 +234,65 @@ text-decoration: underline;
     font-size: 12px;
 }
 
-img  {
-    max-width: 300px;
-    height: auto;
-    max-height: 350px;
+
+/* Extra small devices (phones, less than 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+    #modal1 {
+        width: 100%;
+    }
+    neighborhoodName {
+        font-size: 40px;
+        /* text-align: center; */
+    }
+    .tabs {
+        width: 100%;
+    }
+    .modalQs {
+        max-height: 90%;
+    }
+    .map {
+        width: 100%;
+    }
+
+    .loggedIn {
+        height: 100%;
+    }
+
+    #savedHood, #retake {
+        text-align: center;
+    }
+
+    #localEmail {
+        font-size: 25px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    nav {
+        height: 70px;
+    }
+    .headNav {
+        text-align: center;
+    }
+    
+    .restart-quiz {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    .map {
+        width: 100%;
+    }
+
+    .loggedIn {
+        height: 100%;
+    }
+
 }
