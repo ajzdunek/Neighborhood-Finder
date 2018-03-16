@@ -93,6 +93,11 @@ footer {
 
 [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
     font-size: 20px;
+    color: rgb(26, 26, 26);
+}
+
+#homebtn, .question {
+    font-size: 16px;
 }
 
 
@@ -273,6 +278,10 @@ footer {
     }
     .headNav {
         text-align: center;
+    }
+    
+    .restart-quiz {
+        font-size: 16px;
     }
 }
 
