@@ -1,5 +1,5 @@
 nav {
-    background-color: #D9CFCA;
+    background-color: #131313;
     opacity: .7;
 }
 body {
@@ -11,7 +11,7 @@ body {
 
 .headNav {
     margin-left: 20px;
-    color: #3d4859;
+    color: #b6c2d3;
     font-size: 40px;
 }
 
@@ -195,6 +195,16 @@ li.active .collection-item.active .collection-item {
     height: auto;
     max-height: 350px;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 50px;
+    opacity: .7;
+    background-color: #131313;
+  }
 
 /* Extra small devices (phones, less than 768px) */
 @media screen and (max-width: 768px) {
