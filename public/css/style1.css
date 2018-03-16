@@ -7,9 +7,15 @@ body {
   background-size: cover;
 }
 
+
+
 nav {
   height: 75px;
   background-color: #131313
+}
+
+#login-modal {
+  height: 30%;
 }
 
 #video-background {
@@ -46,4 +52,12 @@ footer {
 
 .material-tooltip {
   width: 300px;
+}
+
+.main-text-box {
+  background-color: rgb(187, 187, 187, .5);
+}
+
+.start {
+  background-color: #D5586E;
 }

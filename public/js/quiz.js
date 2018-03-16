@@ -16,8 +16,9 @@ $(document).ready(function () {
      * @return {function} saveEmailInfo - runs function to save email in local storage
      */
     var quizStart = function () {
-        var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
-        if(isLoggedIn === null){
+        var saved = JSON.parse(localStorage.getItem("savedhood"));
+        console.log(saved);
+        if(saved === null){
             $(".modal-close").addClass("hidden")
         }
         $('#modalStart').modal({
