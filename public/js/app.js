@@ -30,9 +30,9 @@ $(document).ready(function () {
         var newUser = $("#email").val().trim();
         console.log("User's email is ", newUser);
         $.get("/api/users/" + newUser, function (data) {
-            $("#email").val("");
             if (data.length > 0 && data[0].Saved !== null) {
                 var match = data[0].Saved;
+                console.log("match", data[0].Saved);
                 saveHoodName(match);
                 window.location.href = "/survey.html#loadSaved";
             } else if (data.length > 0) {
@@ -43,7 +43,8 @@ $(document).ready(function () {
                     window.location.href = "/survey.html#quizStart";
                 });
             }
-        })  
+        }) 
+        $("#email").val(""); 
     };
 
 
@@ -90,7 +91,6 @@ $(document).ready(function () {
     function isValidEmailAddress(emailAddress) {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         return pattern.test(emailAddress);
-        saveEmailInfo();
     }
 
     /** On click of submit email runs
@@ -99,13 +99,12 @@ $(document).ready(function () {
      */
     $("#submitStart").on("click", function(){
         var email = $("#email").val();
-            if(isValidEmailAddress(email)){
+            if(isValidEmailAddress(email) === true){
                 if(!$("#submitStart").hasClass('modal-close')){
                 $('#submitStart').addClass('modal-close')
                     }
                 saveEmailInfo();
             }else{
-                console.log("error");
                 $("#submitStart").removeClass('modal-close')
             }
     })

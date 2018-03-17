@@ -6,23 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Neighborhood Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="css/button.scss" /> -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/style-survey.css" />
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+
 </head>
 
 <body>
     <nav>
-        <div class="nav-wrapper" id="navigation">
-            <img src="images/Chi-hood.png" class="hoodie-icon"><a class="headNav">Hoodie</a>
-            <ul id="nav-mobile" class="right ">
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center head-nav">Hoodie</a>
+            <ul id="nav-mobile" class="left">
+                <li>
+                    <a id="logout" href="index.html">Logout
+                        <i class="material-icons left">account_circle</i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="nav-mobile" class="right">
                 <li>
                     <a href="index.html">Quiz Home</a>
-                </li>
-                <li>
-                    <a id="logout" href="index.html">Logout</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +50,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group1" type="radio" id="q1-2" value="10" />
-                        <label class="res" for="q1-2">I dont mind living a bit farther out.</label>
+                        <label class="res" for="q1-2">I don't mind living a bit further out.</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group1" type="radio" id="q1-3" value="15" />
@@ -60,11 +66,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 6%"></div>
-            </div>
+            <div class="determinate" style="width: 6%"></div>
+        </div>
         <div class="modal-footer">
             <button class="waves-effect waves-green btn-flat question" href="#modalQ2" id="q1btn">Next</button>
             <button class="btn-flat home" href="index.html" id="homebtn">Quiz Home</button>
@@ -93,7 +99,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group2" type="radio" id="q2-4" value="20" />
-                        <label for="q2-4">I'm willing to pay more for loccation and amenitities.</label>
+                        <label for="q2-4">I'm willing to pay more for location and amenities.</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group2" type="radio" id="q2-5" value="25" />
@@ -101,11 +107,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 12%"></div>
-            </div>
+            <div class="determinate" style="width: 12%"></div>
+        </div>
         <div class="modal-footer">
             <button class="waves-effect waves-green btn-flat question" id="q2btn">Next</button>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -115,7 +121,7 @@
     <div id="modalQ3" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 3</h4>
-            <p class='q'>How important is a neighborhoods ethnic diverisity to you?</p>
+            <p class='q'>How important is a neighborhood's ethnic diversity to you?</p>
             <p class="error hidden" id="error3">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -137,15 +143,15 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group3" type="radio" id="q3-5" value="25" />
-                        <label for="q3-5">Whats Diversity???</label>
+                        <label for="q3-5">Whats diversity???</label>
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 18%"></div>
-            </div>
+            <div class="determinate" style="width: 18%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q3btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -156,7 +162,7 @@
     <div id="modalQ4" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 4</h4>
-            <p class='q'>How much imporatnce do you put on a neighborhoods art scene.</p>
+            <p class='q'>How much importance do you put on a neighborhood's art scene?</p>
             <p class="error hidden" id="error4">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -166,7 +172,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group4" type="radio" id="q4-2" value="10" />
-                        <label for="q4-2">It would be nice to be in a artistic community?</label>
+                        <label for="q4-2">It would be nice to be in an artistic community?</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group4" type="radio" id="q4-3" value="15" />
@@ -174,7 +180,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group4" type="radio" id="q4-4" value="20" />
-                        <label for="q4-4">Not Important</label>
+                        <label for="q4-4">Not important to me.</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group4" type="radio" id="q4-5" value="25" />
@@ -182,11 +188,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 24%"></div>
-            </div>
+            <div class="determinate" style="width: 24%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q4btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -222,11 +228,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 30%"></div>
-            </div>
+            <div class="determinate" style="width: 30%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q5btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -236,7 +242,7 @@
     <div id="modalQ6" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 6</h4>
-            <p class='q'>Whats Your Go to takeout cusisine?</p>
+            <p class='q'>Whats your go-to takeout cuisine?</p>
             <p class="error hidden" id="error6">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -262,11 +268,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 36%"></div>
-            </div>
+            <div class="determinate" style="width: 36%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q6btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -282,7 +288,7 @@
                 <div class="radioRequired">
                     <p>
                         <input class="radio-button" name="group7" type="radio" id="q7-1" value="5" />
-                        <label for="q7-1">Spend time with friend and family.</label>
+                        <label for="q7-1">Spend time with friends and family.</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group7" type="radio" id="q7-2" value="10" />
@@ -294,7 +300,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group7" type="radio" id="q7-4" value="20" />
-                        <label for="q7-4">Go to a Bar.</label>
+                        <label for="q7-4">Go to a bar.</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group7" type="radio" id="q7-5" value="25" />
@@ -302,11 +308,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 42%"></div>
-            </div>
+            <div class="determinate" style="width: 42%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q7btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -316,7 +322,7 @@
     <div id="modalQ8" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 8</h4>
-            <p class='q'>Whats your ideal date activity look like?</p>
+            <p class='q'>What is your ideal date activity?</p>
             <p class="error hidden" id="error8">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -338,15 +344,15 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group8" type="radio" id="q8-5" value="25" />
-                        <label for="q8-5">Cocktails and Dinner.</label>
+                        <label for="q8-5">Cocktails and dinner.</label>
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 48%"></div>
-            </div>
+            <div class="determinate" style="width: 48%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q8btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -356,7 +362,7 @@
     <div id="modalQ9" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 9</h4>
-            <p class='q'>What Kind of Beer are You?</p>
+            <p class='q'>What kind of beer are you?</p>
             <p class="error hidden" id="error9">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -366,7 +372,7 @@
                     </p>
                     <p>
                         <input class="radio-button" name="group9" type="radio" id="q9-2" value="10" />
-                        <label for="q9-2">Laguinitas</label>
+                        <label for="q9-2">Lagunitas</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group9" type="radio" id="q9-3" value="15" />
@@ -382,11 +388,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 54%"></div>
-            </div>
+            <div class="determinate" style="width: 54%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q9btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -402,7 +408,7 @@
                 <div class="radioRequired">
                     <p>
                         <input class="radio-button" name="group10" type="radio" id="q10-1" value="5" />
-                        <label for="q10-1">Full Beard</label>
+                        <label for="q10-1">Full beard</label>
                     </p>
                     <p>
                         <input class="radio-button" name="group10" type="radio" id="q10-2" value="10" />
@@ -422,11 +428,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 60%"></div>
-            </div>
+            <div class="determinate" style="width: 60%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q10btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -462,11 +468,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 66%"></div>
-            </div>
+            <div class="determinate" style="width: 66%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q11btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -502,11 +508,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 72%"></div>
-            </div>
+            <div class="determinate" style="width: 72%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q12btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -542,11 +548,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 78%"></div>
-            </div>
+            <div class="determinate" style="width: 78%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q13btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -556,7 +562,7 @@
     <div id="modalQ14" class="modal modal-fixed-footer modalQs">
         <div class="modal-content">
             <h4 class='q-num'>Question 14</h4>
-            <p class='q'>What's your favorite place to get dessert.</p>
+            <p class='q'>What's your favorite place to get dessert?</p>
             <p class="error hidden" id="error14">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -582,11 +588,11 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
-                <div class="determinate" style="width: 84%"></div>
-            </div>
+            <div class="determinate" style="width: 84%"></div>
+        </div>
         <div class="modal-footer">
             <a href="#!" class="waves-effect waves-green btn-flat question" id="q14btn">Next</a>
             <button class="btn-flat home" href="index.html">Quiz Home</button>
@@ -596,7 +602,7 @@
     <div id="modalQ15" class="modal modal-fixed-footer modalQs">
         <div class="modal-content" id="modals">
             <h4 class='q-num'>Question 15</h4>
-            <p class='q'>What's your preferred form of transporation?</p>
+            <p class='q'>What's your preferred form of transportation?</p>
             <p class="error hidden" id="error15">Please select a response</p>
             <form action="#">
                 <div class="radioRequired">
@@ -622,7 +628,7 @@
                     </p>
                 </div>
             </form>
-            <button class="modal-close btn-flat">X</button>
+            <!-- <button class="modal-close btn-flat">X</button> -->
         </div>
         <div class="progress">
             <div class="determinate" style="width: 90%"></div>
@@ -638,13 +644,15 @@
             <!-- Insert naighborhood name -->
             <h1 id="neighborhoodName"></h1>
             <!-- Save neighborhood button -->
-            <a class="btn-floating btn-large waves-effect waves-light red" id="saveNeighborhood"><i class="material-icons">add</i></a>
+            <a class="btn-floating btn-large waves-effect waves-light teal lighten-1 tooltipped" id="saveNeighborhood" data-position="bottom" data-delay="50" data-tooltip="Make this My Saved Hood">
+                <i class="material-icons">add</i>
+            </a>
             <p class="description"></p>
 
             <!-- Tabbed information -->
             <ul id="tabs-swipe-demo" class="tabs">
                 <li class="tab col s3 t-head">
-                    <a id="mapbtn" class="active"href="#tab1">Map</a>
+                    <a id="mapbtn" class="active" href="#tab1">Map</a>
                 </li>
                 <li class="tab col s3 t-head">
                     <a id="walkbtn" href="#tab2">Walk Score</a>
@@ -656,51 +664,61 @@
                     <a id="funbtn" href="#tab4">Fun</a>
                 </li>
             </ul>
-            <div id="tab1" class="col s12">
-                <div class="mapTab">
-                    <div class="row mapAppend"></div>
+            <div class="div-tabs">
+                <div id="tab1" class="col s12">
+                    <div class="mapTab">
+                        <div class="row mapAppend"></div>
+                    </div>
                 </div>
-            </div>
-            <div id="tab2" class="col s12">
-                <div class="walkScoreTab">
-                    <div class="row walkAppend">
-                        <div class='col s12' id='walk-stuff'>
-                            <img id ="transit" alt="transit score image">
-                            <img id="walk" alt="walk score image">
-                            <img id="bike" alt="bike score image">
+                <div id="tab2" class="col s12">
+                    <div class="walkScoreTab">
+                        <div class="row walkAppend">
+                            <div class='col s12' id='walk-stuff'>
+                                <img id="transit" alt="transit score image">
+                                <img id="walk" alt="walk score image">
+                                <img id="bike" alt="bike score image">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="tab3" class="col s12">
-                <div class="foodTab">
-                    <div class="row foodAppend"></div>
+                <div id="tab3" class="col s12">
+                    <div class="foodTab">
+                        <div class="row foodAppend"></div>
+                    </div>
                 </div>
-            </div>
-            <div id="tab4" class="col s12">
-                <div class="funTab">
-                    <div class="row funAppend"></div>
+                <div id="tab4" class="col s12">
+                    <div class="funTab">
+                        <div class="row funAppend"></div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class='retake'>
-        <button class="modal-close btn-flat results-close">X</button>
-        <button class='takeQuiz restart-quiz'>Take Quiz Again</button>
-        <button class="btn-flat home" href="index.html">Quiz Home</button>
-    </div>
+            <button class="modal-close btn-flat results-close">X</button>
+            <button class='takeQuiz restart-quiz'>Take Quiz Again</button>
+            <button class="home" href="index.html">Quiz Home</button>
+        </div>
     </div>
 
     <div class="container loggedIn hidden">
         <div class="row">
-            <div class="col s12"><h3 id="localEmail"></h3></div>
+            <div class="col s12">
+                <h3 id="localEmail"></h3>
+            </div>
         </div>
         <div class="row">
-            <div class="col s12 welcome"><h5>Welcome back!</h5></div>
-        <div class="row">
-            <div class="col s5"><button id="savedHood">View my Saved Hood</button><p id="savedName"></p></div>
-            <div class="col s2"><p id="or">OR</p></div>
-            <div class="col s5"><button id="retake">Take the Quiz again</button></div>
-        </div>
+            <div class="col s12 welcome">
+                <h5>Welcome back!</h5>
+            </div>
+            <div class="row">
+                <div class="col s6">
+                    <button class='btn' id="savedHood">View my Saved Hood</button>
+                    <p id="savedName"></p>
+                </div>
+                <div class="col s6">
+                    <button class='btn' id="retake">Take the Quiz again</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -717,8 +735,8 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        <script src="js/quiz.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/quiz.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
 
 

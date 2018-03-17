@@ -18,9 +18,6 @@ $(document).ready(function () {
     var quizStart = function () {
         var saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
-        if(saved === null){
-            $(".modal-close").addClass("hidden")
-        }
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -399,12 +396,14 @@ $(document).ready(function () {
                 console.log("match", match);
 
                 $.get("/api/results/" + match, function (data) {
-                    var isLoggedIn = JSON.parse(localStorage.getItem("savedemail"));
-                    console.log("email", isLoggedIn);
-                    if(isLoggedIn === null){
-                        $("#saveNeighborhood").addClass("hidden")
-                        $(".results-close").removeClass("modal-close").text("");
-
+                    var saved = JSON.parse(localStorage.getItem("savedhood"));
+                    console.log("email", saved);
+                    if(saved === null){
+                        if($("#saveNeighborhood").not("hidden")){
+                            $("#saveNeighborhood").addClass("hidden")
+                        }if($(".results-close").hasClass("modal-close")){
+                            $(".results-close").removeClass("modal-close").text("");
+                        }
                     }
                     $('#modal1').modal({
                         dismissible: false,
@@ -419,11 +418,11 @@ $(document).ready(function () {
                     $("#neighborhoodName").text(data.data.nameData.Name);
                     $("#neighborhoodName").val(data.data.nameData.Name);
                     $(".description").text(data.data.nameData.Description);
-                    $('body').css('background', "url(.." + data.data.nameData.Image + ")");
+                    $('body').css({'background': "url(.." + data.data.nameData.Image + ")", 'background-position': 'center top', 'background-size': '100% auto'});
 
                     $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
-                    $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>");
-                    $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img class='img-responsive imageThumbs' src='" + data.data.detailData[5].Image + "'>" + "</div>");
+                    $(".foodAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>" + "</div>");
+                    $(".funAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[3].Image + "'>" + "</div>" + "</div>" +  "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[4].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>");
                     $("#transit").attr('src', data.data.nameData.Walkscore_transit);
                     $("#walk").attr('src', data.data.nameData.Walkscore_walk);
                     $("#bike").attr('src', data.data.nameData.Walkscore_bike);
@@ -450,7 +449,6 @@ $(document).ready(function () {
 
                 });
             }
-            // Clear the question values on submit
             $('.radio-button').prop('checked', false);
             
         });
@@ -474,13 +472,11 @@ $(document).ready(function () {
         var userEmail = JSON.parse(localStorage.getItem("savedemail"));
         userEmail = userEmail.toString();
         var emailInfo = { email: userEmail };
-        var neighborhood = JSON.parse(localStorage.getItem("savedhood"));
-        neighborhood = [];
+        var neighborhood = [];
         var hoodName = $("#neighborhoodName").val();
         var hoodObj = {
             hood: hoodName
         };
-        console.log(hoodObj);
         neighborhood.push(hoodName);
         localStorage.setItem("savedhood", JSON.stringify(neighborhood));
         
@@ -489,13 +485,14 @@ $(document).ready(function () {
 
         function updateNeighborhood(hood) {
             console.log("hood", hood);
+            console.log(userEmail);
             $.ajax({
                 method: "PUT",
                 url: "/api/users/" + userEmail,
                 data: hood
             })
             .then(function (data) {
-                console.log(data)
+                console.log("hood data from db", data)
             });
         }
     })
@@ -532,12 +529,12 @@ $(document).ready(function () {
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $("#neighborhoodName").val(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
-                $('body').css('background', "url(.." + data.data.nameData.Image + ")");
+                $('body').css({'background': "url(.." + data.data.nameData.Image + ")", 'background-position': 'center top', 'background-size': '100% auto'});
                 // $('body').css('background', "url(.." + data.data.nameData.Image + ")no-repeat center center-fixed");
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
-                $(".foodAppend").html("<div class='leftDiv col s12 l4' id='food1'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4' id='food2'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4' id='food3'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>");
-                $(".funAppend").html("<div class='leftDiv col s12 l4'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[3].Image + "'>" + "</div>" + "<div class='middleDiv col s12 l4'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[4].Image + "'>" + "</div>" + "<div class='rightDiv col s12 l4'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>");
+                $(".foodAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>" + "</div>");
+                $(".funAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link4'>" + data.data.detailData[3].Name + "</a>" + "<p>" + data.data.detailData[3].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[3].Image + "'>" + "</div>" + "</div>" +  "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link5'>" + data.data.detailData[4].Name + "</a>" + "<p>" + data.data.detailData[4].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[4].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link6'>" + data.data.detailData[5].Name + "</a>" + "<p>" + data.data.detailData[5].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>");
                 $("#transit").attr('src', data.data.nameData.Walkscore_transit);
                 $("#walk").attr('src', data.data.nameData.Walkscore_walk);
                 $("#bike").attr('src', data.data.nameData.Walkscore_bike);
@@ -595,12 +592,10 @@ $(document).ready(function () {
 
     $("#retake").on("click", function () {
         $('.radio-button').prop('checked', false);
-    
         quizStart();
     });
 
     $(".restart-quiz").on("click", function(){
-        console.log("retake button clicked")
         $('.radio-button').prop('checked', false);
         $('#modal1').modal('close');
         quizStart();
@@ -623,7 +618,9 @@ $(document).ready(function () {
         var email = JSON.parse(localStorage.getItem("savedemail"));
         var hood = JSON.parse(localStorage.getItem("savedhood"));
         $("#savedName").text(hood);
-        $(".loggedIn").removeClass("hidden");
+        if($(".loggedIn").hasClass("hidden")){
+            $(".loggedIn").removeClass("hidden");
+        }
         $("#localEmail").text("Hi, " + email);
     }
 

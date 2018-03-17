@@ -8,23 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/style-index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chicago Neighborhood Finder</title>
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+    <title>Hoodie</title>
 </head>
 
 <body>
-<div class="container-fluid">
-  
-    
-    <div class="video-container hide-on-med-and-down" autoplay loop id="video-background" muted plays-inline>
-        <iframe id="vimeo-player" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" autoplay controls muted frameborder="0" webkitallowfullscreen
-        mozallowfullscreen allowfullscreen></iframe>
-    </div>
+    <div class="container-fluid">
 
-    
+        <div class="video-container hide-on-med-and-down" autoplay loop id="video-background" muted plays-inline>
+            <iframe id="vimeo-player" src="https://player.vimeo.com/video/52302939?autoplay=1&loop=1" width="640" height="360" autoplay
+                controls muted frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+
         <!-- Navbar -->
-        <div class="navbar-fixed">
+        <!-- <div class="navbar-fixed"> -->
             <nav>
-                <div class="nav-wrapper black" id="navigation">
+                <div class="nav-wrapper" id="navigation">
                     <ul id="nav-mobile" class="left">
                         <li>
                             <a class="modal-trigger openLogin" data-target="login-modal">
@@ -33,19 +34,19 @@
                     </ul>
                     <ul id="nav-mobile" class="right">
                         <li>
-                            <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">About</a>
+                            <a class="tooltipped about" data-position="bottom" data-delay="50" data-tooltip="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.">About</a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </div>
+        <!-- </div> -->
         <div class="valign-wrapper">
             <div class="row">
                 <div class="col s12">
                     <main role="main" class="landing-text">
-                        <div class="main-text-box">
-                            <h2 class="center-align" id="landing-title">Chicago Neighborhood Finder</h2>
-                        </div>
+                        <!-- <div class="main-text-box"> -->
+                            <h2 class="center-align" id="landing-title">Hoodie</h2>
+                        <!-- </div> -->
                         <p class="lead">
                             <a href="#modalStart" class="btn btn-lg btn-standard start">Start</a>
                         </p>
@@ -55,24 +56,25 @@
         </div>
 
 
-        <div id="login-modal" class="modal">
+        <div id="login-modal" class="modal login">
             <div class="modal-content">
                 <h4>Log in with your email address</h4>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="material-icons prefix">email</i>
 
-                    <input id="email" type="email" class="validate" required="" aria-required="true">
-                    <label for="email" data-error="please enter a valid email address">Email</label>
-                </div>
-                <div class="modal-footer">
-                    <a class=" modal-action modal-close waves-effect waves-green btn-flat" id="submitStart">Submit + Start</a>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+
+                        <input id="email" type="email" class="validate" required="" aria-required="true">
+                        <label for="email" data-error="please enter a valid email address">Email</label>
+                    </div>
+                    <div class="modal-footer">
+                        <a class=" modal-action modal-close waves-effect waves-green btn-flat" id="submitStart">Submit + Start</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-    
+
         <!-- Footer -->
         <footer class="page-footer black">
             <div class="container center">
@@ -87,7 +89,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
