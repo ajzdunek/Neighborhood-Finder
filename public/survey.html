@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style-survey.css" />
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 
 </head>
 
@@ -643,7 +644,7 @@
             <!-- Insert naighborhood name -->
             <h1 id="neighborhoodName"></h1>
             <!-- Save neighborhood button -->
-            <a class="btn-floating btn-large waves-effect waves-light teal lighten-1" id="saveNeighborhood">
+            <a class="btn-floating btn-large waves-effect waves-light teal lighten-1 tooltipped" id="saveNeighborhood" data-position="bottom" data-delay="50" data-tooltip="Make this My Saved Hood">
                 <i class="material-icons">add</i>
             </a>
             <p class="description"></p>
@@ -711,14 +712,14 @@
             </div>
             <div class="row">
                 <div class="col s5">
-                    <button id="savedHood">View my Saved Hood</button>
+                    <button class='btn' id="savedHood">View my Saved Hood</button>
                     <p id="savedName"></p>
                 </div>
                 <div class="col s2">
                     <p id="or">OR</p>
                 </div>
                 <div class="col s5">
-                    <button id="retake">Take the Quiz again</button>
+                    <button class='btn' id="retake">Take the Quiz again</button>
                 </div>
             </div>
         </div>

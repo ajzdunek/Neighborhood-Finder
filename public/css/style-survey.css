@@ -8,6 +8,7 @@ body {
     background-color: rgb(51, 51, 51, 0.5);
     color: rgb(55, 55, 55);
     overflow: hidden;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .head-nav {
@@ -106,7 +107,8 @@ footer {
 /* Results Modal */
 
 
-.div-content{
+
+.div-content {
     background-color: rgba(255, 255, 255, 0.664);
     border: 1px solid #26a69a;
     color: rgb(55, 55, 55);
@@ -114,19 +116,16 @@ footer {
     min-height: 440px;
     border-radius: 10px;
     text-align: center;
+    margin: 10px;
 }
+
+
 
 .div-tabs {
     background-color: rgba(255, 255, 255, 0.571);
 }
 
-.div-content {
-    margin: 10px;
-}
 
-/* #food2 #food3 {
-    margin-left: 8%;
-} */
 
 #modal1 {
     width: 80%;
@@ -204,8 +203,8 @@ img.responsive-img {
 /* User logged in and saved place landing page */
 
 .loggedIn {
-    background-color: #3D4859;
-    color: #D9CFCA;
+    background-color: #26a69a;
+    color: rgb(255, 255, 255);
     height: 300px;
     text-align: center;
     padding: 20px;
@@ -218,6 +217,10 @@ img.responsive-img {
     font-size: 20px;
     font-weight: bold;
     margin-top: 15px;
+    background: white;
+    color:  #26a69a;
+    border: 2px solid white;
+    border-radius: 5px;
 }
 
 .welcome {
@@ -230,6 +233,12 @@ img.responsive-img {
 
 #savedHood {
     text-align: right;
+
+}
+
+#savedHood:hover, #savedHood:focus #retake:hover, #retake:focus {
+    background: #c4e3e0;
+    color:  white;
 }
 
 #retake {
