@@ -10,12 +10,12 @@ body {
     overflow: hidden;
 }
 
-.headNav {
-    margin-left: 20px;
-    color: #b6c2d3;
+.head-nav {
+    font-family: 'Monoton', cursive;
+    color: #d8d8d8;
     font-size: 40px;
     position: relative;
-    top: -10px;
+    top: 5px;
 }
 
 .hoodie-icon {
@@ -105,34 +105,33 @@ footer {
 
 /* Results Modal */
 
-.leftDiv , .middleDiv {
-    background-color: #D9CFCA;
-    border: 1px solid #A79793;
-    color: #3D4859;
+
+.div-content{
+    background-color: rgba(255, 255, 255, 0.664);
+    border: 1px solid #26a69a;
+    color: rgb(55, 55, 55);
     overflow: auto;
     min-height: 440px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.middleDiv {
+.div-tabs {
+    background-color: rgba(255, 255, 255, 0.571);
+}
+
+.div-content {
+    margin: 10px;
+}
+
+/* #food2 #food3 {
     margin-left: 8%;
-}
-
-
-.rightDiv {
-    background-color: #D9CFCA;
-    border: 1px solid #A79793;
-    color: #3D4859;
-    overflow: auto;
-    min-height: 440px;
-}
-
-#food2 #food3 {
-    margin-left: 8%;
-}
+} */
 
 #modal1 {
     width: 80%;
     height: 80%;
+    background-color: #c4e3e0;
 }
 
 .t-head {
@@ -175,8 +174,12 @@ footer {
     text-decoration: underline;
 }
 
+img.responsive-img {
+    max-width: 90%;
+}
+
 .imageThumbs  {
-    max-width: 300px;
+    max-width: 275px;
     height: auto;
     max-height: 350px;
 }
@@ -280,7 +283,7 @@ footer {
     nav {
         height: 70px;
     }
-    .headNav {
+    .head-nav {
         text-align: center;
     }
     
