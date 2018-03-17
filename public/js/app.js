@@ -63,9 +63,9 @@ $(document).ready(function () {
     /** Saves email in local storage and replaces if one already exists
      * @return {function} checkEmail - runs function to check if email exists in db
      */
-    function saveEmailInfo() {
-        emailInfo = [];
-        var email = $("#email").val().trim();
+    const saveEmailInfo = function() {
+        let emailInfo = [];
+        let email = $("#email").val().trim();
         emailInfo.push(email);
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         console.log("saved", emailInfo);
@@ -76,12 +76,11 @@ $(document).ready(function () {
      * @param {method} hood - takes in variable that holds saved neighborhood name from db
      * @return {string} savedHood - returns name of the saved neighborhood
      */
-    function saveHoodName(hood) {
-        savedHood = [];
+    const saveHoodName = function(hood) {
+        let savedHood = [];
         savedHood.push(hood);
         localStorage.setItem("savedhood", JSON.stringify(savedHood));
         console.log("saved hood", savedHood);
-
         return savedHood;
     }
 
@@ -89,8 +88,8 @@ $(document).ready(function () {
      * @param {method} emailAddress - takes in variable that holds email address user inputed
      * @return {function} saveEmailInfo - runs function to save email in local storage
      */
-    function isValidEmailAddress(emailAddress) {
-        var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    const isValidEmailAddress = function(emailAddress) {
+        let pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         return pattern.test(emailAddress);
     }
 
@@ -98,16 +97,35 @@ $(document).ready(function () {
      * @param {event} click - passes in click listener on button
      * @param {callback} cb - runs function to check for valid email address
      */
-    $("#submitStart").on("click", function(){
-        var email = $("#email").val();
-            if(isValidEmailAddress(email) === true){
-                if(!$("#submitStart").hasClass('modal-close')){
-                $('#submitStart').addClass('modal-close')
-                    }
-                saveEmailInfo();
-            }else{
-                $("#submitStart").removeClass('modal-close')
-            }
-    })
+    // $("#submitStart").on("click", function(){
+    //     let email = $("#email").val();
+    //         if(isValidEmailAddress(email) === true){
+    //             if(!$("#submitStart").hasClass('modal-close')){
+    //             $('#submitStart').addClass('modal-close')
+    //                 }
+    //             saveEmailInfo();
+    //         }else{
+    //             $("#submitStart").removeClass('modal-close')
+    //         }
+    // })
+    const submitEmail = function(){
+        let email = $("#email").val();
+        if(isValidEmailAddress(email) === true){
+            if(!$("#submitStart").hasClass('modal-close')){
+            $('#submitStart').addClass('modal-close')
+                }
+            saveEmailInfo();
+        }else{
+            $("#submitStart").removeClass('modal-close')
+        }
+    }
+
+    $("#email").keyup(function(event) {
+        if (event.keyCode === 13) {
+            submitEmail();
+        }
+    });
+
+    $("#submitStart").on("click", submitEmail);
 
 });
