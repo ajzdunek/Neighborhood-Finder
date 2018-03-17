@@ -18,11 +18,6 @@ $(document).ready(function () {
     var quizStart = function () {
         var saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
-        // if(saved === null){
-        //     if($(".modal-close").not("hidden")){
-        //         $(".modal-close").addClass("hidden")
-        //     }
-        // }
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -423,7 +418,7 @@ $(document).ready(function () {
                     $("#neighborhoodName").text(data.data.nameData.Name);
                     $("#neighborhoodName").val(data.data.nameData.Name);
                     $(".description").text(data.data.nameData.Description);
-                    $('body').css('background', "url(.." + data.data.nameData.Image + ")");
+                    $('body').css({'background': "url(.." + data.data.nameData.Image + ")", 'background-position': 'center top', 'background-size': '100% auto'});
 
                     $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
                     $(".foodAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>" + "</div>");
@@ -454,7 +449,6 @@ $(document).ready(function () {
 
                 });
             }
-            // Clear the question values on submit
             $('.radio-button').prop('checked', false);
             
         });
@@ -535,7 +529,7 @@ $(document).ready(function () {
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $("#neighborhoodName").val(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
-                $('body').css('background', "url(.." + data.data.nameData.Image + ")");
+                $('body').css({'background': "url(.." + data.data.nameData.Image + ")", 'background-position': 'center top', 'background-size': '100% auto'});
                 // $('body').css('background', "url(.." + data.data.nameData.Image + ")no-repeat center center-fixed");
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");

@@ -157,18 +157,18 @@ footer {
     font-size: 18px;
 }
 
-.resultLink {
+a.resultLink {
     font-size: 20px;
     color: #3D4859;
     font-weight: bold;
 }
 
-.resultLink:hover {
+a.resultLink:hover {
     color: rgb(114, 128, 150);
     text-decoration: underline;
 }
 
-.resultLink:hover, .resultLink:active, .resultLink:focus {
+a.resultLink:hover, a.resultLink:active, a.resultLink:focus {
     color: rgb(114, 128, 150);
     text-decoration: underline;
 }
@@ -279,6 +279,8 @@ img.responsive-img {
 
     #savedHood, #retake {
         text-align: center;
+        font-size: 16px;
+        height: auto;
     }
 
     #localEmail {
