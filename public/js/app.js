@@ -35,8 +35,9 @@ $(document).ready(function () {
                 console.log("match", data[0].Saved);
                 saveHoodName(match);
                 window.location.href = "/survey.html#loadSaved";
-            } else if (data.length > 0) {
+            } else if (data.length > 0 && data.email ) {
                 window.location.href = "/survey.html#quizStart";
+                console.log("email but no saved")
             }
             if (data.length <= 0) {
                 $.post("/api/users/" + newUser, function (data) {
@@ -95,7 +96,7 @@ $(document).ready(function () {
 
     /** On click of submit email runs
      * @param {event} click - passes in click listener on button
-     * @param {Requester~requestCallback} cb - runs function to check for valid email address
+     * @param {callback} cb - runs function to check for valid email address
      */
     $("#submitStart").on("click", function(){
         var email = $("#email").val();

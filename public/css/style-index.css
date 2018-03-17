@@ -1,7 +1,14 @@
 
 nav {
   background-color: #131313;
+}
 
+a.openLogin {
+  padding-left: 50px;
+}
+
+a.about {
+  padding-right: 50px;
 }
 
 body {
@@ -33,6 +40,14 @@ footer {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+  }
+
+  a.openLogin {
+    padding-left: 50px;
+  }
+
+  a.about {
+    padding-right: 50px;
   }
 
   .video-container {
@@ -77,6 +92,14 @@ footer {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+  }
+
+  a.openLogin {
+    padding-left: 50px;
+  }
+
+  a.about {
+    padding-right: 50px;
   }
 
   .video-container {
@@ -125,10 +148,17 @@ footer {
   flex-direction: column;
   }
 
+  a.openLogin {
+    padding-left: 50px;
+  }
+
   .video-container {
     visibility: hidden;
   }
 
+  a.about {
+    padding-right: 50px;
+  }
   /* main {
     flex: 1 0 auto;
   } */
@@ -173,6 +203,14 @@ footer {
     font-size: 20px;
   }
 
+  a.openLogin {
+    padding-left: 50px;
+  }
+
+  a.about {
+    padding-right: 50px;
+  }
+
   body {
   text-align: center;
   /* background-image: url(../images/map.jpg); */
@@ -199,10 +237,6 @@ footer {
     height: auto;
     z-index: -100;
   }
-
-  /* main {
-    flex: 1 0 auto;
-  } */
 
   .landing-text {
     color: white;
@@ -239,7 +273,13 @@ footer {
     height: 80px;
   }
 
- 
+  a.about {
+    padding-right: 50px;
+  }
+
+  a.openLogin {
+    padding-left: 50px;
+  }
 
   body {
   text-align: center;
