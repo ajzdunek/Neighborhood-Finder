@@ -18,6 +18,4 @@ There are more than 200 neighborhood areas in Chicago - that's why it's known as
 
 ## Acknowledgments
 
--Hat tip to anyone who's code was used
--Inspiration
--etc
+-Time-lapse video of Chicago shot by Eric Hines taken from Vimeo (http://www.erichinesphotography.com/)
