@@ -393,7 +393,7 @@ $(document).ready(function () {
                  * @param {callback} cb - function takes data parameter
                  */
                 $.get("/api/results/" + match, function (data) {
-                    let saved = JSON.parse(localStorage.getItem("savedhood"));
+                    let saved = JSON.parse(localStorage.getItem("savedemail"));
                     console.log("email", saved);
                     if(saved === null){
                         // if($("#saveNeighborhood").not("hidden")){
@@ -407,6 +407,7 @@ $(document).ready(function () {
                         }if($(".results-close").not("modal-close")){
                         $(".results-close").addClass("modal-close").text("");
                         }
+                    }
                     $('#modal1').modal({
                         dismissible: false,
                         opacity: 0.5,
@@ -448,7 +449,7 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
-                }
+                
                 });
             }
             $('.radio-button').prop('checked', false);
