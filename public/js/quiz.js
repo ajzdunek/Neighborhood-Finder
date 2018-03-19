@@ -405,7 +405,8 @@ $(document).ready(function () {
                         if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").removeClass("hidden");
                         }if($(".results-close").not("modal-close")){
-                        $(".results-close").addClass("modal-close").text("");
+                        $(".results-close").addClass("modal-close").text("X");
+                        console.log("results close added")
                         }
                     }
                     $('#modal1').modal({
