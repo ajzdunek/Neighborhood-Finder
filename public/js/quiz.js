@@ -4,7 +4,6 @@ $(document).ready(function () {
     /** Starts the quiz by initiating and opening the first survey modal
      */
     const quizStart = function () {
-
         let saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
         $('#modalStart').modal({

@@ -66,9 +66,8 @@ footer {
 }
 
 .modal {
-    max-height: 90%;
-    opacity: .8;
-    background-color: rgb(217, 207, 202, .8);
+    max-height: 90%; 
+    background-color: rgb(255, 255, 255);
     z-index: 10;
     border-radius: 10px;
 }
