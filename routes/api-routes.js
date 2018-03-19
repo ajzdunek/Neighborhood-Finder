@@ -1,11 +1,13 @@
 var path = require("path");
-
 var db = require("../models");
-console.log(db.Neighborhoodgeneral);
-// var neighGen = require("../models/neighborhood_general.js");
-// var neighDeet = require("../models/neighborhood_detail.js");
+
 
 module.exports = function (app) {
+    /** On completion of survey, runs get route to db for neighborhood information
+     * @requires Express
+     * @param {string} path - Express path
+     * @param {callback} cb - function takes in req and res and will return json data
+     */
   app.get("/api/results/:name", function (req, res) {
     console.log("req get hood", req.params.name);
     db.Neighborhoodgeneral.findOne({
@@ -13,11 +15,8 @@ module.exports = function (app) {
         Name: req.params.name
       }
     }).then(function (general) {
-      // console.log("general", general)
-      // res.json(general);
       db.Neighborhooddetail.findAll({
         where: {
-          // need to figure out how to call this on foreign key once tables associated
           NeighborhoodgeneralId: general.dataValues.id
         }
       }).then(function (details) {
@@ -25,13 +24,15 @@ module.exports = function (app) {
           nameData: general,
           detailData: details
         };
-        // console.log("details", details);
-        // console.log(data);
         res.json({ data: data });
       });
     });
   });
-  // Check to see if email exists in the db
+    /** On user login, runs get route to db to see if the user email exists
+     * @requires Express
+     * @param {string} path - Express path
+     * @param {callback} cb - function takes in req and res and will return json data
+     */
   app.get("/api/users/:email", function (req, res) {
     console.log("user", req.params.email);
     db.user.findAll({
@@ -42,16 +43,11 @@ module.exports = function (app) {
       res.json(data);
     });
 
-
-
-    // Post new email to db
-    // app.post("/api/users", function(req, res) {
-    //   var userName = req.body.Email;
-    //   console.log("User's email address is ", userName);
-    //   res.send(userName);
-    // });
-
-    // POST route for saving a new User
+    /** On user login, if email does not exist, post route to db adds user email
+     * @requires Express
+     * @param {string} path - Express path
+     * @param {callback} cb - function takes in req and res and will return json data
+     */
     app.post("/api/users/:email", function (req, res) {
       console.log("req post", req.params.email)
       db.user.create(
@@ -62,7 +58,11 @@ module.exports = function (app) {
         });
     });
 
-  // PUT route for updating favorite neighborhood
+    /** On click of save neighborhood, runs put route to db to update users saved neighborhood
+     * @requires Express
+     * @param {string} path - Express path
+     * @param {callback} cb - function takes in req and res and will return json data
+     */
   app.put("/api/users/:email", function (req, res){
     console.log("req hood", req.body.hood);
     console.log("req email", req.params.email);

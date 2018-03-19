@@ -1,22 +1,10 @@
-/* Quiz is running through fifteen questions and appends result.
-* @function save
-* @param {string} 
-* @function store
-* @param {string} 
-* @function getValues
-* @return 
-* @param {string}
-*/
-
 $(document).ready(function () {
     $('.modal').modal();
 
-    /** On click
-     * @param {method} emailAddress - takes in variable that holds email address user inputed
-     * @return {function} saveEmailInfo - runs function to save email in local storage
+    /** Starts the quiz by initiating and opening the first survey modal
      */
-    var quizStart = function () {
-        var saved = JSON.parse(localStorage.getItem("savedhood"));
+    const quizStart = function () {
+        let saved = JSON.parse(localStorage.getItem("savedhood"));
         console.log(saved);
         $('#modalStart').modal({
             dismissible: false,
@@ -26,7 +14,9 @@ $(document).ready(function () {
         });
         $('#modalStart').modal('open');
 
-
+        /** On click of 'next', validates user response, initiates next question modal, closes current and opens next modal
+         * @param {event} event - prevents page from reloading on click
+         */
         $("#q1btn").on("click", function (e) {
             console.log("q1 button works");
             e.preventDefault();
@@ -366,11 +356,12 @@ $(document).ready(function () {
                     $("input[name=group15]:checked").val()
                 ];
 
-                var scoreNums = userScores.map(function (i) {
+                const scoreNums = userScores.map(function (i) {
                     return parseInt(i, 10);
                 });
-                var userTotal = scoreNums.reduce((a, b) => a + b);
-                var match;
+
+                const userTotal = scoreNums.reduce((a, b) => a + b);
+                let match;
 
                 if (userTotal <= 105) {
                     match = "Pilsen";
@@ -395,16 +386,27 @@ $(document).ready(function () {
                 };
                 console.log("match", match);
 
+                /** On completion of survey, runs get request to server for matched hood info, opens modal and renders results
+                 * @requires Express
+                 * @param {string} path - Express path
+                 * @param {string} match - name of neighborhood match 
+                 * @param {callback} cb - function takes data parameter
+                 */
                 $.get("/api/results/" + match, function (data) {
-                    var saved = JSON.parse(localStorage.getItem("savedhood"));
+                    let saved = JSON.parse(localStorage.getItem("savedhood"));
                     console.log("email", saved);
                     if(saved === null){
-                        if($("#saveNeighborhood").not("hidden")){
+                        // if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").addClass("hidden")
-                        }if($(".results-close").hasClass("modal-close")){
+                        // if($(".results-close").hasClass("modal-close")){
                             $(".results-close").removeClass("modal-close").text("");
+                        // }
+                    }else{
+                        if($("#saveNeighborhood").not("hidden")){
+                            $("#saveNeighborhood").removeClass("hidden");
+                        }if($(".results-close").not("modal-close")){
+                        $(".results-close").addClass("modal-close").text("");
                         }
-                    }
                     $('#modal1').modal({
                         dismissible: false,
                         opacity: 0.5,
@@ -446,7 +448,7 @@ $(document).ready(function () {
                     $("#mapbtn").on("click", function () {
                         $(".description").text(data.data.nameData.Description);
                     });
-
+                }
                 });
             }
             $('.radio-button').prop('checked', false);
@@ -457,24 +459,19 @@ $(document).ready(function () {
     
     if (window.location.hash === '#quizStart') {quizStart();}
 
-/* Emails.
-* @function save
-* @param {string} 
-* @function store
-* @param {string} 
-* @function getValues
-* @return 
-* @param {string}
-*/
 
-
+    /** On click of save neighborhood updates user hood data
+     * @param {callback} cb - callback function updates local storage, updates page display and runs put request to server
+     * @return {function} loadSaved - updates logged in state 
+     * @return {function} updateNeighborhood - runs put request to server to update user neighborhood
+     */
     $("#saveNeighborhood").click(function () {
-        var userEmail = JSON.parse(localStorage.getItem("savedemail"));
+        let userEmail = JSON.parse(localStorage.getItem("savedemail"));
         userEmail = userEmail.toString();
-        var emailInfo = { email: userEmail };
-        var neighborhood = [];
-        var hoodName = $("#neighborhoodName").val();
-        var hoodObj = {
+        let emailInfo = { email: userEmail };
+        let neighborhood = [];
+        let hoodName = $("#neighborhoodName").val();
+        let hoodObj = {
             hood: hoodName
         };
         neighborhood.push(hoodName);
@@ -483,6 +480,9 @@ $(document).ready(function () {
         loadSaved();
         updateNeighborhood(hoodObj);
 
+        /** Runs put request to server to update neighborhood in db
+         * @param {object} hood - takes in hood object with property of neighborhood name from on click function
+         */
         function updateNeighborhood(hood) {
             console.log("hood", hood);
             console.log(userEmail);
@@ -497,19 +497,18 @@ $(document).ready(function () {
         }
     })
 
-/* Save Neigborhood.
-* @function save
-* @param {string} 
-* @function store
-* @param {string} 
-* @function getValues
-* @return 
-* @param {string}
-*/
-
-
+    /** On click of 'View my saved hood' shows saved hood modal
+     * @param {callback} cb - callack function sends get request to server for neighborhood info and renders to page
+     */
     $(document).on("click", "#savedHood", function () {
-        var email = JSON.parse(localStorage.getItem("savedemail"));
+        let email = JSON.parse(localStorage.getItem("savedemail"));
+
+        /** On click of 'View my Saved Hood', runs get request to server for matched hood info, opens modal and renders results
+         * @requires Express
+         * @param {string} path - Express path
+         * @param {string} match - name of neighborhood match 
+         * @param {callback} cb - function takes data parameter
+         */
         $.get("/api/users/" + email, function (emaildata) {
             console.log(emaildata)
 
@@ -562,9 +561,6 @@ $(document).ready(function () {
         })
     })
 
-
-
-    // var favorites = JSON.parse(localStorage.getItem("savedplaces"));
     var emailInfo = JSON.parse(localStorage.getItem("savedemail"));
     var savedHood = JSON.parse(localStorage.getItem("savedhood"));
 
@@ -580,49 +576,62 @@ $(document).ready(function () {
      * @return {function} checkEmail - after saving, runs check email to validate
      */
     
-    function saveEmailInfo() {
+    const saveEmailInfo = function() {
         emailInfo = [];
-        var email = $("#email").val().trim();
+        let email = $("#email").val().trim();
         emailInfo.push(email);
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         console.log("saved", emailInfo);
         checkEmail();
     }
 
-
-    $("#retake").on("click", function () {
-        $('.radio-button').prop('checked', false);
-        quizStart();
-    });
-
-    $(".restart-quiz").on("click", function(){
-        $('.radio-button').prop('checked', false);
-        $('#modal1').modal('close');
-        quizStart();
-    });
-
-
-    $("#logout").on("click", function(){
+   /** On click of 'logout', empties email and saved neighborhood in local storage
+     */
+    const logOut = function(){
         emailInfo = [];
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
         hoodInfo = [];
         localStorage.setItem("savedhood", JSON.stringify(hoodInfo));
-    })
+    }
 
-    $(".home").on("click", function(){
-        window.location.href = "/index.html";
-    })
-
-
-    function loadSaved() {
-        var email = JSON.parse(localStorage.getItem("savedemail"));
-        var hood = JSON.parse(localStorage.getItem("savedhood"));
+    /** On click of 'saveNeighborhood', updates logged in state with user's stored hood and displays welcome message
+     */
+    const loadSaved = function() {
+        let email = JSON.parse(localStorage.getItem("savedemail"));
+        let hood = JSON.parse(localStorage.getItem("savedhood"));
         $("#savedName").text(hood);
         if($(".loggedIn").hasClass("hidden")){
             $(".loggedIn").removeClass("hidden");
         }
         $("#localEmail").text("Hi, " + email);
     }
+
+    /** On click of 'take the quiz again' on logged in state, unchecks radio buttons on question modals and closes results modal
+     * @return {function} quizStart - opens first question modal
+     */
+    $("#retake").on("click", function () {
+        $('.radio-button').prop('checked', false);
+        quizStart();
+    });
+
+    /** On click of 'take quiz again' on results modal, unchecks radio buttons on question modals and closes results modal
+     * @return {function} quizStart - opens first question modal
+     */
+    $(".restart-quiz").on("click", function(){
+        $('.radio-button').prop('checked', false);
+        $('#modal1').modal('close');
+        quizStart();
+    });
+
+    /** On click of logout, runs logout function
+     */
+    $("#logout").on("click", logOut);
+
+    /** On click of 'Quiz Home' takes user back to home page
+     */
+    $(".home").on("click", function(){
+        window.location.href = "/index.html";
+    })
 
     if (window.location.hash === '#loadSaved') { loadSaved(); }
 
