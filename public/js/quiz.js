@@ -5,7 +5,6 @@ $(document).ready(function () {
      */
     const quizStart = function () {
         let saved = JSON.parse(localStorage.getItem("savedhood"));
-        console.log(saved);
         $('#modalStart').modal({
             dismissible: false,
             opacity: 0.5,
@@ -18,10 +17,8 @@ $(document).ready(function () {
          * @param {event} event - prevents page from reloading on click
          */
         $("#q1btn").on("click", function (e) {
-            console.log("q1 button works");
             e.preventDefault();
             if ($("input[name=group1]:checked").val() === undefined) {
-                console.log($("input[name=group1]:checked").val())
                 if ($("#error1").hasClass("hidden")) {
                     $("#error1").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -42,7 +39,6 @@ $(document).ready(function () {
         $("#q2btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group2]:checked").val() === undefined) {
-                console.log($("input[name=group2]:checked").val())
                 if ($("#error2").hasClass("hidden")) {
                     $("#error2").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -65,7 +61,6 @@ $(document).ready(function () {
         $("#q3btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group3]:checked").val() === undefined) {
-                console.log($("input[name=group3]:checked").val())
                 if ($("#error3").hasClass("hidden")) {
                     $("#error3").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -87,7 +82,6 @@ $(document).ready(function () {
         $("#q4btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group4]:checked").val() === undefined) {
-                console.log($("input[name=group4]:checked").val())
                 if ($("#error4").hasClass("hidden")) {
                     $("#error4").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -108,7 +102,6 @@ $(document).ready(function () {
         $("#q5btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group5]:checked").val() === undefined) {
-                console.log($("input[name=group5]:checked").val())
                 if ($("#error5").hasClass("hidden")) {
                     $("#error5").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -130,7 +123,6 @@ $(document).ready(function () {
         $("#q6btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group6]:checked").val() === undefined) {
-                console.log($("input[name=group6]:checked").val())
                 if ($("#error6").hasClass("hidden")) {
                     $("#error6").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -152,7 +144,6 @@ $(document).ready(function () {
         $("#q7btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group7]:checked").val() === undefined) {
-                console.log($("input[name=group7]:checked").val())
                 if ($("#error7").hasClass("hidden")) {
                     $("#error7").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -173,7 +164,6 @@ $(document).ready(function () {
         $("#q8btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group8]:checked").val() === undefined) {
-                console.log($("input[name=group8]:checked").val())
                 if ($("#error8").hasClass("hidden")) {
                     $("#error8").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -195,7 +185,6 @@ $(document).ready(function () {
         $("#q9btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group9]:checked").val() === undefined) {
-                console.log($("input[name=group9]:checked").val())
                 if ($("#error9").hasClass("hidden")) {
                     $("#error9").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -216,7 +205,6 @@ $(document).ready(function () {
         $("#q10btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group10]:checked").val() === undefined) {
-                console.log($("input[name=group10]:checked").val())
                 if ($("#error10").hasClass("hidden")) {
                     $("#error10").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -238,7 +226,6 @@ $(document).ready(function () {
         $("#q11btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group11]:checked").val() === undefined) {
-                console.log($("input[name=group11]:checked").val())
                 if ($("#error11").hasClass("hidden")) {
                     $("#error11").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -260,7 +247,6 @@ $(document).ready(function () {
         $("#q12btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group12]:checked").val() === undefined) {
-                console.log($("input[name=group12]:checked").val())
                 if ($("#error12").hasClass("hidden")) {
                     $("#error12").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -282,7 +268,6 @@ $(document).ready(function () {
         $("#q13btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group13]:checked").val() === undefined) {
-                console.log($("input[name=group13]:checked").val())
                 if ($("#error13").hasClass("hidden")) {
                     $("#error13").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -304,7 +289,6 @@ $(document).ready(function () {
         $("#q14btn").on("click", function (e) {
             e.preventDefault();
             if ($("input[name=group14]:checked").val() === undefined) {
-                console.log($("input[name=group14]:checked").val())
                 if ($("#error14").hasClass("hidden")) {
                     $("#error14").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -330,7 +314,6 @@ $(document).ready(function () {
             } 
 
             if ($("input[name=group15]:checked").val() === undefined) {
-                console.log($("input[name=group15]:checked").val())
                 if ($("#error15").hasClass("hidden")) {
                     $("#error15").removeClass("hidden").fadeIn(100).fadeTo(2000, 0);
                 } else {
@@ -384,7 +367,6 @@ $(document).ready(function () {
                 } else if (userTotal <= 375) {
                     match = "River North";
                 };
-                console.log("match", match);
 
                 /** On completion of survey, runs get request to server for matched hood info, opens modal and renders results
                  * @requires Express
@@ -394,19 +376,18 @@ $(document).ready(function () {
                  */
                 $.get("/api/results/" + match, function (data) {
                     let saved = JSON.parse(localStorage.getItem("savedemail"));
-                    console.log("email", saved);
-                    if(saved === null){
-                        // if($("#saveNeighborhood").not("hidden")){
+                    if(saved.length <= 0){
+                        if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").addClass("hidden")
-                        // if($(".results-close").hasClass("modal-close")){
+                        if($(".results-close").hasClass("modal-close")){
                             $(".results-close").removeClass("modal-close").text("");
-                        // }
+                            }
+                        }
                     }else{
                         if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").removeClass("hidden");
                         }if($(".results-close").not("modal-close")){
                         $(".results-close").addClass("modal-close").text("X");
-                        console.log("results close added")
                         }
                     }
                     $('#modal1').modal({
@@ -416,8 +397,6 @@ $(document).ready(function () {
                         outDuration: 300
                     });
                     $('#modal1').modal('open');
-                    console.log("data", data);
-                    console.log("data for neigh", data.data.detailData);
 
                     $("#neighborhoodName").text(data.data.nameData.Name);
                     $("#neighborhoodName").val(data.data.nameData.Name);
@@ -486,15 +465,12 @@ $(document).ready(function () {
          * @param {object} hood - takes in hood object with property of neighborhood name from on click function
          */
         function updateNeighborhood(hood) {
-            console.log("hood", hood);
-            console.log(userEmail);
             $.ajax({
                 method: "PUT",
                 url: "/api/users/" + userEmail,
                 data: hood
             })
             .then(function (data) {
-                console.log("hood data from db", data)
             });
         }
     })
@@ -512,11 +488,8 @@ $(document).ready(function () {
          * @param {callback} cb - function takes data parameter
          */
         $.get("/api/users/" + email, function (emaildata) {
-            console.log(emaildata)
-
         }).then(function (data) {
             $.get("/api/results/" + data[0].Saved, function (data) {
-                console.log("hood", data);
                 $('#modal1').modal({
                     dismissible: false,
                     opacity: 0.5,
@@ -524,14 +497,11 @@ $(document).ready(function () {
                     outDuration: 300
                 });
                 $('#modal1').modal('open');
-                console.log("data", data);
-                console.log("data for neigh", data.data.detailData);
 
                 $("#neighborhoodName").text(data.data.nameData.Name);
                 $("#neighborhoodName").val(data.data.nameData.Name);
                 $(".description").text(data.data.nameData.Description);
                 $('body').css({'background': "url(.." + data.data.nameData.Image + ")", 'background-position': 'center top', 'background-size': '100% auto'});
-                // $('body').css('background', "url(.." + data.data.nameData.Image + ")no-repeat center center-fixed");
 
                 $(".mapAppend").html("<img class='map' src='" + data.data.nameData.Map_image + "'>");
                 $(".foodAppend").html("<div class='col s12 l4'><div class='div-content leftDiv'>" + "<a class='link1'>" + data.data.detailData[0].Name + "</a>" + "<p>" + data.data.detailData[0].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[0].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content middleDiv'>" + "<a class='link2'>" + data.data.detailData[1].Name + "</a>" + "<p>" + data.data.detailData[1].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[1].Image + "'>" + "</div>" + "</div>" + "<div class='col s12 l4'><div class='div-content rightDiv'>" + "<a class='link3'>" + data.data.detailData[2].Name + "</a>" + "<p>" + data.data.detailData[2].Description + "</p>" + "<img class='responsive-img imageThumbs' src='" + data.data.detailData[2].Image + "'>" + "</div>" + "</div>");
@@ -583,7 +553,6 @@ $(document).ready(function () {
         let email = $("#email").val().trim();
         emailInfo.push(email);
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
-        console.log("saved", emailInfo);
         checkEmail();
     }
 
