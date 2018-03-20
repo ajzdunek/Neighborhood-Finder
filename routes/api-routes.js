@@ -9,7 +9,6 @@ module.exports = function (app) {
      * @param {callback} cb - function takes in req and res and will return json data
      */
   app.get("/api/results/:name", function (req, res) {
-    console.log("req get hood", req.params.name);
     db.Neighborhoodgeneral.findOne({
       where: {
         Name: req.params.name
@@ -34,7 +33,6 @@ module.exports = function (app) {
      * @param {callback} cb - function takes in req and res and will return json data
      */
   app.get("/api/users/:email", function (req, res) {
-    console.log("user", req.params.email);
     db.user.findAll({
       where: {
         Email: req.params.email
@@ -49,7 +47,6 @@ module.exports = function (app) {
      * @param {callback} cb - function takes in req and res and will return json data
      */
     app.post("/api/users/:email", function (req, res) {
-      console.log("req post", req.params.email)
       db.user.create(
         {
           Email: req.params.email
@@ -64,8 +61,6 @@ module.exports = function (app) {
      * @param {callback} cb - function takes in req and res and will return json data
      */
   app.put("/api/users/:email", function (req, res){
-    console.log("req hood", req.body.hood);
-    console.log("req email", req.params.email);
     db.user.update(
       {
         Saved: req.body.hood

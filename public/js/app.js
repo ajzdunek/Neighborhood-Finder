@@ -28,16 +28,13 @@ $(document).ready(function () {
     var checkEmail = function () {
 
         var newUser = $("#email").val().trim();
-        console.log("User's email is ", newUser);
         $.get("/api/users/" + newUser, function (data) {
             if (data.length > 0 && data[0].Saved !== null) {
                 var match = data[0].Saved;
-                console.log("match", data[0].Saved);
                 saveHoodName(match);
                 window.location.href = "/survey.html#loadSaved";
             } else if (data.length > 0 && data.email ) {
                 window.location.href = "/survey.html#quizStart";
-                console.log("email but no saved")
             }
             if (data.length <= 0) {
                 $.post("/api/users/" + newUser, function (data) {
@@ -68,7 +65,6 @@ $(document).ready(function () {
         let email = $("#email").val().trim();
         emailInfo.push(email);
         localStorage.setItem("savedemail", JSON.stringify(emailInfo));
-        console.log("saved", emailInfo);
         checkEmail();
     }
 
@@ -80,7 +76,6 @@ $(document).ready(function () {
         let savedHood = [];
         savedHood.push(hood);
         localStorage.setItem("savedhood", JSON.stringify(savedHood));
-        console.log("saved hood", savedHood);
         return savedHood;
     }
 
@@ -93,21 +88,6 @@ $(document).ready(function () {
         return pattern.test(emailAddress);
     }
 
-    /** On click of submit email runs
-     * @param {event} click - passes in click listener on button
-     * @param {callback} cb - runs function to check for valid email address
-     */
-    // $("#submitStart").on("click", function(){
-    //     let email = $("#email").val();
-    //         if(isValidEmailAddress(email) === true){
-    //             if(!$("#submitStart").hasClass('modal-close')){
-    //             $('#submitStart').addClass('modal-close')
-    //                 }
-    //             saveEmailInfo();
-    //         }else{
-    //             $("#submitStart").removeClass('modal-close')
-    //         }
-    // })
     const submitEmail = function(){
         let email = $("#email").val();
         if(isValidEmailAddress(email) === true){
