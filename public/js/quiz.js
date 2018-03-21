@@ -379,15 +379,15 @@ $(document).ready(function () {
                     if(saved.length <= 0){
                         if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").addClass("hidden")
-                        if($(".results-close").hasClass("modal-close")){
-                            $(".results-close").removeClass("modal-close").text("");
-                            }
+                            if($(".results-close").hasClass("modal-close")){
+                                $(".results-close").removeClass("modal-close").text("");
+                                }
                         }
                     }else{
                         if($("#saveNeighborhood").not("hidden")){
                             $("#saveNeighborhood").removeClass("hidden");
-                        }if($(".results-close").not("modal-close")){
-                        $(".results-close").addClass("modal-close").text("X");
+                            }if($(".results-close").not("modal-close")){
+                            $(".results-close").addClass("modal-close").text("X");
                         }
                     }
                     $('#modal1').modal({
