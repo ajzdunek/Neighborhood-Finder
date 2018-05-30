@@ -26,7 +26,7 @@ How the survey page looks like.
 We added a progress bar so you can keep track of how many questions you have left.
 
 ![picture](results.jpg)
-After you have finished taking the survey Hoodie will match you up with the neighborhood that's right for you and it will also include a map of the area, walkscore,restaurants in the neighborhood and entertainment.
+After you have finished taking the survey Hoodie will match you up with the neighborhood that's right for you and it will also include a map of the area, walkscore, restaurants and entertainment that's in the area.
 
 ![picture](walkscore.png)
 Walkscore.
