@@ -13,6 +13,13 @@ a.about {
 
 body {
   font-family: 'Nanum Gothic', sans-serif;
+  background-image: url(../images/map.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position:center center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 footer {
@@ -24,302 +31,32 @@ footer {
   background-color: #131313;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  /* html body {
-  margin: 0 auto;
-  height: 100%;
-  overflow: hidden;
-} */
-
-  body {
-    background-image: url(../images/map.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  a.openLogin {
-    padding-left: 50px;
-  }
-
-  a.about {
-    padding-right: 50px;
-  }
-
-  .video-container {
-    visibility: hidden;
-  }
-
-  .landing-text {
-    color: black;
-    vertical-align: middle;
-    padding-top: 100%;
-    text-align: center;
-  }
-
-  #landing-title {
-    font-family: 'Monoton', cursive;
-    text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .material-tooltip {
-    width: 300px;
-  }
+nav, .page-footer {
+  height: 80px;
 }
 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 768px) {
-  body {
-    background-image: url(../images/map.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-
-  a.openLogin {
-    padding-left: 50px;
-  }
-
-  a.about {
-    padding-right: 50px;
-  }
-
-  .video-container {
-    visibility: hidden;
-  }
-
-
-  .landing-text {
-    color: black;
-    vertical-align: middle;
-    padding-top: 100%;
-    text-align: center;
-  }
-
-  #landing-title {
-    font-family: 'Monoton', cursive;
-    text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .material-tooltip {
-    width: 300px;
-  }
-}
-
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-  body {
+.landing-text {
+  color: white;
+  vertical-align: middle;
+  padding-top: 20%;
   text-align: center;
-  background-image: url(../images/map.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  }
-
-  a.openLogin {
-    padding-left: 50px;
-  }
-
-  .video-container {
-    visibility: hidden;
-  }
-
-  a.about {
-    padding-right: 50px;
-  }
-
-  .landing-text {
-    color: white;
-    vertical-align: middle;
-    padding-top: 20%;
-    text-align: center;
-  }
-
-  #landing-title {
-    font-family: 'Monoton', cursive;
-    font-size: 80px;
-    color: rgb(29, 29, 29);
-    text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-  }
-
-  .material-tooltip {
-    width: 300px;
-  }
-  
 }
 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 992px) {
-
-  nav, .page-footer {
-    height: 100px;
-  }
-
-  .openLogin, .about {
-    font-size: 20px;
-  }
-
-  a.openLogin {
-    padding-left: 50px;
-  }
-
-  a.about {
-    padding-right: 50px;
-  }
-
-  body {
-  text-align: center;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  }
-
-  .video-container {
-    visibility: visible;
-    min-height: 100%;
-  }
-
-  #video-background { 
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-  }
-
-  .landing-text {
-    color: white;
-    vertical-align: middle;
-    padding-top: 20%;
-    text-align: center;
-  }
-
-  #landing-title {
-    font-family: 'Monoton', cursive;
-    font-size: 80px;
-    color: rgb(255, 255, 255);
-    text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-  }
-
-  .material-tooltip {
-    width: 300px;
-  }
-  
+#landing-title {
+  font-family: 'Monoton', cursive;
+  font-size: 80px;
+  color: #131313;
+  text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 1200px) {
-
-  nav, .page-footer {
-    height: 80px;
-  }
-
-  a.about {
-    padding-right: 50px;
-  }
-
-  a.openLogin {
-    padding-left: 50px;
-  }
-
-  body {
-  text-align: center;
-  background-color: black;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  }
-
-  .video-container {
-    visibility: visible;
-    min-height: 100%;
-  }
-
-  #video-background { 
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-  }
-
-  .landing-text {
-    color: white;
-    vertical-align: middle;
-    padding-top: 20%;
-    text-align: center;
-  }
-
-  #landing-title {
-    font-family: 'Monoton', cursive;
-    font-size: 80px;
-    color: rgb(255, 255, 255);
-    text-shadow: -5px 3px 0px rgba(150, 150, 150, 1);
-  }
-
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-  }
-
-  .material-tooltip {
-    width: 300px;
-  }
-  
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
 }
 
+.material-tooltip {
+  width: 300px;
+}
