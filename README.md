@@ -10,31 +10,31 @@ There are more than 200 neighborhood areas in Chicago - that's why it's known as
 
 ## Screenshots
 
-![picture](home.jpg)
+![picture](public/home.jpg)
 How the home page looks like.
 
-![picture](about.jpg)
+![picture](public/about.jpg)
 About Hoodie at the top right corner of the screen.
 
-![picture](login.jpg)
+![picture](public/login.jpg)
 You can login with your email and take the survey or just go straight to the survey. If you decide to not login with an email address first then Hoodie will not remember what your results were if you decide to come back and take the survey at a later time.
 
-![picture](questions-page.jpg)
+![picture](public/questions-page.jpg)
 How the survey page looks like.
 
-![picture](progressbar.png)
+![picture](public/progressbar.png)
 We added a progress bar so you can keep track of how many questions you have left.
 
-![picture](results.jpg)
+![picture](public/results.jpg)
 After you have finished taking the survey Hoodie will match you up with the neighborhood that's right for you and it will also include a map of the area, walkscore, restaurants and entertainment that's in the area.
 
-![picture](walkscore.png)
+![picture](public/walkscore.png)
 Walkscore.
 
-![picture](food.png)
+![picture](public/food.png)
 Restaurants. 
 
-![picture](fun.png)
+![picture](public/fun.png)
 Entertainment.
 
 
